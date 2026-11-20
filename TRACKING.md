@@ -8,10 +8,10 @@
 
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
-- Bản đầu đã thiết kế: **7/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 87 · Đang thiết kế 2 · Đã thiết kế 7 · Đang code 0 · Xong 0.
+- Bản đầu đã thiết kế: **9/79** · đã code xong: **0/79**.
+- Theo trạng thái (mọi bản): Chưa làm 87 · Đang thiết kế 0 · Đã thiết kế 9 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **1/17**.
-- Cập nhật lúc: 2026-11-20 17:33.
+- Cập nhật lúc: 2026-11-20 17:43.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -22,8 +22,8 @@
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
 | 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đã thiết kế | Đã duyệt; bản ở design/screen-0.1.html · [ảnh](shots/0.1.jpg) |
-| 0.2 | Cài lên màn hình chính | Bản đầu | Đang thiết kế |  |
-| 0.3 | Chọn bạn đồng hành | Bản đầu | Đang thiết kế |  |
+| 0.2 | Cài lên màn hình chính | Bản đầu | Đã thiết kế | Chờ duyệt; design/screen-0.2.html · [ảnh](shots/0.2.jpg) |
+| 0.3 | Chọn bạn đồng hành | Bản đầu | Đã thiết kế | Chờ duyệt; design/screen-0.3.html · [ảnh](shots/0.3.jpg) |
 | 0.4 | Đặt tên và chọn màu vía | Bản đầu | Chưa làm |  |
 | 0.5 | Hồ sơ: về người dùng | Bản đầu | Chưa làm |  |
 | 0.6 | Mục tiêu và trình độ | Bản đầu | Chưa làm |  |
@@ -204,3 +204,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-21: thiết kế xong màn 0.1 (logo Tạ Nhỏ, hộp đồ bỏ quên, bấm Mở hộp để ba bạn đồng hành nhảy ra); chờ người dùng duyệt.
 - 2026-11-21: trang theo dõi có thêm ảnh màn hình (mục "Đã có hình" và ảnh trong từng màn). Đang thiết kế 0.2 và 0.3.
 - 2026-11-21: chốt D14: thiết kế xong hết rồi mới bắt đầu code.
+- 2026-11-21: thiết kế xong 0.2 (cài app: iPhone 3 bước, Android) và 0.3 (chọn bạn đồng hành, vuốt ngang); đã qua 1 vòng so mù và sửa; chờ duyệt.
