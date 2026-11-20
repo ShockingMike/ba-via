@@ -201,7 +201,12 @@ fs.mkdirSync(path.join(root, 'docs'), { recursive: true });
 fs.writeFileSync(path.join(root, 'docs', 'index.html'), html);
 fs.mkdirSync(path.join(root, 'docs', 'shots'), { recursive: true });
 const protoDir = path.join(root, 'prototypes');
-if (fs.existsSync(protoDir)) { fs.mkdirSync(path.join(root, 'docs', 'prototypes'), { recursive: true }); for (const f of fs.readdirSync(protoDir)) fs.copyFileSync(path.join(protoDir, f), path.join(root, 'docs', 'prototypes', f)); }
+if (fs.existsSync(protoDir)) { fs.mkdirSync(path.join(root, 'docs', 'prototypes'), { recursive: true }); for (const f of fs.readdirSync(protoDir)) {
+  // Prototypes are written as page bodies (artifact style); give them a proper document shell for GitHub Pages.
+  let h = fs.readFileSync(path.join(protoDir, f), 'utf8');
+  if (!/^\s*<!doctype/i.test(h)) h = '<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' + h + '</body></html>';
+  fs.writeFileSync(path.join(root, 'docs', 'prototypes', f), h);
+} }
 for (const f of shotFiles) fs.copyFileSync(path.join(shotDir, f), path.join(root, 'docs', 'shots', f));
 try { fs.copyFileSync(path.join(root, 'brand', 'favicon.svg'), path.join(root, 'docs', 'favicon.svg')); } catch (e) { /* optional */ }
 console.log(`docs/index.html: ${screens.length} màn, ${nDesigned}/${mvp.length} bản đầu đã thiết kế, ${nDecided}/${decisions.length} quyết định`);

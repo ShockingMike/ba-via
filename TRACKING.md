@@ -21,11 +21,11 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đã thiết kế | Đã duyệt; bản ở design/screen-0.1.html · [ảnh](shots/0.1.jpg) · [bấm thử](prototypes/0.1.html) |
-| 0.2 | Cài lên màn hình chính | Bản đầu | Đã thiết kế |  · [ảnh](shots/0.2.jpg) · [bấm thử](prototypes/0.2.html) |
-| 0.3 | Chọn bạn đồng hành | Bản đầu | Đã thiết kế |  · [ảnh](shots/0.3.jpg) · [bấm thử](prototypes/0.3.html) |
-| 0.4 | Đặt tên và chọn màu bạn đồng hành | Bản đầu | Đã thiết kế |  · [ảnh](shots/0.4.jpg) · [bấm thử](prototypes/0.4.html) |
-| 0.5 | Hồ sơ: về người dùng | Bản đầu | Đã thiết kế |  · [ảnh](shots/0.5.jpg) · [bấm thử](prototypes/0.5.html) |
+| 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đã thiết kế | Đã duyệt · Đã duyệt; bản ở design/screen-0.1.html · [ảnh](shots/0.1.jpg) · [bấm thử](prototypes/0.1.html) |
+| 0.2 | Cài lên màn hình chính | Bản đầu | Đã thiết kế | Đã duyệt ·  · [ảnh](shots/0.2.jpg) · [bấm thử](prototypes/0.2.html) |
+| 0.3 | Chọn bạn đồng hành | Bản đầu | Đã thiết kế | Đã duyệt ·  · [ảnh](shots/0.3.jpg) · [bấm thử](prototypes/0.3.html) |
+| 0.4 | Đặt tên và chọn màu bạn đồng hành | Bản đầu | Đã thiết kế | Chờ duyệt ·  · [ảnh](shots/0.4.jpg) · [bấm thử](prototypes/0.4.html) |
+| 0.5 | Hồ sơ: về người dùng | Bản đầu | Đã thiết kế | Chờ duyệt ·  · [ảnh](shots/0.5.jpg) · [bấm thử](prototypes/0.5.html) |
 | 0.6 | Mục tiêu và trình độ | Bản đầu | Chưa làm |  |
 | 0.7 | Lời hứa tuần và thời lượng | Bản đầu | Chưa làm |  |
 | 0.8 | Sàng lọc sức khoẻ | Bản đầu | Chưa làm |  |
