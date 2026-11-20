@@ -2,7 +2,7 @@
 
 Ngày: 2026-11-20. Đọc cùng: [09-naming.md](09-naming.md) (hệ 5), trang chọn: [logo-options.html](logo-options.html), file: [logo/](logo/).
 
-Chưa chốt gì. Người dùng chọn hướng; file này ghi nghiên cứu, bốn hướng, và kết quả chấm mù.
+**Đã chốt 2026-11-21: người dùng chọn hướng C "Ba màu, một quả tạ".** Bản cuối và file ở mục "Bản cuối" cuối file này và trong `logo/final/`. Phần trên ghi nghiên cứu, bốn hướng và kết quả chấm mù của bước chọn hướng.
 
 Từ ngữ: Khăn, Bình, Găng là **bạn đồng hành**. Quả tạ là biểu tượng của thương hiệu, không phải nhân vật, nên không hướng nào vẽ mặt lên quả tạ.
 
@@ -96,3 +96,51 @@ Kết luận thẳng: **chưa hướng nào đạt mức hoàn thiện của ba 
 - Fabrik, lịch sử logo Headspace — https://fabrikbrands.com/branding-matters/logofile/headspace-logo-history-symbol-and-meaning/
 - Apple Human Interface Guidelines, App icons — https://developer.apple.com/design/human-interface-guidelines/app-icons
 - Sketch, phỏng vấn nhóm Gentler Streak — https://sketch.com/blog/gentler-streak
+
+---
+
+# Bản cuối — hướng C đã chọn (2026-11-21)
+
+Người dùng chọn hướng C "Ba màu, một quả tạ". File cuối nằm ở `logo/final/`. Các mục 5 (đề xuất) ở trên chỉ còn là lịch sử.
+
+## Đã sửa
+
+| Điểm yếu | Cách sửa |
+|---|---|
+| Nền kem chìm trên hình nền sáng | Thử sáu nền (mực, mực nhạt, vàng, kem, cam, tím mận) trên màn sáng, tối và ảnh nền (`logo/_work/t/final_tiles.png`). Chọn **vàng `#FFC93C`**: đứng được ở cả ba, và xanh ngọc, chàm nổi rõ nhất. Mực bị chìm trên màn tối |
+| Tay cầm mảnh | Bản phẳng: cao 300 trên đầu tạ 580 (trước là 176). Bản nỉ: bán kính 0,096 (trước 0,066). Cam tay cầm đậm hơn một nấc (`#F2500F`) |
+| Bản một màu giống cái búa | Hai đầu tạ cùng một dáng; bản một màu chỉ có hai đầu tạ, khe hở, tay cầm và một rãnh ngang mỗi đầu. Dùng mask nên rãnh là lỗ thật, đặt trên nền nào cũng được |
+| Cỡ rất nhỏ | Vẽ riêng cho 32 px trở xuống: hai đầu tạ và tay cầm, không chi tiết (`mark-nho.svg`, `mark-1mau-*-nho.svg`, favicon, icon 40) |
+| Ba bản vẽ lệch nhau | Một hình gốc cho mọi bản: đầu tạ 288 × 580 bo 116, vòng cổ tạ, tay cầm 300, nghiêng 12°, một sọc kem mỗi đầu (sọc khăn của Khăn ở dưới, băng đô của Găng ở trên). Bản nỉ dựng lại theo đúng hình này, bỏ vạch chia trên tay cầm |
+| Chữ | "Tạ Nhỏ" viết hoa đầu chữ (người chấm vòng 3 của bước chọn hướng thấy bản viết hoa cả là cứng nhất). Dấu hỏi: một nét dày 92 đơn vị, đặt giữa chữ o. Dấu nặng: một "bánh tạ" vuông bo 126 × 108, nghiêng 12° như quả tạ. Lockup chừa một khoảng trước chữ T |
+
+## Chấm mù bản cuối (3 vòng, cạnh Duolingo, Finch, Strava, màn sáng và tối)
+
+| Vòng | Icon nỉ | Icon phẳng | Lockup | Một màu | Ý chính |
+|---|---|---|---|---|---|
+| 1 | 6 | 6,5 | 6,5 | 5 | Nền vàng đứng được ở cả hai màn. Bản nỉ nghiêng ngược bản phẳng; một màu ở 16 px hỏng |
+| 2 | 6,5 | 6 | 5,5 | 4 | "Bốn bản vẽ anh em chứ không phải một"; vạch chia trên tay cầm thành nhiễu; biểu tượng dính vào chữ T |
+| 3 | 6 | 6,5 | 7 | 5 | Không có lỗi chính tả tiếng Việt. Cam trên vàng là cặp tương phản thấp nhất; nền còn phẳng; dấu hỏi còn nhẹ hơn thân chữ |
+
+Sau vòng 3 không sửa thêm, nên bảng trên đúng với file đang có. Người chấm vòng 3 nói hai đầu tạ không đều; trong file hai đầu cùng kích thước, cái họ thấy là do nghiêng.
+
+## Còn yếu
+
+- **Bản một màu mới sửa được một phần** (5/10 ở vòng cuối): ở 24 px là "quả tạ, vừa đủ"; ở 96 và 48 px rãnh ngang cộng độ nghiêng vẫn gợi cái búa hoặc viên thuốc. Bản không rãnh cho cỡ nhỏ cũng từng bị nhận xét giống khúc xương, nên bỏ rãnh chưa chắc là cách sửa.
+- Tay cầm cam trên nền vàng mờ đi trước tiên ở 40 px.
+- Nền icon là một màu phẳng, chưa có chiều sâu như icon tham chiếu.
+- Bản một màu ở 16 px chỉ còn là một gạch; đừng dùng dưới 24 px.
+- Bản nỉ chỉ dùng từ 152 px trở lên.
+- Dấu hỏi còn hơi nhẹ so với thân chữ; thân chữ vẫn là nét Baloo 2.
+- Chưa thử trên máy thật và chưa thử icon adaptive của Android.
+
+## File trong `logo/final/`
+
+- Icon: `icon-1024/512/192/180/152.png` (nỉ), `icon-120/60.png` (phẳng), `icon-40.png` (phẳng, bản vẽ cỡ nhỏ), `icon-maskable-512/192.png` (hình nằm trong vùng an toàn 80 %), `icon.svg`, `icon-nho.svg`, `icon-rat-nho.svg`
+- `favicon.svg`, `favicon-32.png`
+- `lockup-ngang.svg`, `lockup-doc.svg`, `lockup-ngang-nho.svg`; một màu: `lockup-ngang-1mau-dam.svg`, `-sang.svg`, `lockup-doc-1mau-dam.svg`, `-sang.svg`
+- `wordmark.svg`, `wordmark-sang.svg`, `wordmark-lon-dau-ta.svg` (dấu nặng là quả tạ, chỉ cho cỡ lớn)
+- `mark.svg`, `mark-nho.svg`, `mark-1mau-dam.svg`, `mark-1mau-sang.svg`, `mark-1mau-dam-nho.svg`, `mark-1mau-sang-nho.svg`
+- `hero-ni.png`: bản dựng nỉ, nền trong, không bóng, cho màn chờ và màn chào
+- Các file `logo/C-*` là bản của bước chọn hướng (và đã bị dựng lại với quả tạ mới trên nền kem cũ); dùng `logo/final/` thay cho chúng.
+- Dựng lại: `logo/_work/final.py build` (sau khi chạy `logo_scene.py -- C --size 1600 --samples 192 --tag _n --noshadow`)

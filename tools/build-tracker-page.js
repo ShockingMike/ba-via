@@ -67,6 +67,7 @@ const seg = STATES.slice().reverse().map((s) => counts[s] ? `<i class="${KEY[s]}
 const html = `<!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tạ Nhỏ · Theo dõi</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
 :root{--bg:#121318;--card:#1A1C23;--line:#2A2D37;--ink:#ECEDF2;--ink2:#A2A6B4;--ink3:#6E7282;--acc:#8B93FF;--teal:#3CCB9C;--amber:#E7B34B;--violet:#B48CFF;--red:#F07167;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;color-scheme:dark}
@@ -176,4 +177,5 @@ ${flows.map(flowCard).join('\n')}
 `;
 fs.mkdirSync(path.join(root, 'docs'), { recursive: true });
 fs.writeFileSync(path.join(root, 'docs', 'index.html'), html);
+try { fs.copyFileSync(path.join(root, 'brand', 'favicon.svg'), path.join(root, 'docs', 'favicon.svg')); } catch (e) { /* optional */ }
 console.log(`docs/index.html: ${screens.length} màn, ${nDesigned}/${mvp.length} bản đầu đã thiết kế, ${nDecided}/${decisions.length} quyết định`);
