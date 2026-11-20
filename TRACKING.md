@@ -9,9 +9,9 @@
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
 - Bản đầu đã thiết kế: **9/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 87 · Đang thiết kế 0 · Đã thiết kế 9 · Đang code 0 · Xong 0.
-- Giai đoạn xong: **0/19** · quyết định đã chốt: **1/17**.
-- Cập nhật lúc: 2026-11-20 17:43.
+- Theo trạng thái (mọi bản): Chưa làm 85 · Đang thiết kế 2 · Đã thiết kế 9 · Đang code 0 · Xong 0.
+- Giai đoạn xong: **0/19** · quyết định đã chốt: **2/17**.
+- Cập nhật lúc: 2026-11-20 18:40.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -24,8 +24,8 @@
 | 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đã thiết kế | Đã duyệt; bản ở design/screen-0.1.html · [ảnh](shots/0.1.jpg) |
 | 0.2 | Cài lên màn hình chính | Bản đầu | Đã thiết kế | Chờ duyệt; design/screen-0.2.html · [ảnh](shots/0.2.jpg) |
 | 0.3 | Chọn bạn đồng hành | Bản đầu | Đã thiết kế | Chờ duyệt; design/screen-0.3.html · [ảnh](shots/0.3.jpg) |
-| 0.4 | Đặt tên và chọn màu vía | Bản đầu | Chưa làm |  |
-| 0.5 | Hồ sơ: về người dùng | Bản đầu | Chưa làm |  |
+| 0.4 | Đặt tên và chọn màu bạn đồng hành | Bản đầu | Đang thiết kế |  |
+| 0.5 | Hồ sơ: về người dùng | Bản đầu | Đang thiết kế |  |
 | 0.6 | Mục tiêu và trình độ | Bản đầu | Chưa làm |  |
 | 0.7 | Lời hứa tuần và thời lượng | Bản đầu | Chưa làm |  |
 | 0.8 | Sàng lọc sức khoẻ | Bản đầu | Chưa làm |  |
@@ -179,7 +179,7 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 | Mã | Câu hỏi | Fable đề xuất | Đã chốt |
 |---|---|---|---|
 | D1 | Vào tổ bằng mã nhóm không tài khoản, hay đăng nhập Google? | Phương án thứ ba: vào bằng mã cho nhanh, nối Google là tuỳ chọn để giữ danh tính. Lý do chính là rủi ro iOS xoá dữ liệu. |  |
-| D2 | Vía mặc đồ đến được điện thoại bằng cách nào, và màu vía là bảng cố định hay tự do? | Render sẵn theo lớp + bảng 6 màu cố định mỗi giống. Cần người dùng xác nhận rằng lớp đồ render 3D riêng rồi ghép vẫn đúng yêu cầu "mặc thật, không dán 2D". Thử trong giai đoạn A1 trước khi làm hàng loạt. |  |
+| D2 | Vía mặc đồ đến được điện thoại bằng cách nào, và màu vía là bảng cố định hay tự do? | Render sẵn theo lớp + bảng 6 màu cố định mỗi giống. Cần người dùng xác nhận rằng lớp đồ render 3D riêng rồi ghép vẫn đúng yêu cầu "mặc thật, không dán 2D". Thử trong giai đoạn A1 trước khi làm hàng loạt. | Render theo lớp + 6 màu cố định mỗi bạn đồng hành (chốt 2026-11-21) |
 | D3 | Danh mục đồ và các mốc mở đồ theo thế giới Ba Vía là gì? | Viết lại theo đồ bỏ quên, MVP 12 món. Giữ mốc 4/12/26 tuần của tài liệu 06 và sửa chữ trong bản v2. |  |
 | D4 | Bóng trong gương làm mẫu cho 90 bài bằng cách nào? | Phương án thứ ba, và vía là hình riêng đặt cạnh gương để ảnh gương dùng chung cho mọi giống. |  |
 | D5 | Tiến độ (lịch sử, biểu đồ, cân nặng) nằm ở đâu? | Trong tab Tôi. Bốn tab đã được duyệt, và tiến độ không phải việc hằng ngày. |  |
@@ -205,3 +205,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-21: trang theo dõi có thêm ảnh màn hình (mục "Đã có hình" và ảnh trong từng màn). Đang thiết kế 0.2 và 0.3.
 - 2026-11-21: chốt D14: thiết kế xong hết rồi mới bắt đầu code.
 - 2026-11-21: thiết kế xong 0.2 (cài app: iPhone 3 bước, Android) và 0.3 (chọn bạn đồng hành, vuốt ngang); đã qua 1 vòng so mù và sửa; chờ duyệt.
+- 2026-11-21: chốt D2 (đồ render theo lớp, mỗi bạn đồng hành 6 màu cố định). Đang sửa 0.2, 0.3 và thiết kế 0.4, 0.5.

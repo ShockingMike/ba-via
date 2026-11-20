@@ -30,6 +30,7 @@ Người dùng làm dự án này bằng **nhiều tài khoản Claude khác nha
 - **Logo: hướng C "Ba màu, một quả tạ"** (chốt 2026-11-21): một quả tạ nỉ ghép từ màu của ba bạn đồng hành. File cuối ở `design/logo/final/` (chỉ có trên máy, không đẩy lên repo). Chi tiết: `design/10-logo.md`.
 - Thế giới đồ bỏ quên (tài liệu cũ gọi là "Ba Vía"), shader **nỉ/len chọc**. Mặt Găng: phương án C (quai găng làm băng đô).
 - Mỗi buổi tập được 1 mảnh đồ, đủ mảnh thành 1 món, tối đa 1 món/tuần.
+- **D2:** mỗi món đồ là một lớp render 3D nỉ riêng, có che khuất đúng, xếp chồng lên nhau trên máy. Mỗi bạn đồng hành có **6 màu cố định** (chốt 2026-11-21).
 - Đồ thu thập được phải **mặc thật** lên avatar (mesh 3D gắn vào rig), không dùng icon dán đè.
 - Asset làm bằng phần mềm trong máy (Blender portable ở `tools/`). Không dùng Higgsfield hay OpenArt cho app này.
 - **Thiết kế xong hết rồi mới code** (D14, chốt 2026-11-21): không code phần nào, kể cả rules engine, trước khi các màn bản đầu được thiết kế và duyệt.
