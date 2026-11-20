@@ -1,4 +1,4 @@
-# Ba Vía: theo dõi tiến độ
+# Tạ Nhỏ: theo dõi tiến độ
 
 > File này là nơi DUY NHẤT ghi tiến độ. Ai sửa (bạn hay bất kỳ nick Claude nào) chỉ cần đổi chữ ở cột **Trạng thái**.
 > Trạng thái dùng một trong 5 chữ: `Chưa làm` · `Đang thiết kế` · `Đã thiết kế` · `Đang code` · `Xong`.
@@ -9,9 +9,9 @@
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
 - Bản đầu đã thiết kế: **6/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 90 · Đang thiết kế 0 · Đã thiết kế 6 · Đang code 0 · Xong 0.
+- Theo trạng thái (mọi bản): Chưa làm 89 · Đang thiết kế 1 · Đã thiết kế 6 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **0/17**.
-- Cập nhật lúc: 2026-11-20 11:17.
+- Cập nhật lúc: 2026-11-20 16:24.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -21,7 +21,7 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Chưa làm |  |
+| 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đang thiết kế |  |
 | 0.2 | Cài lên màn hình chính | Bản đầu | Chưa làm |  |
 | 0.3 | Nhận vía: chọn giống | Bản đầu | Chưa làm |  |
 | 0.4 | Đặt tên và chọn màu vía | Bản đầu | Chưa làm |  |
@@ -199,3 +199,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 ## Nhật ký
 
 - 2026-11-20: tạo file từ kế hoạch của Fable (96 màn, 19 giai đoạn, 17 quyết định). Đã thiết kế 6 màn ở bản v2.
+- 2026-11-20: đổi tên app "Ba Vía" thành **Tạ Nhỏ** (nhóc tạ, nhận nhóc tạ, đập tay, Hội Tạ Nhỏ [tên]). Màn 0.1 đang thiết kế; bắt đầu làm logo.

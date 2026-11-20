@@ -66,7 +66,7 @@ const seg = STATES.slice().reverse().map((s) => counts[s] ? `<i class="${KEY[s]}
 
 const html = `<!doctype html>
 <html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ba Vía · Theo dõi</title>
+<title>Tạ Nhỏ · Theo dõi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
 :root{--bg:#121318;--card:#1A1C23;--line:#2A2D37;--ink:#ECEDF2;--ink2:#A2A6B4;--ink3:#6E7282;--acc:#8B93FF;--teal:#3CCB9C;--amber:#E7B34B;--violet:#B48CFF;--red:#F07167;--mono:"JetBrains Mono",ui-monospace,Consolas,monospace;color-scheme:dark}
@@ -138,7 +138,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:13px}
 a{color:var(--acc)}
 @media (max-width:620px){.stats{grid-template-columns:1fr 1fr}.stats>div:nth-child(3){border-left:0}.stats>div:nth-child(n+3){border-top:1px solid var(--line)}.row summary{grid-template-columns:20px 40px minmax(0,1fr)}.row .tags{grid-column:3}.det{padding-left:4px}.li{grid-template-columns:40px minmax(0,1fr)}.li>.pill{grid-column:2;justify-self:start}}
 </style></head><body><div class="wrap">
-<div class="eyebrow">Ba Vía · app tập gym</div>
+<div class="eyebrow">Tạ Nhỏ · app tập gym</div>
 <h1>Theo dõi tiến độ</h1>
 <p class="sub">96 màn hình xếp theo thứ tự người dùng gặp. Trang tự sinh từ <code>TRACKING.md</code>: sửa file đó (trên máy hoặc ngay trên GitHub), đẩy lên là trang tự cập nhật.</p>
 <p class="upd">Cập nhật lần cuối: ${esc(updated)}</p>

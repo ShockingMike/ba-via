@@ -1,4 +1,4 @@
-# Ba Vía: app tập gym cho nhóm bạn
+# Tạ Nhỏ: app tập gym cho nhóm bạn
 
 **Trang theo dõi tiến độ:** https://shockingmike.github.io/ba-via/
 
