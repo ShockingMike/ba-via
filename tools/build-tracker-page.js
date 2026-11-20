@@ -12,7 +12,7 @@ const phaseInfo = Object.fromEntries((plan.phases || []).map((p) => [p.id, p]));
 const decInfo = Object.fromEntries((plan.decisions || []).map((d) => [d.id, d]));
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const inline = (s) => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+const inline = (s) => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\[([^\]]+)\]\((shots\/[A-Za-z0-9._-]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
 // ---- parse TRACKING.md ----
 const STATES = ['Chưa làm', 'Đang thiết kế', 'Đã thiết kế', 'Đang code', 'Xong'];
@@ -41,10 +41,18 @@ const curPhase = phases.find((p) => p.st !== 'Xong');
 const counts = Object.fromEntries(STATES.map((s) => [s, screens.filter((x) => x.st === s).length]));
 const updated = new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' });
 
+// ---- screenshots: shots/<id>.jpg, shots/<id>-2.jpg, ... ----
+const shotDir = path.join(root, 'shots');
+const shotFiles = fs.existsSync(shotDir) ? fs.readdirSync(shotDir).filter((f) => /\.(jpe?g|png|webp)$/i.test(f)).sort((a, b) => { const k = (f) => f.replace(/\.[a-z]+$/i, '').replace(/^(.*?)(?:-(\d+))?$/, (m, id, n) => id + '~' + String(n || 1).padStart(3, '0')); return k(a).localeCompare(k(b), 'en', { numeric: true }); }) : [];
+const shotsOf = (id) => shotFiles.filter((f) => f.replace(/\.[a-z]+$/i, '') === id || f.startsWith(id + '-'));
+const thumbs = (id, cls) => shotsOf(id).map((f) => `<a href="shots/${esc(f)}" target="_blank" rel="noopener"><img class="${cls}" src="shots/${esc(f)}" alt="Màn ${esc(id)}" loading="lazy"></a>`).join('');
+const withShots = screens.filter((s) => shotsOf(s.id).length);
+
 const list = (a) => (a && a.length ? `<ul>${a.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : '');
 const screenRow = (s) => {
   const d = detail[s.id] || {};
   const body = [
+    shotsOf(s.id).length && `<div class="gal">${thumbs(s.id, 'big')}</div>`,
     d.purpose_vi && `<p class="pur">${esc(d.purpose_vi)}</p>`,
     d.content_vi && `<h5>Nội dung</h5>${list(d.content_vi)}`,
     d.states_vi && `<h5>Trạng thái con</h5>${list(d.states_vi)}`,
@@ -54,7 +62,7 @@ const screenRow = (s) => {
     d.notes_vi && `<h5>Ghi chú kế hoạch</h5><p>${esc(d.notes_vi)}</p>`,
   ].filter(Boolean).join('');
   const k = KEY[s.st];
-  return `<details class="row ${k}"><summary><span class="chk" aria-hidden="true"></span><span class="rid">${esc(s.id)}</span><span class="rn">${esc(s.name)}${s.note ? `<small>${inline(s.note)}</small>` : ''}</span><span class="tags">${s.pri !== 'Bản đầu' ? `<span class="tg">${esc(s.pri)}</span>` : ''}<span class="pill ${k}">${esc(s.st)}</span></span></summary>${body ? `<div class="det">${body}</div>` : ''}</details>`;
+  return `<details class="row ${k}"><summary><span class="chk" aria-hidden="true"></span><span class="rid">${esc(s.id)}</span><span class="rn">${esc(s.name)}${s.note ? `<small>${inline(s.note)}</small>` : ''}</span><span class="tags">${shotsOf(s.id).length ? `<img class="tn" src="shots/${esc(shotsOf(s.id)[0])}" alt="" loading="lazy">` : ''}${s.pri !== 'Bản đầu' ? `<span class="tg">${esc(s.pri)}</span>` : ''}<span class="pill ${k}">${esc(s.st)}</span></span></summary>${body ? `<div class="det">${body}</div>` : ''}</details>`;
 };
 const flowCard = (f) => {
   const d = f.rows.filter(isDesigned).length;
@@ -135,6 +143,16 @@ i.done{background:var(--teal)} i.building{background:var(--violet)} i.designed{b
 .li .chosen{color:var(--teal);font-weight:600}
 .log{margin:14px 0 0;padding:14px 16px 14px 34px;font-size:14px;color:var(--ink2)}
 code{font-family:var(--mono);font-size:.9em}
+/* screenshots */
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px;margin-top:14px}
+.wall figure{margin:0;display:grid;gap:8px}
+.wall figure>a{display:none}.wall figure>a:first-child{display:block}
+.wall img.w{width:100%;height:auto;display:block;border-radius:18px;border:1px solid var(--line)}
+.wall figcaption{font-size:13px;line-height:1.35;font-weight:600}
+.wall figcaption .pill{margin-left:2px}
+.tn{width:22px;height:36px;object-fit:cover;object-position:top;border-radius:4px;border:1px solid var(--line)}
+.gal{display:flex;gap:10px;overflow-x:auto;padding:4px 0 8px}
+.gal img.big{height:360px;width:auto;border-radius:16px;border:1px solid var(--line);display:block}
 footer{margin-top:40px;color:var(--ink3);font-size:13px}
 a{color:var(--acc)}
 @media (max-width:620px){.stats{grid-template-columns:1fr 1fr}.stats>div:nth-child(3){border-left:0}.stats>div:nth-child(n+3){border-top:1px solid var(--line)}.row summary{grid-template-columns:20px 40px minmax(0,1fr)}.row .tags{grid-column:3}.det{padding-left:4px}.li{grid-template-columns:40px minmax(0,1fr)}.li>.pill{grid-column:2;justify-self:start}}
@@ -159,6 +177,10 @@ a{color:var(--acc)}
   <div><b>${nDecided}/${decisions.length}</b><span>Quyết định đã chốt</span><small>${decisions.length - nDecided} còn chờ</small></div>
 </section>
 
+${withShots.length ? `<h2>Đã có hình</h2>
+<p class="sub">Các màn đã thiết kế, theo thứ tự người dùng gặp. Bấm ảnh để xem cỡ lớn.</p>
+<div class="wall">${withShots.map((sc) => `<figure>${thumbs(sc.id, 'w')}<figcaption><span class="rid">${esc(sc.id)}</span> ${esc(sc.name)} <span class="pill ${KEY[sc.st]}">${esc(sc.st)}</span></figcaption></figure>`).join('')}</div>` : ''}
+
 <h2>Màn hình</h2>
 <p class="sub">Bấm vào một màn để xem chi tiết.</p>
 ${flows.map(flowCard).join('\n')}
@@ -177,5 +199,7 @@ ${flows.map(flowCard).join('\n')}
 `;
 fs.mkdirSync(path.join(root, 'docs'), { recursive: true });
 fs.writeFileSync(path.join(root, 'docs', 'index.html'), html);
+fs.mkdirSync(path.join(root, 'docs', 'shots'), { recursive: true });
+for (const f of shotFiles) fs.copyFileSync(path.join(shotDir, f), path.join(root, 'docs', 'shots', f));
 try { fs.copyFileSync(path.join(root, 'brand', 'favicon.svg'), path.join(root, 'docs', 'favicon.svg')); } catch (e) { /* optional */ }
 console.log(`docs/index.html: ${screens.length} màn, ${nDesigned}/${mvp.length} bản đầu đã thiết kế, ${nDecided}/${decisions.length} quyết định`);

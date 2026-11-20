@@ -9,9 +9,9 @@
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
 - Bản đầu đã thiết kế: **7/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 89 · Đang thiết kế 0 · Đã thiết kế 7 · Đang code 0 · Xong 0.
+- Theo trạng thái (mọi bản): Chưa làm 87 · Đang thiết kế 2 · Đã thiết kế 7 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **0/17**.
-- Cập nhật lúc: 2026-11-20 17:18.
+- Cập nhật lúc: 2026-11-20 17:27.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -21,9 +21,9 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đã thiết kế | Chờ duyệt; bản ở design/screen-0.1.html |
-| 0.2 | Cài lên màn hình chính | Bản đầu | Chưa làm |  |
-| 0.3 | Nhận vía: chọn giống | Bản đầu | Chưa làm |  |
+| 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đã thiết kế | Đã duyệt; bản ở design/screen-0.1.html · [ảnh](shots/0.1.jpg) |
+| 0.2 | Cài lên màn hình chính | Bản đầu | Đang thiết kế |  |
+| 0.3 | Chọn bạn đồng hành | Bản đầu | Đang thiết kế |  |
 | 0.4 | Đặt tên và chọn màu vía | Bản đầu | Chưa làm |  |
 | 0.5 | Hồ sơ: về người dùng | Bản đầu | Chưa làm |  |
 | 0.6 | Mục tiêu và trình độ | Bản đầu | Chưa làm |  |
@@ -45,12 +45,12 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 1.1 | Hôm nay | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html |
-| 1.2 | Check-in | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html |
+| 1.1 | Hôm nay | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/1.1.jpg) |
+| 1.2 | Check-in | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/1.2.jpg) |
 | 1.2a | Hôm nay đau chỗ nào? (tấm trượt) | Bản đầu | Chưa làm |  |
 | 1.2b | Hôm nay vùng đỏ: chọn cách tập | Bản đầu | Chưa làm |  |
 | 1.3 | Buổi tập hôm nay (xem trước) | Bản đầu | Chưa làm |  |
-| 1.4 | Đang tập | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html |
+| 1.4 | Đang tập | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/1.4.jpg) |
 | 1.4a | Hướng dẫn động tác | Bản đầu | Chưa làm |  |
 | 1.4b | Báo đau giữa buổi (tấm trượt) | Bản đầu | Chưa làm |  |
 | 1.4c | Hỏi bước tạ lần đầu dùng dụng cụ (tấm trượt) | Bản đầu | Chưa làm |  |
@@ -59,7 +59,7 @@
 | 1.4f | App tự chỉnh giữa buổi (thông báo) | Bản đầu | Chưa làm |  |
 | 1.4g | Dừng buổi giữa chừng (xác nhận) | Bản đầu | Chưa làm |  |
 | 1.5 | Buổi này thế nào? | Bản đầu | Chưa làm |  |
-| 1.6 | Xong buổi | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html |
+| 1.6 | Xong buổi | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/1.6.jpg) |
 | 1.6a | Nhận món: thanh đầy | Bản đầu | Chưa làm |  |
 | 1.6b | Chọn món kế tiếp (1 trong 3) | Bản đầu | Chưa làm |  |
 | 1.6c | Chạm mốc | Bản đầu | Chưa làm |  |
@@ -69,7 +69,7 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 2.1 | Nhóm (bảng tổ) | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html |
+| 2.1 | Nhóm (bảng tổ) | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/2.1.jpg) |
 | 2.1a | Cho vía (khoảnh khắc) | Bản đầu | Chưa làm |  |
 | 2.2 | Chi tiết bài đăng | v1.1 | Chưa làm |  |
 | 2.3 | Thử thách tuần của tổ | Bản đầu | Chưa làm |  |
@@ -88,7 +88,7 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 3.1 | Tủ đồ | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html |
+| 3.1 | Tủ đồ | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/3.1.jpg) |
 | 3.2 | Chi tiết món | Bản đầu | Chưa làm |  |
 | 3.3 | Mặc thử | Bản đầu | Chưa làm |  |
 | 3.3a | Bộ phối sẵn | v1.1 | Chưa làm |  |
@@ -202,3 +202,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-20: đổi tên app "Ba Vía" thành **Tạ Nhỏ** (nhân vật = bạn đồng hành, cổ vũ = đập tay, nhóm = Hội Tạ Nhỏ [tên]). Màn 0.1 đang thiết kế; bắt đầu làm logo.
 - 2026-11-21: chốt logo hướng C "Ba màu, một quả tạ"; đang hoàn thiện bộ file logo và icon.
 - 2026-11-21: thiết kế xong màn 0.1 (logo Tạ Nhỏ, hộp đồ bỏ quên, bấm Mở hộp để ba bạn đồng hành nhảy ra); chờ người dùng duyệt.
+- 2026-11-21: trang theo dõi có thêm ảnh màn hình (mục "Đã có hình" và ảnh trong từng màn). Đang thiết kế 0.2 và 0.3.
