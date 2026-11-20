@@ -21,11 +21,11 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đã thiết kế | Đã duyệt; bản ở design/screen-0.1.html · [ảnh](shots/0.1.jpg) |
-| 0.2 | Cài lên màn hình chính | Bản đầu | Đã thiết kế | Chờ duyệt; design/screen-0.2.html · [ảnh](shots/0.2.jpg) |
-| 0.3 | Chọn bạn đồng hành | Bản đầu | Đã thiết kế | Chờ duyệt; design/screen-0.3.html · [ảnh](shots/0.3.jpg) |
-| 0.4 | Đặt tên và chọn màu bạn đồng hành | Bản đầu | Đã thiết kế | Chờ duyệt; design/screen-0.4.html · [ảnh](shots/0.4.jpg) |
-| 0.5 | Hồ sơ: về người dùng | Bản đầu | Đã thiết kế | Chờ duyệt; design/screen-0.5.html · [ảnh](shots/0.5.jpg) |
+| 0.1 | Chào mừng: hộp đồ bỏ quên | Bản đầu | Đã thiết kế | Đã duyệt; bản ở design/screen-0.1.html · [ảnh](shots/0.1.jpg) · [bấm thử](prototypes/0.1.html) |
+| 0.2 | Cài lên màn hình chính | Bản đầu | Đã thiết kế |  · [ảnh](shots/0.2.jpg) · [bấm thử](prototypes/0.2.html) |
+| 0.3 | Chọn bạn đồng hành | Bản đầu | Đã thiết kế |  · [ảnh](shots/0.3.jpg) · [bấm thử](prototypes/0.3.html) |
+| 0.4 | Đặt tên và chọn màu bạn đồng hành | Bản đầu | Đã thiết kế |  · [ảnh](shots/0.4.jpg) · [bấm thử](prototypes/0.4.html) |
+| 0.5 | Hồ sơ: về người dùng | Bản đầu | Đã thiết kế |  · [ảnh](shots/0.5.jpg) · [bấm thử](prototypes/0.5.html) |
 | 0.6 | Mục tiêu và trình độ | Bản đầu | Chưa làm |  |
 | 0.7 | Lời hứa tuần và thời lượng | Bản đầu | Chưa làm |  |
 | 0.8 | Sàng lọc sức khoẻ | Bản đầu | Chưa làm |  |
@@ -45,12 +45,12 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 1.1 | Hôm nay | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/1.1.jpg) |
-| 1.2 | Check-in | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/1.2.jpg) |
+| 1.1 | Hôm nay | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/1.1.jpg) · [bấm thử](prototypes/v2.html) |
+| 1.2 | Check-in | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/1.2.jpg) · [bấm thử](prototypes/v2.html) |
 | 1.2a | Hôm nay đau chỗ nào? (tấm trượt) | Bản đầu | Chưa làm |  |
 | 1.2b | Hôm nay vùng đỏ: chọn cách tập | Bản đầu | Chưa làm |  |
 | 1.3 | Buổi tập hôm nay (xem trước) | Bản đầu | Chưa làm |  |
-| 1.4 | Đang tập | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/1.4.jpg) |
+| 1.4 | Đang tập | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/1.4.jpg) · [bấm thử](prototypes/v2.html) |
 | 1.4a | Hướng dẫn động tác | Bản đầu | Chưa làm |  |
 | 1.4b | Báo đau giữa buổi (tấm trượt) | Bản đầu | Chưa làm |  |
 | 1.4c | Hỏi bước tạ lần đầu dùng dụng cụ (tấm trượt) | Bản đầu | Chưa làm |  |
@@ -59,7 +59,7 @@
 | 1.4f | App tự chỉnh giữa buổi (thông báo) | Bản đầu | Chưa làm |  |
 | 1.4g | Dừng buổi giữa chừng (xác nhận) | Bản đầu | Chưa làm |  |
 | 1.5 | Buổi này thế nào? | Bản đầu | Chưa làm |  |
-| 1.6 | Xong buổi | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/1.6.jpg) |
+| 1.6 | Xong buổi | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/1.6.jpg) · [bấm thử](prototypes/v2.html) |
 | 1.6a | Nhận món: thanh đầy | Bản đầu | Chưa làm |  |
 | 1.6b | Chọn món kế tiếp (1 trong 3) | Bản đầu | Chưa làm |  |
 | 1.6c | Chạm mốc | Bản đầu | Chưa làm |  |
@@ -69,7 +69,7 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 2.1 | Nhóm (bảng tổ) | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/2.1.jpg) |
+| 2.1 | Nhóm (bảng tổ) | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/2.1.jpg) · [bấm thử](prototypes/v2.html) |
 | 2.1a | Cho vía (khoảnh khắc) | Bản đầu | Chưa làm |  |
 | 2.2 | Chi tiết bài đăng | v1.1 | Chưa làm |  |
 | 2.3 | Thử thách tuần của tổ | Bản đầu | Chưa làm |  |
@@ -88,7 +88,7 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 3.1 | Tủ đồ | Bản đầu | Đã thiết kế | Bản v2: design/screens-v2.html · [ảnh](shots/3.1.jpg) |
+| 3.1 | Tủ đồ | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/3.1.jpg) · [bấm thử](prototypes/v2.html) |
 | 3.2 | Chi tiết món | Bản đầu | Chưa làm |  |
 | 3.3 | Mặc thử | Bản đầu | Chưa làm |  |
 | 3.3a | Bộ phối sẵn | v1.1 | Chưa làm |  |

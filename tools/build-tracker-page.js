@@ -12,7 +12,7 @@ const phaseInfo = Object.fromEntries((plan.phases || []).map((p) => [p.id, p]));
 const decInfo = Object.fromEntries((plan.decisions || []).map((d) => [d.id, d]));
 
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-const inline = (s) => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\[([^\]]+)\]\((shots\/[A-Za-z0-9._-]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+const inline = (s) => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\[([^\]]+)\]\(((?:shots|prototypes)\/[A-Za-z0-9._-]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
 
 // ---- parse TRACKING.md ----
 const STATES = ['Chưa làm', 'Đang thiết kế', 'Đã thiết kế', 'Đang code', 'Xong'];
@@ -200,6 +200,8 @@ ${flows.map(flowCard).join('\n')}
 fs.mkdirSync(path.join(root, 'docs'), { recursive: true });
 fs.writeFileSync(path.join(root, 'docs', 'index.html'), html);
 fs.mkdirSync(path.join(root, 'docs', 'shots'), { recursive: true });
+const protoDir = path.join(root, 'prototypes');
+if (fs.existsSync(protoDir)) { fs.mkdirSync(path.join(root, 'docs', 'prototypes'), { recursive: true }); for (const f of fs.readdirSync(protoDir)) fs.copyFileSync(path.join(protoDir, f), path.join(root, 'docs', 'prototypes', f)); }
 for (const f of shotFiles) fs.copyFileSync(path.join(shotDir, f), path.join(root, 'docs', 'shots', f));
 try { fs.copyFileSync(path.join(root, 'brand', 'favicon.svg'), path.join(root, 'docs', 'favicon.svg')); } catch (e) { /* optional */ }
 console.log(`docs/index.html: ${screens.length} màn, ${nDesigned}/${mvp.length} bản đầu đã thiết kế, ${nDecided}/${decisions.length} quyết định`);

@@ -10,7 +10,7 @@ Người dùng làm dự án này bằng **nhiều tài khoản Claude khác nha
   - thêm một dòng vào **Nhật ký** (ngày, ai/nick nào, làm gì);
   - chạy `node tools/tracking-summary.js` để tính lại phần Tóm tắt.
 - Khi người dùng chốt một quyết định: ghi vào cột **Đã chốt** của bảng Quyết định.
-- **Màn nào thiết kế xong PHẢI có ảnh** (người dùng xem lại trên GitHub): chạy `python tools/add-shot.py <mã-màn> <ảnh-chính> [ảnh-biến-thể...]`. Script tạo `shots/<mã>.jpg`, `shots/<mã>-2.jpg`… và trang theo dõi tự hiện ảnh. Trong TRACKING.md, cột Ghi chú thêm `[ảnh](shots/<mã>.jpg)`.
+- **Màn nào thiết kế xong PHẢI có ảnh** (người dùng xem lại trên GitHub): chạy `python tools/add-shot.py <mã-màn> <ảnh-chính> [ảnh-biến-thể...]`. Script tạo `shots/<mã>.jpg`, `shots/<mã>-2.jpg`… và trang theo dõi tự hiện ảnh. Copy bản HTML bấm thử vào `prototypes/<mã>.html` (để nick nào cũng mở được trên GitHub Pages; link claude.ai chỉ mở được bằng một nick). Trong TRACKING.md, cột Ghi chú thêm `[ảnh](shots/<mã>.jpg) · [bấm thử](prototypes/<mã>.html)`. Khi báo người dùng, LUÔN đưa link bấm thử `https://shockingmike.github.io/ba-via/prototypes/<mã>.html`.
 - Sau khi sửa: commit và `git push` lên repo công khai `github.com/ShockingMike/ba-via`. GitHub Actions tự dựng lại trang theo dõi ở https://shockingmike.github.io/ba-via/. Nếu máy chưa có lệnh `gh`, dùng bản portable ở `tools/gh/bin/gh.exe`.
 - Repo là **công khai**: không đẩy email, tên thật, khoá API hay file nặng. `.gitignore` đã chặn Blender, ảnh render và mockup HTML.
 - Không đổi thứ tự hay mã màn. Muốn thêm màn mới thì thêm dòng với mã mới và ghi vào Nhật ký.
