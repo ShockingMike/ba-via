@@ -10,6 +10,8 @@ Người dùng làm dự án này bằng **nhiều tài khoản Claude khác nha
   - thêm một dòng vào **Nhật ký** (ngày, ai/nick nào, làm gì);
   - chạy `node tools/tracking-summary.js` để tính lại phần Tóm tắt.
 - Khi người dùng chốt một quyết định: ghi vào cột **Đã chốt** của bảng Quyết định.
+- Sau khi sửa: commit và `git push` lên repo công khai `github.com/ShockingMike/ba-via`. GitHub Actions tự dựng lại trang theo dõi ở https://shockingmike.github.io/ba-via/. Nếu máy chưa có lệnh `gh`, dùng bản portable ở `tools/gh/bin/gh.exe`.
+- Repo là **công khai**: không đẩy email, tên thật, khoá API hay file nặng. `.gitignore` đã chặn Blender, ảnh render và mockup HTML.
 - Không đổi thứ tự hay mã màn. Muốn thêm màn mới thì thêm dòng với mã mới và ghi vào Nhật ký.
 
 ## Tài liệu chính
