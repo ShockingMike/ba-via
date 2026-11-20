@@ -1,0 +1,14 @@
+# Heavy or local-only: kept on this machine, not in the repo
+tools/blender-*/
+blender/
+design/*.html
+design/*.png
+design/refs/
+design/screens-v1-src/
+design/screens-v2-src/
+design/tracker/
+docs/
+node_modules/
+*.blend
+*.blend1
+tools/gh/

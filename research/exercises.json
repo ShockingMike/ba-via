@@ -1,0 +1,4953 @@
+{
+  "meta": {
+    "version": 1,
+    "generated": "2026-11-19",
+    "language": "vi",
+    "notes": [
+      "equipment[] is AND: every listed item is required. Either/or cases are separate exercises.",
+      "substitutes[] is ordered nearest-equivalent first. For every required item, at least one substitute does not need it.",
+      "Selection rule: take the first substitute whose equipment is all available, skipping beginner_ok=false entries for beginners and entries whose avoid_if matches the user. Validated: beginner_ok exercises keep per-item coverage after the beginner filter.",
+      "single_implement=true: the load is the weight of ONE dumbbell held with both hands, not per hand.",
+      "cable_high / cable_low also count the pulleys on a lat pulldown station (see equipment notes).",
+      "evidence_note_vi comes from search-result summaries, not full papers (UNVERIFIED).",
+      "source_status: read = page fetched and cues checked against it; url_only = URL confirmed to exist but content not compared (treat cues as UNVERIFIED); none = no source (UNVERIFIED).",
+      "start_load_* are UNVERIFIED beginner heuristics in the unit of load_type; null = bodyweight. band_level uses light/medium/heavy.",
+      "avoid_if / safer_alternative are general heuristics, not medical advice."
+    ],
+    "enums": {
+      "equipment": [
+        "barbell",
+        "bench_station",
+        "bench_flat",
+        "dumbbell",
+        "pullup_bar",
+        "lat_pulldown",
+        "smith",
+        "bench_incline",
+        "cable_high",
+        "cable_low",
+        "leg_press",
+        "leg_extension",
+        "leg_curl",
+        "machine_chest",
+        "dip_bar",
+        "rack",
+        "machine_row",
+        "machine_shoulder",
+        "back_extension",
+        "calf_machine",
+        "kettlebell",
+        "band",
+        "none"
+      ],
+      "pattern": [
+        "squat",
+        "hinge",
+        "lunge",
+        "push_horizontal",
+        "push_vertical",
+        "pull_horizontal",
+        "pull_vertical",
+        "core",
+        "carry",
+        "biceps",
+        "triceps",
+        "lateral_delt",
+        "calves",
+        "glutes",
+        "rear_delt"
+      ],
+      "load_type": [
+        "barbell_kg",
+        "dumbbell_kg_per_hand",
+        "kettlebell_kg",
+        "machine_kg",
+        "added_kg",
+        "band_level",
+        "bodyweight_reps",
+        "time_seconds"
+      ],
+      "avoid_if": [
+        "knee",
+        "lower_back",
+        "shoulder",
+        "wrist"
+      ],
+      "core_type": [
+        "anti_extension",
+        "anti_rotation",
+        "flexion"
+      ],
+      "measure": [
+        "reps",
+        "seconds",
+        "meters"
+      ],
+      "muscle": [
+        "quads",
+        "glutes",
+        "hamstrings",
+        "adductors",
+        "calves",
+        "erectors",
+        "lats",
+        "traps",
+        "rhomboids",
+        "rear_delt",
+        "front_delt",
+        "lateral_delt",
+        "chest",
+        "triceps",
+        "biceps",
+        "forearms",
+        "abs",
+        "obliques",
+        "hip_abductors",
+        "rotator_cuff",
+        "hip_flexors"
+      ]
+    },
+    "labels_vi": {
+      "load_type": {
+        "barbell_kg": "Tổng kg trên thanh đòn (tính cả thanh)",
+        "dumbbell_kg_per_hand": "Kg mỗi tay (tạ tay)",
+        "kettlebell_kg": "Kg tạ ấm",
+        "machine_kg": "Kg trên máy/cáp (số ghi trên chồng tạ, hoặc tổng bánh tạ lắp vào máy)",
+        "added_kg": "Kg tạ lắp thêm, KHÔNG tính thanh/khung (Smith, landmine)",
+        "band_level": "Mức dây kháng lực (light / medium / heavy)",
+        "bodyweight_reps": "Số lần với trọng lượng cơ thể",
+        "time_seconds": "Thời gian giữ (giây)"
+      },
+      "avoid_if": {
+        "knee": "Đau gối",
+        "lower_back": "Đau lưng dưới",
+        "shoulder": "Đau vai",
+        "wrist": "Đau cổ tay"
+      },
+      "core_type": {
+        "anti_extension": "Chống ưỡn",
+        "anti_rotation": "Chống xoay / nghiêng",
+        "flexion": "Gập bụng"
+      },
+      "muscle": {
+        "quads": "Đùi trước",
+        "glutes": "Mông",
+        "hamstrings": "Đùi sau",
+        "adductors": "Đùi trong",
+        "calves": "Bắp chân",
+        "erectors": "Cơ dựng sống (lưng dưới)",
+        "lats": "Xô",
+        "traps": "Cầu vai / thang",
+        "rhomboids": "Cơ trám (giữa lưng)",
+        "rear_delt": "Vai sau",
+        "front_delt": "Vai trước",
+        "lateral_delt": "Vai giữa",
+        "chest": "Ngực",
+        "triceps": "Tay sau",
+        "biceps": "Tay trước",
+        "forearms": "Cẳng tay / lực nắm",
+        "abs": "Bụng",
+        "obliques": "Liên sườn",
+        "hip_abductors": "Mông nhỡ (dạng hông)",
+        "rotator_cuff": "Chóp xoay",
+        "hip_flexors": "Gập hông"
+      }
+    }
+  },
+  "equipment": [
+    {
+      "id": "barbell",
+      "name_vi": "Thanh đòn + bánh tạ",
+      "name_en": "Barbell + plates",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": "Thanh có thể không chuẩn 20 kg (10-15 kg); nên cân thử một lần."
+    },
+    {
+      "id": "bench_station",
+      "name_vi": "Ghế đẩy ngực có giá đỡ",
+      "name_en": "Bench press station",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": "Gần như phòng nào cũng có ít nhất một ghế."
+    },
+    {
+      "id": "bench_flat",
+      "name_vi": "Ghế phẳng",
+      "name_en": "Flat bench",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": ""
+    },
+    {
+      "id": "dumbbell",
+      "name_vi": "Tạ tay (tạ đơn)",
+      "name_en": "Dumbbells",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": "Thường thiếu mức nhỏ (1-4 kg) và nhảy cóc 2,5-5 kg."
+    },
+    {
+      "id": "pullup_bar",
+      "name_vi": "Xà đơn",
+      "name_en": "Pull-up bar",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": ""
+    },
+    {
+      "id": "lat_pulldown",
+      "name_vi": "Máy kéo xô (có đệm chặn đùi)",
+      "name_en": "Lat pulldown",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": "Thường gộp chung với ròng rọc thấp để kéo ngang."
+    },
+    {
+      "id": "smith",
+      "name_vi": "Khung Smith",
+      "name_en": "Smith machine",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": ""
+    },
+    {
+      "id": "bench_incline",
+      "name_vi": "Ghế chỉnh độ dốc",
+      "name_en": "Adjustable/incline bench",
+      "likelihood": "sometimes",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "cable_high",
+      "name_vi": "Ròng rọc cao (cáp trên)",
+      "name_en": "High cable pulley",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": "Tick nếu có máy cáp HOẶC đầu cáp trên của máy kéo xô tháo thanh ra gắn tay cầm khác được."
+    },
+    {
+      "id": "cable_low",
+      "name_vi": "Ròng rọc thấp (cáp dưới)",
+      "name_en": "Low cable pulley",
+      "likelihood": "sometimes",
+      "default_checked": false,
+      "note_vi": "Tick nếu có máy cáp HOẶC ròng rọc thấp gắn dưới máy kéo xô (chỗ kéo cáp ngang)."
+    },
+    {
+      "id": "leg_press",
+      "name_vi": "Máy đạp đùi",
+      "name_en": "Leg press",
+      "likelihood": "sometimes",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "leg_extension",
+      "name_vi": "Máy đá đùi",
+      "name_en": "Leg extension",
+      "likelihood": "sometimes",
+      "default_checked": false,
+      "note_vi": "Hay là máy 2 trong 1 với móc đùi sau."
+    },
+    {
+      "id": "leg_curl",
+      "name_vi": "Máy móc đùi sau",
+      "name_en": "Leg curl",
+      "likelihood": "sometimes",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "machine_chest",
+      "name_vi": "Máy đẩy ngực / ép ngực",
+      "name_en": "Chest press machine",
+      "likelihood": "sometimes",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "dip_bar",
+      "name_vi": "Xà kép",
+      "name_en": "Dip bars",
+      "likelihood": "sometimes",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "rack",
+      "name_vi": "Giá squat / khung power rack",
+      "name_en": "Squat rack / power rack",
+      "likelihood": "sometimes",
+      "default_checked": false,
+      "note_vi": "Hay chỉ có giá đỡ không thanh an toàn; nhiều phòng không có."
+    },
+    {
+      "id": "machine_row",
+      "name_vi": "Máy kéo ngang (row)",
+      "name_en": "Row machine",
+      "likelihood": "rare",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "machine_shoulder",
+      "name_vi": "Máy đẩy vai",
+      "name_en": "Shoulder press machine",
+      "likelihood": "rare",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "back_extension",
+      "name_vi": "Ghế gập lưng 45°",
+      "name_en": "Back extension bench",
+      "likelihood": "rare",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "calf_machine",
+      "name_vi": "Máy nhón bắp chân",
+      "name_en": "Calf raise machine",
+      "likelihood": "rare",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "kettlebell",
+      "name_vi": "Tạ ấm",
+      "name_en": "Kettlebell",
+      "likelihood": "rare",
+      "default_checked": false,
+      "note_vi": ""
+    },
+    {
+      "id": "band",
+      "name_vi": "Dây kháng lực",
+      "name_en": "Resistance band",
+      "likelihood": "rare",
+      "default_checked": false,
+      "note_vi": "Phòng thường không có; nên tự mua mang theo (rẻ, gọn)."
+    },
+    {
+      "id": "none",
+      "name_vi": "Không cần dụng cụ",
+      "name_en": "Bodyweight",
+      "likelihood": "common",
+      "default_checked": true,
+      "note_vi": ""
+    }
+  ],
+  "patterns": [
+    {
+      "id": "squat",
+      "name_vi": "Squat (gập gối)",
+      "name_en": "Squat",
+      "ladder": [
+        "barbell_back_squat",
+        "smith_squat",
+        "goblet_squat",
+        "leg_press",
+        "leg_extension",
+        "band_squat",
+        "bodyweight_squat"
+      ]
+    },
+    {
+      "id": "hinge",
+      "name_vi": "Hinge (gập hông)",
+      "name_en": "Hip hinge",
+      "ladder": [
+        "conventional_deadlift",
+        "romanian_deadlift_barbell",
+        "romanian_deadlift_dumbbell",
+        "cable_pull_through",
+        "back_extension_45",
+        "leg_curl_machine",
+        "band_good_morning",
+        "single_leg_rdl_bodyweight"
+      ]
+    },
+    {
+      "id": "lunge",
+      "name_vi": "Lunge / một chân",
+      "name_en": "Lunge / single-leg",
+      "ladder": [
+        "barbell_reverse_lunge",
+        "bulgarian_split_squat_dumbbell",
+        "reverse_lunge_dumbbell",
+        "step_up_dumbbell",
+        "split_squat_bodyweight",
+        "reverse_lunge_bodyweight"
+      ]
+    },
+    {
+      "id": "push_horizontal",
+      "name_vi": "Đẩy ngang",
+      "name_en": "Horizontal push",
+      "ladder": [
+        "barbell_bench_press",
+        "dumbbell_bench_press",
+        "incline_dumbbell_press",
+        "machine_chest_press",
+        "band_chest_press",
+        "push_up",
+        "incline_push_up"
+      ]
+    },
+    {
+      "id": "push_vertical",
+      "name_vi": "Đẩy dọc (qua đầu)",
+      "name_en": "Vertical push",
+      "ladder": [
+        "overhead_press_barbell",
+        "dumbbell_shoulder_press",
+        "machine_shoulder_press",
+        "landmine_press",
+        "band_overhead_press",
+        "pike_push_up"
+      ]
+    },
+    {
+      "id": "pull_horizontal",
+      "name_vi": "Kéo ngang",
+      "name_en": "Horizontal pull",
+      "ladder": [
+        "barbell_row",
+        "dumbbell_row",
+        "seated_cable_row",
+        "machine_row",
+        "inverted_row",
+        "band_row",
+        "prone_row_bodyweight"
+      ]
+    },
+    {
+      "id": "pull_vertical",
+      "name_vi": "Kéo dọc",
+      "name_en": "Vertical pull",
+      "ladder": [
+        "pull_up",
+        "band_assisted_pull_up",
+        "negative_pull_up",
+        "lat_pulldown",
+        "straight_arm_pulldown_cable",
+        "band_lat_pulldown"
+      ]
+    },
+    {
+      "id": "core",
+      "name_vi": "Core (thân giữa)",
+      "name_en": "Core",
+      "ladder": [
+        "plank",
+        "dead_bug",
+        "side_plank",
+        "bird_dog",
+        "pallof_press_cable",
+        "pallof_press_band",
+        "mcgill_curl_up",
+        "cable_crunch",
+        "reverse_crunch"
+      ]
+    },
+    {
+      "id": "carry",
+      "name_vi": "Mang vác",
+      "name_en": "Loaded carry",
+      "ladder": [
+        "farmers_carry_dumbbell",
+        "suitcase_carry_dumbbell",
+        "front_carry_kettlebell",
+        "bear_crawl"
+      ]
+    },
+    {
+      "id": "biceps",
+      "name_vi": "Tay trước (isolation)",
+      "name_en": "Biceps",
+      "ladder": [
+        "barbell_curl",
+        "dumbbell_curl",
+        "hammer_curl",
+        "cable_curl",
+        "band_curl"
+      ]
+    },
+    {
+      "id": "triceps",
+      "name_vi": "Tay sau (isolation)",
+      "name_en": "Triceps",
+      "ladder": [
+        "lying_triceps_extension_barbell",
+        "overhead_triceps_extension_dumbbell",
+        "triceps_pushdown_cable",
+        "dip",
+        "band_pushdown",
+        "close_grip_push_up"
+      ]
+    },
+    {
+      "id": "lateral_delt",
+      "name_vi": "Vai giữa (isolation)",
+      "name_en": "Lateral delt",
+      "ladder": [
+        "upright_row_barbell",
+        "dumbbell_lateral_raise",
+        "cable_lateral_raise",
+        "band_lateral_raise"
+      ]
+    },
+    {
+      "id": "calves",
+      "name_vi": "Bắp chân (isolation)",
+      "name_en": "Calves",
+      "ladder": [
+        "standing_calf_raise_machine",
+        "smith_calf_raise",
+        "leg_press_calf_raise",
+        "single_leg_calf_raise_dumbbell",
+        "single_leg_calf_raise_bodyweight"
+      ]
+    },
+    {
+      "id": "glutes",
+      "name_vi": "Mông / hip thrust",
+      "name_en": "Glutes / hip thrust",
+      "ladder": [
+        "barbell_hip_thrust",
+        "dumbbell_hip_thrust",
+        "cable_kickback",
+        "band_glute_bridge",
+        "single_leg_glute_bridge",
+        "glute_bridge"
+      ]
+    },
+    {
+      "id": "rear_delt",
+      "name_vi": "Vai sau (isolation)",
+      "name_en": "Rear delt",
+      "ladder": [
+        "reverse_dumbbell_fly",
+        "face_pull_cable",
+        "band_pull_apart",
+        "prone_y_raise"
+      ]
+    }
+  ],
+  "exercises": [
+    {
+      "id": "barbell_back_squat",
+      "name_vi": "Squat thanh đòn (gánh tạ)",
+      "name_en": "Barbell Back Squat",
+      "pattern": "squat",
+      "core_type": null,
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors",
+        "erectors",
+        "abs"
+      ],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Hít sâu bằng bụng, gồng bụng như sắp bị đấm rồi mới xuống",
+        "Chân rộng khoảng bằng vai, mũi chân xoay ra 15-20°",
+        "Gối đi cùng hướng mũi chân (qua ngón 1-2)",
+        "Xuống sâu nhất trong tầm kiểm soát, đứng lên dứt khoát"
+      ],
+      "mistakes_vi": [
+        "Đặt thanh đè lên đốt sống cổ thay vì lên cơ cầu vai",
+        "Mông bật lên trước, biến thành động tác cúi lưng (good morning)",
+        "Móc thanh đặt quá cao phải kiễng chân mới nhấc ra"
+      ],
+      "avoid_if": [
+        "knee",
+        "lower_back",
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge",
+        "lower_back": "goblet_squat",
+        "shoulder": "goblet_squat"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 15,
+      "start_load_note_vi": "Bắt đầu bằng thanh trống. Nữ nên dùng thanh nhẹ 10-15 kg nếu có; chưa vững thì tập goblet squat trước.",
+      "substitutes": [
+        "smith_squat",
+        "goblet_squat",
+        "leg_press",
+        "bodyweight_squat"
+      ],
+      "source_url": "https://www.strongerbyscience.com/how-to-squat/",
+      "source_status": "read"
+    },
+    {
+      "id": "smith_squat",
+      "name_vi": "Squat khung Smith",
+      "name_en": "Smith Machine Squat",
+      "pattern": "squat",
+      "core_type": null,
+      "equipment": [
+        "smith"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đặt chân hơi đưa ra trước thanh một chút",
+        "Gồng bụng, lưng thẳng tự nhiên",
+        "Xuống tới khi đùi ngang hoặc thấp hơn sàn",
+        "Gối cùng hướng mũi chân, bàn chân bám phẳng"
+      ],
+      "mistakes_vi": [
+        "Nhấc gót khỏi sàn",
+        "Để gối đổ vào trong",
+        "Quên xoay khóa móc an toàn khi kết thúc"
+      ],
+      "avoid_if": [
+        "knee",
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge",
+        "lower_back": "split_squat_bodyweight"
+      },
+      "load_type": "added_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 0,
+      "start_load_note_vi": "Số kg là tạ lắp thêm; thanh Smith tự nặng khoảng 7-20 kg tùy máy.",
+      "substitutes": [
+        "barbell_back_squat",
+        "leg_press",
+        "goblet_squat",
+        "bodyweight_squat"
+      ],
+      "source_url": "https://www.strengthlog.com/smith-machine-squat/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "goblet_squat",
+      "name_vi": "Squat ôm tạ trước ngực",
+      "name_en": "Goblet Squat",
+      "pattern": "squat",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "quads",
+        "glutes",
+        "adductors"
+      ],
+      "secondary": [
+        "erectors",
+        "abs",
+        "calves"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ôm một quả tạ sát ngực",
+        "Chân rộng bằng vai, mũi chân hơi xoay ra",
+        "Hít vào, gồng nhẹ bụng, ngồi xuống sâu nhất mà vẫn thoải mái",
+        "Mũi chân cùng hướng với đường đi của gối"
+      ],
+      "mistakes_vi": [
+        "Để tạ rời xa ngực làm đổ người ra trước",
+        "Gối đổ vào trong",
+        "Xuống quá nông"
+      ],
+      "avoid_if": [
+        "knee",
+        "wrist"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge",
+        "wrist": "leg_press"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": true,
+      "start_load_men": 10,
+      "start_load_women": 6,
+      "start_load_note_vi": "Chỉ dùng MỘT quả tạ, số kg là của quả tạ đó. Có tạ ấm thì cầm tạ ấm cũng được.",
+      "substitutes": [
+        "leg_press",
+        "smith_squat",
+        "band_squat",
+        "bodyweight_squat"
+      ],
+      "source_url": "https://www.strengthlog.com/goblet-squat/",
+      "source_status": "read"
+    },
+    {
+      "id": "leg_press",
+      "name_vi": "Đạp đùi máy",
+      "name_en": "Leg Press",
+      "pattern": "squat",
+      "core_type": null,
+      "equipment": [
+        "leg_press"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors",
+        "hamstrings"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Lưng và mông áp sát đệm suốt động tác",
+        "Chân rộng bằng vai, đặt giữa bàn đạp",
+        "Hạ tới khi gối gập khoảng 90° hoặc sâu hơn mà mông không cuộn lên",
+        "Đạp bằng cả bàn chân, không khóa cứng gối ở trên"
+      ],
+      "mistakes_vi": [
+        "Hạ quá sâu làm mông cuộn khỏi đệm (tròn lưng dưới)",
+        "Khóa cứng gối đột ngột",
+        "Dùng tay đẩy vào đầu gối"
+      ],
+      "avoid_if": [
+        "knee",
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge",
+        "lower_back": "goblet_squat"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 40,
+      "start_load_women": 20,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "smith_squat",
+        "goblet_squat",
+        "barbell_back_squat",
+        "band_squat"
+      ],
+      "source_url": "https://www.strengthlog.com/leg-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "leg_extension",
+      "name_vi": "Đá đùi máy",
+      "name_en": "Leg Extension",
+      "pattern": "squat",
+      "core_type": null,
+      "equipment": [
+        "leg_extension"
+      ],
+      "primary": [
+        "quads"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chỉnh trục máy ngang với khớp gối",
+        "Đệm tì ngay trên cổ chân",
+        "Duỗi thẳng gối, siết đùi 1 giây",
+        "Hạ chậm 2-3 giây"
+      ],
+      "mistakes_vi": [
+        "Vung tạ lấy đà",
+        "Nhấc mông khỏi ghế",
+        "Tạ quá nặng nên chỉ đi nửa biên độ"
+      ],
+      "avoid_if": [
+        "knee"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 15,
+      "start_load_women": 10,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "goblet_squat",
+        "split_squat_bodyweight",
+        "step_up_dumbbell",
+        "band_squat"
+      ],
+      "source_url": "https://www.strengthlog.com/leg-extension/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_squat",
+      "name_vi": "Squat với dây kháng lực",
+      "name_en": "Banded Squat",
+      "pattern": "squat",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Giẫm lên dây bằng hai chân, vòng dây lên vai hoặc cầm ngang vai",
+        "Gồng bụng, ngực mở",
+        "Ngồi xuống sâu, gối cùng hướng mũi chân",
+        "Đứng lên hết tầm, giữ dây căng"
+      ],
+      "mistakes_vi": [
+        "Dây tuột khỏi bàn chân",
+        "Chùng dây ở đáy nên gần như không có lực cản",
+        "Gối đổ vào trong"
+      ],
+      "avoid_if": [
+        "knee"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge"
+      },
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "goblet_squat",
+        "bodyweight_squat",
+        "leg_press"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "bodyweight_squat",
+      "name_vi": "Squat không tạ (ngồi xuống ghế)",
+      "name_en": "Bodyweight / Box Squat",
+      "pattern": "squat",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chân rộng bằng vai, tay đưa ra trước giữ thăng bằng",
+        "Đẩy hông ra sau và gập gối cùng lúc",
+        "Chạm nhẹ mông xuống ghế/bục rồi đứng lên",
+        "Cả bàn chân bám sàn"
+      ],
+      "mistakes_vi": [
+        "Ngồi phịch xuống ghế mất kiểm soát",
+        "Nhấc gót",
+        "Gối đổ vào trong"
+      ],
+      "avoid_if": [
+        "knee"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_squat",
+        "goblet_squat",
+        "split_squat_bodyweight"
+      ],
+      "source_url": "https://www.strengthlog.com/air-squat/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "conventional_deadlift",
+      "name_vi": "Deadlift (kéo tạ từ sàn)",
+      "name_en": "Conventional Deadlift",
+      "pattern": "hinge",
+      "core_type": null,
+      "equipment": [
+        "barbell"
+      ],
+      "primary": [
+        "glutes",
+        "hamstrings",
+        "erectors"
+      ],
+      "secondary": [
+        "quads",
+        "traps",
+        "lats",
+        "forearms"
+      ],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Thanh nằm trên giữa bàn chân (ngang dây giày), cách ống chân 2-5 cm",
+        "Hít sâu bằng bụng, gồng cứng, giữ hơi suốt lần kéo",
+        "Hạ bả vai, siết xô (\"nhét bả vai vào túi quần sau\")",
+        "Căng người trước rồi mới kéo; lưng dưới luôn thẳng và cứng"
+      ],
+      "mistakes_vi": [
+        "Giật thanh khỏi sàn làm mông bật lên, lưng tròn",
+        "Để thanh trôi ra xa người",
+        "Co tay kéo thay vì để tay thẳng như sợi dây"
+      ],
+      "avoid_if": [
+        "lower_back",
+        "knee"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge",
+        "knee": "romanian_deadlift_dumbbell"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 40,
+      "start_load_women": 30,
+      "start_load_note_vi": "Bánh tạ nhỏ làm thanh quá thấp: kê thanh lên bục/bánh tạ để thanh cao ngang giữa ống chân.",
+      "substitutes": [
+        "romanian_deadlift_dumbbell",
+        "back_extension_45",
+        "cable_pull_through",
+        "band_good_morning"
+      ],
+      "source_url": "https://www.strongerbyscience.com/how-to-deadlift/",
+      "source_status": "read"
+    },
+    {
+      "id": "romanian_deadlift_barbell",
+      "name_vi": "Romanian deadlift thanh đòn",
+      "name_en": "Barbell Romanian Deadlift",
+      "pattern": "hinge",
+      "core_type": null,
+      "equipment": [
+        "barbell"
+      ],
+      "primary": [
+        "glutes",
+        "hamstrings",
+        "erectors"
+      ],
+      "secondary": [
+        "adductors",
+        "traps",
+        "forearms"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Bắt đầu ở tư thế đứng thẳng cầm thanh",
+        "Hít vào, gồng nhẹ bụng, đẩy hông ra sau, gối gần thẳng",
+        "Hạ thanh sâu nhất mà lưng vẫn giữ trung tính (không cần chạm sàn)",
+        "Đẩy hông về trước để đứng lên, thở ra"
+      ],
+      "mistakes_vi": [
+        "Tròn lưng",
+        "Gập gối nhiều biến thành squat",
+        "Không gồng bụng trước mỗi lần"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 30,
+      "start_load_women": 20,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "romanian_deadlift_dumbbell",
+        "cable_pull_through",
+        "back_extension_45",
+        "band_good_morning"
+      ],
+      "source_url": "https://www.strengthlog.com/romanian-deadlift/",
+      "source_status": "read"
+    },
+    {
+      "id": "romanian_deadlift_dumbbell",
+      "name_vi": "Romanian deadlift tạ tay",
+      "name_en": "Dumbbell Romanian Deadlift",
+      "pattern": "hinge",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary": [
+        "erectors",
+        "forearms"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Hai tạ trước đùi, gối hơi chùng",
+        "Đẩy hông ra sau như đóng cửa bằng mông",
+        "Tạ trượt sát chân, lưng giữ thẳng",
+        "Xuống tới khi căng đùi sau rồi đẩy hông lên"
+      ],
+      "mistakes_vi": [
+        "Tròn lưng",
+        "Tạ đưa xa người",
+        "Ngửa cổ nhìn gương"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 6,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "romanian_deadlift_barbell",
+        "cable_pull_through",
+        "back_extension_45",
+        "band_good_morning",
+        "single_leg_rdl_bodyweight"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-romanian-deadlift/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "cable_pull_through",
+      "name_vi": "Kéo cáp qua háng",
+      "name_en": "Cable Pull-Through",
+      "pattern": "hinge",
+      "core_type": null,
+      "equipment": [
+        "cable_low"
+      ],
+      "primary": [
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary": [
+        "erectors"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Quay lưng về máy, cầm dây thừng giữa hai chân, bước ra cho căng cáp",
+        "Đẩy hông ra sau, lưng thẳng",
+        "Đẩy hông về trước và siết mông để đứng thẳng",
+        "Tay chỉ giữ dây, không kéo bằng tay"
+      ],
+      "mistakes_vi": [
+        "Squat xuống thay vì gập hông",
+        "Ngả người ra sau quá mức ở trên",
+        "Kéo bằng tay và vai"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 15,
+      "start_load_women": 10,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "romanian_deadlift_dumbbell",
+        "band_good_morning",
+        "back_extension_45",
+        "glute_bridge"
+      ],
+      "source_url": "https://www.strengthlog.com/cable-pull-through/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "back_extension_45",
+      "name_vi": "Gập lưng ghế 45°",
+      "name_en": "45° Back Extension",
+      "pattern": "hinge",
+      "core_type": null,
+      "equipment": [
+        "back_extension"
+      ],
+      "primary": [
+        "erectors",
+        "glutes",
+        "hamstrings"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đệm tì dưới nếp gập hông để hông gập tự do",
+        "Hạ người với lưng thẳng",
+        "Siết mông để nâng lên tới khi thân thẳng hàng với chân",
+        "Lên xuống chậm, có kiểm soát"
+      ],
+      "mistakes_vi": [
+        "Ưỡn lưng quá mức ở trên",
+        "Giật người lấy đà",
+        "Đệm đặt quá cao chặn hông"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "bird_dog"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "romanian_deadlift_dumbbell",
+        "band_good_morning",
+        "cable_pull_through",
+        "single_leg_rdl_bodyweight"
+      ],
+      "source_url": "https://www.strengthlog.com/back-extension/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "leg_curl_machine",
+      "name_vi": "Móc đùi sau máy",
+      "name_en": "Leg Curl (seated / lying)",
+      "pattern": "hinge",
+      "core_type": null,
+      "equipment": [
+        "leg_curl"
+      ],
+      "primary": [
+        "hamstrings"
+      ],
+      "secondary": [
+        "calves"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chỉnh trục máy ngang khớp gối",
+        "Giữ hông áp sát đệm",
+        "Co gối hết tầm, siết 1 giây",
+        "Duỗi chậm 2-3 giây tới gần thẳng"
+      ],
+      "mistakes_vi": [
+        "Nhấc hông để lấy đà",
+        "Thả tạ rơi tự do",
+        "Đi nửa biên độ"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 15,
+      "start_load_women": 10,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "romanian_deadlift_dumbbell",
+        "back_extension_45",
+        "single_leg_glute_bridge",
+        "band_good_morning"
+      ],
+      "source_url": "https://www.strengthlog.com/seated-leg-curl/",
+      "source_status": "url_only",
+      "evidence_note_vi": "[UNVERIFIED, theo tóm tắt tìm kiếm] Nghiên cứu PubMed 33009197: móc đùi NGỒI tăng thể tích đùi sau nhiều hơn móc đùi NẰM (+14% so với +9%, 12 tuần, 20 người). Có cả hai máy thì ưu tiên máy ngồi."
+    },
+    {
+      "id": "band_good_morning",
+      "name_vi": "Good morning với dây",
+      "name_en": "Banded Good Morning",
+      "pattern": "hinge",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "hamstrings",
+        "glutes",
+        "erectors"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Giẫm lên dây, vòng đầu kia qua sau cổ/vai",
+        "Gối hơi chùng, đẩy hông ra sau",
+        "Lưng thẳng, cúi tới khi căng đùi sau",
+        "Đẩy hông về trước để đứng lên"
+      ],
+      "mistakes_vi": [
+        "Tròn lưng",
+        "Gập gối nhiều",
+        "Dây tì thẳng lên cổ gây đau (nên đặt trên cầu vai)"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "romanian_deadlift_dumbbell",
+        "cable_pull_through",
+        "single_leg_rdl_bodyweight"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "single_leg_rdl_bodyweight",
+      "name_vi": "Romanian deadlift một chân không tạ",
+      "name_en": "Bodyweight Single-Leg RDL",
+      "pattern": "hinge",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondary": [
+        "erectors",
+        "hip_abductors"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng một chân, gối trụ hơi chùng",
+        "Gập hông, chân sau duỗi thẳng ra sau như bập bênh",
+        "Hông giữ song song sàn, không xoay mở",
+        "Có thể vịn nhẹ tường để giữ thăng bằng"
+      ],
+      "mistakes_vi": [
+        "Xoay mở hông",
+        "Tròn lưng",
+        "Làm quá nhanh nên mất thăng bằng"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_good_morning",
+        "romanian_deadlift_dumbbell",
+        "glute_bridge"
+      ],
+      "source_url": "https://www.strengthlog.com/single-leg-romanian-deadlift/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "barbell_reverse_lunge",
+      "name_vi": "Lunge lùi gánh thanh đòn",
+      "name_en": "Barbell Reverse Lunge",
+      "pattern": "lunge",
+      "core_type": null,
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors",
+        "hamstrings"
+      ],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Gánh thanh như squat, gồng bụng",
+        "Bước lùi một bước dài, hạ gối sau gần chạm sàn",
+        "Đạp chân trước để về vị trí cũ",
+        "Thân người thẳng, hơi ngả trước nhẹ"
+      ],
+      "mistakes_vi": [
+        "Bước quá ngắn làm gót trước nhấc lên",
+        "Gối trước đổ vào trong",
+        "Đập gối sau xuống sàn"
+      ],
+      "avoid_if": [
+        "knee",
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge",
+        "lower_back": "reverse_lunge_dumbbell"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 15,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "reverse_lunge_dumbbell",
+        "bulgarian_split_squat_dumbbell",
+        "split_squat_bodyweight"
+      ],
+      "source_url": "https://www.strengthlog.com/barbell-lunge/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "bulgarian_split_squat_dumbbell",
+      "name_vi": "Bulgarian split squat tạ tay",
+      "name_en": "Dumbbell Bulgarian Split Squat",
+      "pattern": "lunge",
+      "core_type": null,
+      "equipment": [
+        "dumbbell",
+        "bench_flat"
+      ],
+      "primary": [
+        "quads",
+        "glutes",
+        "adductors"
+      ],
+      "secondary": [],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Đứng cách ghế một bước dài, đặt mu bàn chân sau lên ghế",
+        "Hít vào, hạ có kiểm soát tới khi gối sau gần chạm sàn",
+        "Thở ra, đạp lên bằng chân trước",
+        "Chân sau chỉ để giữ thăng bằng, không dùng để đẩy"
+      ],
+      "mistakes_vi": [
+        "Gối trước đổ vào trong",
+        "Đổ người ra trước",
+        "Dùng chân sau để đẩy"
+      ],
+      "avoid_if": [
+        "knee"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 5,
+      "start_load_women": 2,
+      "start_load_note_vi": "Tập không tạ cho vững trước rồi mới cầm tạ.",
+      "substitutes": [
+        "reverse_lunge_dumbbell",
+        "split_squat_bodyweight",
+        "reverse_lunge_bodyweight",
+        "leg_press"
+      ],
+      "source_url": "https://www.strengthlog.com/bulgarian-split-squat/",
+      "source_status": "read"
+    },
+    {
+      "id": "reverse_lunge_dumbbell",
+      "name_vi": "Lunge lùi tạ tay",
+      "name_en": "Dumbbell Reverse Lunge",
+      "pattern": "lunge",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors",
+        "hamstrings"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Hai tạ thả hai bên hông",
+        "Bước lùi dài, hạ thẳng xuống",
+        "Gối trước cùng hướng mũi chân",
+        "Đạp gót chân trước để đứng lên"
+      ],
+      "mistakes_vi": [
+        "Bước ngắn",
+        "Thân đổ ra trước",
+        "Gối trước đổ vào trong"
+      ],
+      "avoid_if": [
+        "knee"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 6,
+      "start_load_women": 4,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "barbell_reverse_lunge",
+        "reverse_lunge_bodyweight",
+        "split_squat_bodyweight",
+        "leg_press"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-lunge/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "step_up_dumbbell",
+      "name_vi": "Bước lên bục với tạ tay",
+      "name_en": "Dumbbell Step-Up",
+      "pattern": "lunge",
+      "core_type": null,
+      "equipment": [
+        "dumbbell",
+        "bench_flat"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "calves"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đặt cả bàn chân lên bục/ghế chắc chắn",
+        "Đạp bằng chân trên bục để đứng lên",
+        "Hạ xuống chậm bằng chính chân đó",
+        "Chọn bục cao ngang gối hoặc thấp hơn"
+      ],
+      "mistakes_vi": [
+        "Nhún chân dưới để lấy đà",
+        "Gối đổ vào trong",
+        "Bục quá cao làm nghiêng hông"
+      ],
+      "avoid_if": [
+        "knee"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 5,
+      "start_load_women": 3,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "reverse_lunge_dumbbell",
+        "reverse_lunge_bodyweight",
+        "split_squat_bodyweight"
+      ],
+      "source_url": "https://www.strengthlog.com/step-up/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "split_squat_bodyweight",
+      "name_vi": "Split squat không tạ",
+      "name_en": "Bodyweight Split Squat",
+      "pattern": "lunge",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng tư thế chân trước chân sau, hai chân rộng bằng hông",
+        "Hạ thẳng xuống, gối sau gần chạm sàn",
+        "Dồn trọng tâm vào chân trước",
+        "Vịn tường nếu chưa vững"
+      ],
+      "mistakes_vi": [
+        "Hai chân trên một đường thẳng nên mất thăng bằng",
+        "Đẩy bằng chân sau",
+        "Gối trước đổ vào trong"
+      ],
+      "avoid_if": [
+        "knee"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "reverse_lunge_bodyweight",
+        "bodyweight_squat",
+        "reverse_lunge_dumbbell"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "reverse_lunge_bodyweight",
+      "name_vi": "Lunge lùi không tạ",
+      "name_en": "Bodyweight Reverse Lunge",
+      "pattern": "lunge",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "quads",
+        "glutes"
+      ],
+      "secondary": [
+        "adductors",
+        "hamstrings"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Bước lùi một bước dài",
+        "Hạ gối sau gần chạm sàn",
+        "Thân thẳng, bụng gồng nhẹ",
+        "Đạp chân trước để đứng lên"
+      ],
+      "mistakes_vi": [
+        "Bước ngắn làm gót trước nhấc",
+        "Gối trước đổ vào trong",
+        "Đập gối xuống sàn"
+      ],
+      "avoid_if": [
+        "knee"
+      ],
+      "safer_alternative": {
+        "knee": "glute_bridge"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "split_squat_bodyweight",
+        "bodyweight_squat",
+        "reverse_lunge_dumbbell"
+      ],
+      "source_url": "https://www.strengthlog.com/reverse-body-weight-lunges/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "barbell_bench_press",
+      "name_vi": "Đẩy ngực thanh đòn",
+      "name_en": "Barbell Bench Press",
+      "pattern": "push_horizontal",
+      "core_type": null,
+      "equipment": [
+        "barbell",
+        "bench_station"
+      ],
+      "primary": [
+        "chest",
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps"
+      ],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Kéo hai bả vai ra sau, ưỡn ngực lên, chân đạp chắc xuống sàn",
+        "Nắm rộng hơn vai (khoảng 1,5-2 lần vai), cổ tay thẳng trên khuỷu",
+        "Hạ có kiểm soát 2-3 giây, chạm khoảng giữa núm ngực và đáy xương ức",
+        "Đẩy lên và hơi ngược về phía mặt, kết thúc thanh trên vai"
+      ],
+      "mistakes_vi": [
+        "Vai trượt, mất tư thế siết bả vai",
+        "Chạm thanh quá thấp dưới xương ức (dễ căng vai)",
+        "Bẻ ngửa cổ tay dưới tải"
+      ],
+      "avoid_if": [
+        "shoulder",
+        "wrist"
+      ],
+      "safer_alternative": {
+        "shoulder": "incline_push_up",
+        "wrist": "machine_chest_press"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 15,
+      "start_load_note_vi": "Thanh trống. Tập nặng phải có người đỡ; không kẹp khóa tạ khi tập một mình.",
+      "substitutes": [
+        "dumbbell_bench_press",
+        "machine_chest_press",
+        "push_up",
+        "band_chest_press"
+      ],
+      "source_url": "https://www.strongerbyscience.com/how-to-bench/",
+      "source_status": "read"
+    },
+    {
+      "id": "dumbbell_bench_press",
+      "name_vi": "Đẩy ngực tạ tay",
+      "name_en": "Dumbbell Bench Press",
+      "pattern": "push_horizontal",
+      "core_type": null,
+      "equipment": [
+        "dumbbell",
+        "bench_flat"
+      ],
+      "primary": [
+        "chest",
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Siết bả vai ra sau và xuống",
+        "Khuỷu tay mở khoảng 45-60° so với thân",
+        "Hạ tạ tới ngang ngực, cẳng tay thẳng đứng",
+        "Đẩy lên, hai tạ hơi chụm lại ở trên"
+      ],
+      "mistakes_vi": [
+        "Khuỷu mở ngang 90°",
+        "Nhấc mông khỏi ghế",
+        "Hạ quá nông"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "incline_push_up"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 8,
+      "start_load_women": 4,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "barbell_bench_press",
+        "machine_chest_press",
+        "push_up",
+        "band_chest_press"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-chest-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "incline_dumbbell_press",
+      "name_vi": "Đẩy ngực trên tạ tay (ghế dốc)",
+      "name_en": "Incline Dumbbell Press",
+      "pattern": "push_horizontal",
+      "core_type": null,
+      "equipment": [
+        "dumbbell",
+        "bench_incline"
+      ],
+      "primary": [
+        "chest",
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ghế dốc khoảng 30-45°",
+        "Siết bả vai, ngực ưỡn",
+        "Hạ tạ tới ngang ngực trên",
+        "Đẩy thẳng lên trên vai"
+      ],
+      "mistakes_vi": [
+        "Ghế dốc quá cao biến thành đẩy vai",
+        "Khuỷu mở quá rộng",
+        "Cong lưng nhấc mông"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "landmine_press"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 7,
+      "start_load_women": 4,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_bench_press",
+        "machine_chest_press",
+        "push_up",
+        "landmine_press"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-incline-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "machine_chest_press",
+      "name_vi": "Đẩy ngực máy",
+      "name_en": "Machine Chest Press",
+      "pattern": "push_horizontal",
+      "core_type": null,
+      "equipment": [
+        "machine_chest"
+      ],
+      "primary": [
+        "chest",
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chỉnh ghế để tay cầm ngang giữa ngực",
+        "Lưng và bả vai áp sát đệm",
+        "Đẩy tới gần thẳng tay, không khóa cứng khuỷu",
+        "Về chậm, không để chồng tạ chạm nhau"
+      ],
+      "mistakes_vi": [
+        "Ghế quá thấp làm tay cầm ngang vai",
+        "Nhô vai ra trước khi đẩy",
+        "Thả tạ rơi"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "incline_push_up"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 10,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_bench_press",
+        "barbell_bench_press",
+        "incline_push_up",
+        "band_chest_press"
+      ],
+      "source_url": "https://www.strengthlog.com/machine-chest-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_chest_press",
+      "name_vi": "Đẩy ngực với dây",
+      "name_en": "Banded Chest Press",
+      "pattern": "push_horizontal",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "chest",
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Vòng dây qua sau lưng ngang bả vai (hoặc buộc vào cột)",
+        "Đứng chân trước chân sau, gồng bụng",
+        "Đẩy thẳng ra trước ngang ngực",
+        "Về chậm, giữ dây luôn căng"
+      ],
+      "mistakes_vi": [
+        "Nhô vai ra trước",
+        "Ưỡn lưng",
+        "Dây chùng ở điểm đầu"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "incline_push_up"
+      },
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "push_up",
+        "incline_push_up",
+        "dumbbell_bench_press"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "push_up",
+      "name_vi": "Chống đẩy",
+      "name_en": "Push-Up",
+      "pattern": "push_horizontal",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "chest",
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps",
+        "abs"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Tay rộng hơn vai một chút",
+        "Giữ thẳng một đường từ đầu tới gót, gồng nhẹ bụng",
+        "Hít vào, hạ người sâu nhất có thể",
+        "Thở ra, đẩy lên thẳng tay"
+      ],
+      "mistakes_vi": [
+        "Võng hông hoặc chổng mông",
+        "Chỉ hạ nửa chừng",
+        "Khuỷu mở ngang 90°"
+      ],
+      "avoid_if": [
+        "shoulder",
+        "wrist"
+      ],
+      "safer_alternative": {
+        "shoulder": "incline_push_up",
+        "wrist": "dumbbell_bench_press"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_bench_press",
+        "band_chest_press",
+        "incline_push_up"
+      ],
+      "source_url": "https://www.strengthlog.com/push-up/",
+      "source_status": "read",
+      "evidence_note_vi": "[UNVERIFIED, theo tóm tắt tìm kiếm] Calatayud 2015: chống đẩy thêm dây kháng lực cho hoạt hóa cơ và mức tăng sức mạnh tương đương đẩy ngực 6RM (5 tuần, mẫu nhỏ). Kê cao chân để tăng độ khó."
+    },
+    {
+      "id": "incline_push_up",
+      "name_vi": "Chống đẩy kê tay cao",
+      "name_en": "Incline (Hands-Elevated) Push-Up",
+      "pattern": "push_horizontal",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "chest",
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps",
+        "abs"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đặt tay lên ghế, thanh Smith hoặc mép bàn chắc chắn",
+        "Thân thẳng từ đầu tới gót",
+        "Hạ ngực chạm gần điểm tựa",
+        "Điểm tựa càng thấp càng khó; hạ dần độ cao theo tuần"
+      ],
+      "mistakes_vi": [
+        "Võng hông",
+        "Đưa cằm ra trước thay vì hạ ngực",
+        "Điểm tựa trơn hoặc không chắc"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "push_up",
+        "machine_chest_press",
+        "band_chest_press"
+      ],
+      "source_url": "https://www.strengthlog.com/incline-push-up/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "overhead_press_barbell",
+      "name_vi": "Đẩy vai thanh đòn đứng",
+      "name_en": "Barbell Overhead Press",
+      "pattern": "push_vertical",
+      "core_type": null,
+      "equipment": [
+        "barbell",
+        "rack"
+      ],
+      "primary": [
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps",
+        "lateral_delt",
+        "abs"
+      ],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Thanh trên giá ngang ngực, nắm rộng hơn vai một chút",
+        "Gồng bụng, nhấc thanh ra, thanh tựa trên vai trước",
+        "Đẩy thẳng lên hết tay, thở ra",
+        "Hạ có kiểm soát về vai"
+      ],
+      "mistakes_vi": [
+        "Ngả lưng ưỡn quá mức",
+        "Nhún chân lấy đà (thành push press)",
+        "Tăng tạ quá nhanh"
+      ],
+      "avoid_if": [
+        "shoulder",
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "shoulder": "landmine_press",
+        "lower_back": "landmine_press"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 10,
+      "start_load_note_vi": "Thanh 20 kg thường quá nặng với nữ mới tập: dùng thanh nhẹ hoặc chuyển sang tạ tay.",
+      "substitutes": [
+        "dumbbell_shoulder_press",
+        "machine_shoulder_press",
+        "band_overhead_press",
+        "pike_push_up"
+      ],
+      "source_url": "https://www.strengthlog.com/overhead-press/",
+      "source_status": "read"
+    },
+    {
+      "id": "dumbbell_shoulder_press",
+      "name_vi": "Đẩy vai tạ tay",
+      "name_en": "Dumbbell Shoulder Press",
+      "pattern": "push_vertical",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps",
+        "lateral_delt"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ngồi hoặc đứng, tạ ngang tai, cẳng tay thẳng đứng",
+        "Khuỷu hơi đưa ra trước thân (không mở ngang hoàn toàn)",
+        "Đẩy lên tới gần thẳng tay",
+        "Hạ chậm về ngang tai"
+      ],
+      "mistakes_vi": [
+        "Ưỡn lưng dưới",
+        "Hạ quá nông",
+        "Hai tạ đập vào nhau ở trên"
+      ],
+      "avoid_if": [
+        "shoulder",
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "shoulder": "landmine_press",
+        "lower_back": "landmine_press"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 6,
+      "start_load_women": 3,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "overhead_press_barbell",
+        "machine_shoulder_press",
+        "landmine_press",
+        "band_overhead_press",
+        "pike_push_up"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-shoulder-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "machine_shoulder_press",
+      "name_vi": "Đẩy vai máy",
+      "name_en": "Machine Shoulder Press",
+      "pattern": "push_vertical",
+      "core_type": null,
+      "equipment": [
+        "machine_shoulder"
+      ],
+      "primary": [
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps",
+        "lateral_delt"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chỉnh ghế để tay cầm ngang vai",
+        "Lưng áp sát đệm",
+        "Đẩy lên tới gần thẳng tay",
+        "Hạ chậm, không để tạ chạm chồng"
+      ],
+      "mistakes_vi": [
+        "Ghế quá thấp",
+        "Ưỡn lưng rời đệm",
+        "Nhún vai lên tai"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "landmine_press"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 5,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_shoulder_press",
+        "overhead_press_barbell",
+        "band_overhead_press"
+      ],
+      "source_url": "https://www.strengthlog.com/machine-shoulder-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "landmine_press",
+      "name_vi": "Đẩy landmine (thanh đòn chống góc)",
+      "name_en": "Landmine Press",
+      "pattern": "push_vertical",
+      "core_type": null,
+      "equipment": [
+        "barbell"
+      ],
+      "primary": [
+        "front_delt",
+        "chest"
+      ],
+      "secondary": [
+        "triceps",
+        "abs"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chống một đầu thanh vào góc tường (lót khăn), cầm đầu kia ngang vai",
+        "Đứng chân trước chân sau hoặc quỳ một gối",
+        "Đẩy thanh chéo lên trước, vươn vai ở cuối",
+        "Bụng gồng, không ưỡn lưng"
+      ],
+      "mistakes_vi": [
+        "Xoay thân lấy đà",
+        "Ưỡn lưng",
+        "Đầu thanh trượt vì không chèn chắc"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "added_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 5,
+      "start_load_women": 0,
+      "start_load_note_vi": "Số kg là tạ lắp thêm vào đầu thanh, không tính thanh. Đây là lựa chọn đẩy qua đầu thân thiện với vai.",
+      "substitutes": [
+        "dumbbell_shoulder_press",
+        "incline_dumbbell_press",
+        "band_overhead_press"
+      ],
+      "source_url": "https://www.strengthlog.com/landmine-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_overhead_press",
+      "name_vi": "Đẩy vai với dây",
+      "name_en": "Banded Overhead Press",
+      "pattern": "push_vertical",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps",
+        "lateral_delt"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Giẫm lên dây, cầm hai đầu ngang vai",
+        "Gồng bụng, siết mông",
+        "Đẩy thẳng lên trên đầu",
+        "Hạ chậm về ngang vai"
+      ],
+      "mistakes_vi": [
+        "Ưỡn lưng",
+        "Dây lệch hai bên không đều",
+        "Chỉ đẩy nửa biên độ"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "landmine_press"
+      },
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_shoulder_press",
+        "pike_push_up",
+        "machine_shoulder_press"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "pike_push_up",
+      "name_vi": "Chống đẩy chổng mông (pike)",
+      "name_en": "Pike Push-Up",
+      "pattern": "push_vertical",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "front_delt"
+      ],
+      "secondary": [
+        "triceps",
+        "chest"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Vào tư thế chữ V ngược, mông cao, tay rộng hơn vai",
+        "Hạ đỉnh đầu về phía sàn, trước hai tay",
+        "Khuỷu chỉ chếch ra sau khoảng 45°",
+        "Đẩy lên trở lại chữ V"
+      ],
+      "mistakes_vi": [
+        "Biến thành chống đẩy thường (hông hạ thấp)",
+        "Khuỷu mở ngang",
+        "Hạ đầu giữa hai tay thay vì phía trước"
+      ],
+      "avoid_if": [
+        "shoulder",
+        "wrist"
+      ],
+      "safer_alternative": {
+        "shoulder": "landmine_press",
+        "wrist": "band_overhead_press"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_overhead_press",
+        "dumbbell_shoulder_press",
+        "incline_push_up"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "barbell_row",
+      "name_vi": "Kéo thanh đòn gập người",
+      "name_en": "Barbell Bent-Over Row",
+      "pattern": "pull_horizontal",
+      "core_type": null,
+      "equipment": [
+        "barbell"
+      ],
+      "primary": [
+        "lats",
+        "traps",
+        "rhomboids"
+      ],
+      "secondary": [
+        "rear_delt",
+        "biceps",
+        "erectors"
+      ],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Gập hông, thân nghiêng khoảng 45° hoặc thấp hơn, lưng thẳng",
+        "Gồng bụng, gối hơi chùng",
+        "Kéo thanh về bụng trên, khuỷu đi ra sau",
+        "Hạ có kiểm soát tới thẳng tay"
+      ],
+      "mistakes_vi": [
+        "Giật thân lên để lấy đà",
+        "Tròn lưng",
+        "Đứng thẳng dần lên theo từng lần kéo"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "band_row"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 30,
+      "start_load_women": 20,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_row",
+        "seated_cable_row",
+        "machine_row",
+        "inverted_row",
+        "band_row"
+      ],
+      "source_url": "https://www.strengthlog.com/barbell-row/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "dumbbell_row",
+      "name_vi": "Kéo tạ tay một bên",
+      "name_en": "One-Arm Dumbbell Row",
+      "pattern": "pull_horizontal",
+      "core_type": null,
+      "equipment": [
+        "dumbbell",
+        "bench_flat"
+      ],
+      "primary": [
+        "lats",
+        "traps",
+        "rear_delt"
+      ],
+      "secondary": [
+        "biceps",
+        "forearms",
+        "rotator_cuff"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Tay và gối cùng bên chống lên ghế, thân song song sàn",
+        "Gồng bụng, lưng trung tính, mắt nhìn xuống sàn",
+        "Kéo tạ lên, khuỷu hướng lên trần và đi sát thân",
+        "Hạ chậm tới thẳng tay rồi mới kéo lần tiếp"
+      ],
+      "mistakes_vi": [
+        "Vung tạ lấy đà",
+        "Cắt ngắn biên độ",
+        "Khuỷu mở ra ngoài"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "band_row"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 6,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "seated_cable_row",
+        "machine_row",
+        "barbell_row",
+        "band_row"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-row/",
+      "source_status": "read"
+    },
+    {
+      "id": "seated_cable_row",
+      "name_vi": "Kéo cáp ngang ngồi",
+      "name_en": "Seated Cable Row",
+      "pattern": "pull_horizontal",
+      "core_type": null,
+      "equipment": [
+        "cable_low"
+      ],
+      "primary": [
+        "lats",
+        "rhomboids",
+        "traps"
+      ],
+      "secondary": [
+        "rear_delt",
+        "biceps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ngồi thẳng lưng, gối hơi chùng, chân đạp chắc",
+        "Kéo tay cầm về bụng, khuỷu đi sát thân",
+        "Siết hai bả vai lại 1 giây",
+        "Duỗi tay chậm, để bả vai vươn ra nhưng lưng không tròn"
+      ],
+      "mistakes_vi": [
+        "Ngả người ra sau để lấy đà",
+        "Nhún vai lên tai",
+        "Tròn lưng khi duỗi tay"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "band_row"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 25,
+      "start_load_women": 15,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "machine_row",
+        "dumbbell_row",
+        "barbell_row",
+        "band_row"
+      ],
+      "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/48/seated-row/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "machine_row",
+      "name_vi": "Kéo ngang máy (tì ngực)",
+      "name_en": "Chest-Supported Machine Row",
+      "pattern": "pull_horizontal",
+      "core_type": null,
+      "equipment": [
+        "machine_row"
+      ],
+      "primary": [
+        "lats",
+        "rhomboids",
+        "traps"
+      ],
+      "secondary": [
+        "rear_delt",
+        "biceps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chỉnh ghế để ngực tì vào đệm, tay cầm ngang ngực dưới",
+        "Kéo khuỷu ra sau, siết bả vai",
+        "Ngực luôn áp vào đệm",
+        "Về chậm tới thẳng tay"
+      ],
+      "mistakes_vi": [
+        "Rời ngực khỏi đệm để ngả sau",
+        "Nhún vai",
+        "Kéo nửa biên độ"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 10,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "seated_cable_row",
+        "dumbbell_row",
+        "band_row",
+        "inverted_row"
+      ],
+      "source_url": "https://www.strengthlog.com/seated-machine-row/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "inverted_row",
+      "name_vi": "Kéo người dưới thanh (inverted row)",
+      "name_en": "Inverted Row",
+      "pattern": "pull_horizontal",
+      "core_type": null,
+      "equipment": [
+        "smith"
+      ],
+      "primary": [
+        "lats",
+        "rhomboids",
+        "traps"
+      ],
+      "secondary": [
+        "rear_delt",
+        "biceps",
+        "abs"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Khóa thanh Smith ngang thắt lưng, nằm dưới thanh, nắm rộng hơn vai",
+        "Thân thẳng như tấm ván, gót chạm sàn",
+        "Kéo ngực chạm thanh",
+        "Co gối hoặc nâng thanh cao hơn để dễ hơn"
+      ],
+      "mistakes_vi": [
+        "Võng hông",
+        "Đưa cằm lên thay vì kéo ngực",
+        "Thanh chưa khóa chắc"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "seated_cable_row"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "seated_cable_row",
+        "dumbbell_row",
+        "band_row",
+        "prone_row_bodyweight"
+      ],
+      "source_url": "https://www.strengthlog.com/inverted-row/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_row",
+      "name_vi": "Kéo dây ngang",
+      "name_en": "Banded Row",
+      "pattern": "pull_horizontal",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "lats",
+        "rhomboids"
+      ],
+      "secondary": [
+        "rear_delt",
+        "biceps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Móc dây vào cột chắc ngang bụng (hoặc ngồi, vòng qua bàn chân)",
+        "Ngồi/đứng thẳng lưng",
+        "Kéo khuỷu ra sau sát thân, siết bả vai",
+        "Về chậm, dây luôn căng"
+      ],
+      "mistakes_vi": [
+        "Điểm móc không chắc",
+        "Ngả người lấy đà",
+        "Nhún vai"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_row",
+        "seated_cable_row",
+        "inverted_row",
+        "prone_row_bodyweight"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "prone_row_bodyweight",
+      "name_vi": "Nằm sấp kéo tay (W raise)",
+      "name_en": "Prone Bodyweight Row (W Raise)",
+      "pattern": "pull_horizontal",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "rhomboids",
+        "traps",
+        "rear_delt"
+      ],
+      "secondary": [
+        "erectors",
+        "lats"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm sấp, trán gần sàn, tay duỗi trước đầu",
+        "Nhấc nhẹ ngực và tay, kéo khuỷu về sườn thành chữ W",
+        "Siết bả vai 2 giây",
+        "Duỗi tay ra lại mà không chạm sàn"
+      ],
+      "mistakes_vi": [
+        "Ngửa cổ",
+        "Ưỡn lưng dưới quá mức",
+        "Làm nhanh, không siết"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "band_row"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "Chỉ là phương án tạm khi không có gì để kéo; lực cản thấp, không thay hẳn được bài kéo có tạ.",
+      "substitutes": [
+        "band_row",
+        "inverted_row",
+        "dumbbell_row"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "pull_up",
+      "name_vi": "Hít xà đơn",
+      "name_en": "Pull-Up",
+      "pattern": "pull_vertical",
+      "core_type": null,
+      "equipment": [
+        "pullup_bar"
+      ],
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "rear_delt",
+        "forearms",
+        "rotator_cuff"
+      ],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Nắm sấp, rộng hơn vai một chút",
+        "Ngực ưỡn, mắt nhìn xà",
+        "Kéo tới khi cằm qua xà hoặc xà chạm ngực trên; hạ bả vai xuống khi kéo",
+        "Hạ có kiểm soát tới thẳng tay hoàn toàn"
+      ],
+      "mistakes_vi": [
+        "Đá chân lấy đà (kipping)",
+        "Nắm quá rộng làm ngắn biên độ",
+        "Không xuống hết tay"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "band_lat_pulldown"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "Nắm ngửa (chin-up) dễ hơn một chút và ăn tay trước nhiều hơn; có thể dùng thay.",
+      "substitutes": [
+        "band_assisted_pull_up",
+        "lat_pulldown",
+        "band_lat_pulldown",
+        "straight_arm_pulldown_cable"
+      ],
+      "source_url": "https://www.strengthlog.com/pull-up/",
+      "source_status": "read"
+    },
+    {
+      "id": "band_assisted_pull_up",
+      "name_vi": "Hít xà có dây trợ lực",
+      "name_en": "Band-Assisted Pull-Up",
+      "pattern": "pull_vertical",
+      "core_type": null,
+      "equipment": [
+        "pullup_bar",
+        "band"
+      ],
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "rear_delt",
+        "forearms"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Buộc dây lên xà, đặt gối hoặc bàn chân vào vòng dây",
+        "Bắt đầu từ treo thẳng tay",
+        "Kéo ngực về phía xà, khuỷu đi xuống",
+        "Hạ chậm 2-3 giây; đổi dây mỏng dần theo thời gian"
+      ],
+      "mistakes_vi": [
+        "Nảy trên dây để lấy đà",
+        "Không xuống hết tay",
+        "Dây bật khỏi chân khi xuống xà"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "band_lat_pulldown"
+      },
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "heavy",
+      "start_load_women": "heavy",
+      "start_load_note_vi": "Dây càng dày càng trợ lực nhiều (dễ hơn).",
+      "substitutes": [
+        "negative_pull_up",
+        "lat_pulldown",
+        "band_lat_pulldown",
+        "straight_arm_pulldown_cable"
+      ],
+      "source_url": "https://www.strengthlog.com/assisted-pull-up/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "negative_pull_up",
+      "name_vi": "Hít xà chiều xuống (negative)",
+      "name_en": "Negative Pull-Up",
+      "pattern": "pull_vertical",
+      "core_type": null,
+      "equipment": [
+        "pullup_bar"
+      ],
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "forearms"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng lên ghế/bục để bắt đầu ở vị trí cằm trên xà",
+        "Nhấc chân, hạ người thật chậm 3-5 giây",
+        "Xuống tới thẳng tay hoàn toàn",
+        "Bước lên bục lại, không cần kéo lên"
+      ],
+      "mistakes_vi": [
+        "Rơi tự do",
+        "Dừng giữa chừng không xuống hết",
+        "Làm quá nhiều lần khi đã mất kiểm soát"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "band_lat_pulldown"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_assisted_pull_up",
+        "lat_pulldown",
+        "band_lat_pulldown"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "lat_pulldown",
+      "name_vi": "Kéo xô máy",
+      "name_en": "Lat Pulldown",
+      "pattern": "pull_vertical",
+      "core_type": null,
+      "equipment": [
+        "lat_pulldown"
+      ],
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "rear_delt",
+        "forearms",
+        "rotator_cuff"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chỉnh đệm chặn sát đùi",
+        "Nắm sấp, rộng hơn vai một chút; ngồi cao, ngực ưỡn",
+        "Kéo thanh về ngực trên, \"kéo bằng khuỷu\"",
+        "Siết bả vai ở dưới, trả thanh chậm hết tầm"
+      ],
+      "mistakes_vi": [
+        "Tạ quá nặng nên phải ngả giật người",
+        "Kéo bằng tay trước",
+        "Bỏ qua pha siết hoặc không đi hết biên độ"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "straight_arm_pulldown_cable"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 25,
+      "start_load_women": 15,
+      "start_load_note_vi": "Không kéo thanh ra sau gáy.",
+      "substitutes": [
+        "band_assisted_pull_up",
+        "negative_pull_up",
+        "band_lat_pulldown",
+        "straight_arm_pulldown_cable"
+      ],
+      "source_url": "https://www.strengthlog.com/lat-pulldown-with-pronated-grip/",
+      "source_status": "read"
+    },
+    {
+      "id": "straight_arm_pulldown_cable",
+      "name_vi": "Kéo cáp thẳng tay",
+      "name_en": "Straight-Arm Cable Pulldown",
+      "pattern": "pull_vertical",
+      "core_type": null,
+      "equipment": [
+        "cable_high"
+      ],
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "triceps",
+        "abs",
+        "rear_delt"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng trước ròng rọc cao, tay gần thẳng",
+        "Hơi gập hông, gồng bụng",
+        "Kéo thanh theo cung tròn xuống đùi",
+        "Trả chậm lên ngang trán"
+      ],
+      "mistakes_vi": [
+        "Co khuỷu biến thành kéo tay sau",
+        "Đung đưa thân",
+        "Nhún vai"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 5,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_lat_pulldown",
+        "lat_pulldown",
+        "dumbbell_row"
+      ],
+      "source_url": "https://www.strengthlog.com/straight-arm-lat-pulldown/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_lat_pulldown",
+      "name_vi": "Kéo xô với dây",
+      "name_en": "Banded Lat Pulldown",
+      "pattern": "pull_vertical",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "lats"
+      ],
+      "secondary": [
+        "biceps",
+        "rear_delt"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Móc dây vào điểm cao chắc chắn (xà, móc tường)",
+        "Quỳ hoặc ngồi, tay vươn lên",
+        "Kéo khuỷu xuống sườn, ngực ưỡn",
+        "Trả chậm hết tầm"
+      ],
+      "mistakes_vi": [
+        "Điểm móc không chắc",
+        "Kéo bằng tay trước",
+        "Gập người theo dây"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "lat_pulldown",
+        "negative_pull_up",
+        "straight_arm_pulldown_cable"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "plank",
+      "name_vi": "Plank",
+      "name_en": "Front Plank",
+      "pattern": "core",
+      "core_type": "anti_extension",
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "obliques"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Tì cẳng tay và mũi chân, khuỷu ngay dưới vai, chân rộng bằng hông",
+        "Gồng bụng, giữ thẳng một đường từ đầu tới gót",
+        "Ép cẳng tay xuống sàn để vai không sụp",
+        "Dừng trước khi tư thế hỏng"
+      ],
+      "mistakes_vi": [
+        "Võng hông hoặc chổng mông",
+        "Ưỡn lưng dưới khi mỏi",
+        "Sụp vai"
+      ],
+      "avoid_if": [
+        "shoulder",
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "shoulder": "dead_bug",
+        "lower_back": "dead_bug"
+      },
+      "load_type": "time_seconds",
+      "measure": "seconds",
+      "single_implement": false,
+      "start_load_men": 30,
+      "start_load_women": 20,
+      "start_load_note_vi": "Giữ được 60-90 giây thì chuyển sang biến thể khó hơn thay vì giữ lâu thêm.",
+      "substitutes": [
+        "dead_bug",
+        "bird_dog",
+        "bear_crawl"
+      ],
+      "source_url": "https://www.strengthlog.com/plank/",
+      "source_status": "read"
+    },
+    {
+      "id": "dead_bug",
+      "name_vi": "Dead bug",
+      "name_en": "Dead Bug",
+      "pattern": "core",
+      "core_type": "anti_extension",
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "obliques",
+        "hip_flexors"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm ngửa, tay chỉ lên trần, hông và gối gập 90°",
+        "Ép lưng dưới sát sàn",
+        "Duỗi chậm tay và chân đối bên ra xa",
+        "Thở ra khi duỗi, lưng không rời sàn"
+      ],
+      "mistakes_vi": [
+        "Lưng dưới cong rời sàn",
+        "Làm quá nhanh",
+        "Nín thở"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "plank",
+        "bird_dog",
+        "mcgill_curl_up"
+      ],
+      "source_url": "https://www.strengthlog.com/dead-bugs/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "side_plank",
+      "name_vi": "Plank nghiêng",
+      "name_en": "Side Plank",
+      "pattern": "core",
+      "core_type": "anti_rotation",
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "obliques"
+      ],
+      "secondary": [
+        "abs",
+        "hip_abductors"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm nghiêng, tì khuỷu; người mới gập gối và tì gối",
+        "Nâng hông để chỉ còn gối (hoặc bàn chân) và cẳng tay chạm sàn",
+        "Vai, thân và đùi trên thẳng một đường",
+        "Giữ 10 giây mỗi lần, nhiều lần ngắn thay vì một lần dài"
+      ],
+      "mistakes_vi": [
+        "Hông võng xuống hoặc xoay ra sau",
+        "Vai sụp vào tai",
+        "Cố giữ lâu khi tư thế đã hỏng"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "pallof_press_band"
+      },
+      "load_type": "time_seconds",
+      "measure": "seconds",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 10,
+      "start_load_note_vi": "Theo McGill Big 3: giữ 10 giây, làm kiểu tháp giảm 5-3-1 lần mỗi bên.",
+      "substitutes": [
+        "pallof_press_band",
+        "pallof_press_cable",
+        "suitcase_carry_dumbbell",
+        "bird_dog"
+      ],
+      "source_url": "https://squatuniversity.com/2018/06/21/the-mcgill-big-3-for-core-stability/",
+      "source_status": "read"
+    },
+    {
+      "id": "bird_dog",
+      "name_vi": "Bird dog",
+      "name_en": "Bird Dog",
+      "pattern": "core",
+      "core_type": "anti_rotation",
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "erectors",
+        "glutes"
+      ],
+      "secondary": [
+        "abs",
+        "obliques"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chống hai tay hai gối, cột sống trung tính (hơi võng nhẹ tự nhiên)",
+        "Duỗi một chân ra sau và tay đối bên ra trước, lưng dưới đứng yên",
+        "Đẩy gót thẳng ra sau, chân chỉ nhấc thấp",
+        "Giữ 10 giây rồi đổi bên"
+      ],
+      "mistakes_vi": [
+        "Ưỡn lưng khi nhấc chân",
+        "Tròn lưng khi thu tay chân về",
+        "Cố làm dù đau hoặc mất thăng bằng (chuyển sang bản chỉ duỗi chân)"
+      ],
+      "avoid_if": [
+        "wrist"
+      ],
+      "safer_alternative": {
+        "wrist": "dead_bug"
+      },
+      "load_type": "time_seconds",
+      "measure": "seconds",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 10,
+      "start_load_note_vi": "Theo McGill Big 3: giữ 10 giây, tháp giảm 5-3-1 lần mỗi bên.",
+      "substitutes": [
+        "dead_bug",
+        "side_plank",
+        "plank"
+      ],
+      "source_url": "https://squatuniversity.com/2018/06/21/the-mcgill-big-3-for-core-stability/",
+      "source_status": "read"
+    },
+    {
+      "id": "pallof_press_cable",
+      "name_vi": "Pallof press với cáp",
+      "name_en": "Cable Pallof Press",
+      "pattern": "core",
+      "core_type": "anti_rotation",
+      "equipment": [
+        "cable_high"
+      ],
+      "primary": [
+        "obliques",
+        "abs"
+      ],
+      "secondary": [
+        "glutes"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng ngang với máy, tay cầm ngang ngực; ròng rọc cố định ở cao thì quỳ hai gối cho gần ngang ngực",
+        "Hai tay nắm tay cầm sát ngực, gồng bụng",
+        "Đẩy thẳng tay ra trước mà thân không xoay",
+        "Giữ 2 giây rồi thu về"
+      ],
+      "mistakes_vi": [
+        "Thân xoay theo cáp",
+        "Đứng quá gần máy nên cáp chùng",
+        "Nhún vai"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 5,
+      "start_load_women": 2.5,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "pallof_press_band",
+        "side_plank",
+        "suitcase_carry_dumbbell"
+      ],
+      "source_url": "https://www.strengthlog.com/pallof-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "pallof_press_band",
+      "name_vi": "Pallof press với dây",
+      "name_en": "Banded Pallof Press",
+      "pattern": "core",
+      "core_type": "anti_rotation",
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "obliques",
+        "abs"
+      ],
+      "secondary": [
+        "glutes"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Móc dây ngang ngực vào cột chắc, đứng ngang với dây",
+        "Hai tay nắm dây sát ngực, bước ra cho dây căng",
+        "Đẩy thẳng tay ra trước, không để dây kéo xoay người",
+        "Giữ 2 giây rồi thu về"
+      ],
+      "mistakes_vi": [
+        "Thân xoay theo dây",
+        "Dây chùng",
+        "Hông lệch sang một bên"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "light",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "pallof_press_cable",
+        "side_plank",
+        "bird_dog"
+      ],
+      "source_url": "https://www.strengthlog.com/pallof-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "mcgill_curl_up",
+      "name_vi": "Gập bụng McGill (curl-up)",
+      "name_en": "McGill Curl-Up",
+      "pattern": "core",
+      "core_type": "flexion",
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "obliques"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm ngửa, một gối co, một chân duỗi",
+        "Đặt hai tay dưới lưng dưới để giữ độ cong tự nhiên",
+        "Chỉ nhấc đầu và vai lên vài cm",
+        "Giữ 10 giây rồi hạ; tăng số lần chứ không tăng thời gian giữ"
+      ],
+      "mistakes_vi": [
+        "Nhấc đầu vai quá cao làm tròn lưng dưới",
+        "Biến thành gập bụng (crunch) truyền thống",
+        "Tập ngay sau khi ngủ dậy"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "time_seconds",
+      "measure": "seconds",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 10,
+      "start_load_note_vi": "Theo McGill Big 3: giữ 8-10 giây, tháp giảm 5-3-1 lần, nghỉ 20-30 giây.",
+      "substitutes": [
+        "dead_bug",
+        "reverse_crunch",
+        "plank"
+      ],
+      "source_url": "https://squatuniversity.com/2018/06/21/the-mcgill-big-3-for-core-stability/",
+      "source_status": "read"
+    },
+    {
+      "id": "cable_crunch",
+      "name_vi": "Gập bụng cáp (quỳ)",
+      "name_en": "Kneeling Cable Crunch",
+      "pattern": "core",
+      "core_type": "flexion",
+      "equipment": [
+        "cable_high"
+      ],
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "obliques"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Quỳ trước ròng rọc cao, cầm dây thừng hai bên đầu",
+        "Giữ hông cố định, cuộn ngực về phía hông",
+        "Thở ra và siết bụng ở dưới",
+        "Trả chậm, để bụng giãn ra"
+      ],
+      "mistakes_vi": [
+        "Ngồi mông xuống gót (thành động tác hông)",
+        "Kéo bằng tay",
+        "Tạ quá nặng"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "dead_bug"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 10,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "reverse_crunch",
+        "mcgill_curl_up",
+        "plank"
+      ],
+      "source_url": "https://www.strengthlog.com/cable-crunch/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "reverse_crunch",
+      "name_vi": "Gập bụng ngược (nâng chân co gối)",
+      "name_en": "Reverse Crunch / Bent-Knee Leg Raise",
+      "pattern": "core",
+      "core_type": "flexion",
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "abs"
+      ],
+      "secondary": [
+        "hip_flexors",
+        "obliques"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm ngửa, tay dọc thân, gối co 90°",
+        "Cuộn hông khỏi sàn, đưa gối về phía ngực",
+        "Hạ chậm, lưng dưới không cong rời sàn",
+        "Thở ra khi cuộn lên"
+      ],
+      "mistakes_vi": [
+        "Đá chân lấy đà",
+        "Lưng dưới ưỡn khi hạ chân",
+        "Duỗi thẳng chân quá sớm khi chưa đủ sức"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "dead_bug"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "mcgill_curl_up",
+        "cable_crunch",
+        "dead_bug"
+      ],
+      "source_url": "https://www.strengthlog.com/lying-leg-raise/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "farmers_carry_dumbbell",
+      "name_vi": "Đi bộ xách tạ hai tay",
+      "name_en": "Dumbbell Farmer's Carry",
+      "pattern": "carry",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "forearms",
+        "traps",
+        "obliques",
+        "glutes"
+      ],
+      "secondary": [
+        "abs",
+        "erectors",
+        "quads",
+        "calves"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Hít vào, gồng nhẹ bụng rồi nhấc tạ lên bằng chân, lưng thẳng",
+        "Mắt nhìn thẳng, bước ngắn rồi dài dần",
+        "Người thẳng một đường khi đi",
+        "Đặt tạ xuống có kiểm soát"
+      ],
+      "mistakes_vi": [
+        "Đổ người ra trước",
+        "Nhún vai lên tai",
+        "Cúi tròn lưng khi nhấc/đặt tạ"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "dead_bug"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "meters",
+      "single_implement": false,
+      "start_load_men": 14,
+      "start_load_women": 8,
+      "start_load_note_vi": "Đi 20-30 m mỗi hiệp (hoặc 30-40 giây nếu phòng chật).",
+      "substitutes": [
+        "front_carry_kettlebell",
+        "suitcase_carry_dumbbell",
+        "bear_crawl",
+        "plank"
+      ],
+      "source_url": "https://www.strengthlog.com/farmers-walk/",
+      "source_status": "read"
+    },
+    {
+      "id": "suitcase_carry_dumbbell",
+      "name_vi": "Đi bộ xách tạ một tay",
+      "name_en": "Suitcase Carry",
+      "pattern": "carry",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "obliques",
+        "forearms"
+      ],
+      "secondary": [
+        "traps",
+        "glutes",
+        "abs"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Xách tạ một bên như xách vali",
+        "Vai hai bên ngang nhau, không nghiêng",
+        "Gồng bụng, bước đều",
+        "Đổi tay sau mỗi lượt"
+      ],
+      "mistakes_vi": [
+        "Nghiêng người về phía tạ hoặc ngược lại",
+        "Tạ va vào đùi",
+        "Nhún vai bên xách"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "side_plank"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "meters",
+      "single_implement": false,
+      "start_load_men": 12,
+      "start_load_women": 6,
+      "start_load_note_vi": "Đi 15-20 m mỗi bên.",
+      "substitutes": [
+        "farmers_carry_dumbbell",
+        "front_carry_kettlebell",
+        "side_plank",
+        "pallof_press_band"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "front_carry_kettlebell",
+      "name_vi": "Đi bộ ôm tạ ấm trước ngực",
+      "name_en": "Kettlebell Goblet Carry",
+      "pattern": "carry",
+      "core_type": null,
+      "equipment": [
+        "kettlebell"
+      ],
+      "primary": [
+        "abs",
+        "erectors"
+      ],
+      "secondary": [
+        "forearms",
+        "biceps",
+        "quads"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ôm tạ ấm sát ngực, khuỷu khép",
+        "Sườn hạ, không ưỡn lưng",
+        "Bước ngắn, đều",
+        "Thở đều, không nín thở cả lượt"
+      ],
+      "mistakes_vi": [
+        "Ngả người ra sau để đỡ tạ",
+        "Tạ rời xa ngực",
+        "Nín thở"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "dead_bug"
+      },
+      "load_type": "kettlebell_kg",
+      "measure": "meters",
+      "single_implement": false,
+      "start_load_men": 12,
+      "start_load_women": 8,
+      "start_load_note_vi": "Đi 20-30 m. Không có tạ ấm thì ôm một quả tạ tay dựng đứng.",
+      "substitutes": [
+        "farmers_carry_dumbbell",
+        "suitcase_carry_dumbbell",
+        "bear_crawl"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "bear_crawl",
+      "name_vi": "Bò gấu",
+      "name_en": "Bear Crawl",
+      "pattern": "carry",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "abs",
+        "front_delt"
+      ],
+      "secondary": [
+        "quads",
+        "obliques",
+        "triceps"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Chống tay và mũi chân, gối nhấc cách sàn vài cm",
+        "Lưng phẳng như mặt bàn",
+        "Tay và chân đối bên di chuyển cùng lúc, bước ngắn",
+        "Hông không lắc sang hai bên"
+      ],
+      "mistakes_vi": [
+        "Chổng mông cao",
+        "Bước quá dài làm hông lắc",
+        "Nín thở"
+      ],
+      "avoid_if": [
+        "wrist",
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "wrist": "farmers_carry_dumbbell",
+        "shoulder": "farmers_carry_dumbbell"
+      },
+      "load_type": "time_seconds",
+      "measure": "seconds",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 15,
+      "start_load_note_vi": "Phương án không dụng cụ; không thay được phần lực nắm của bài xách tạ.",
+      "substitutes": [
+        "farmers_carry_dumbbell",
+        "plank",
+        "bird_dog"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "barbell_curl",
+      "name_vi": "Cuốn tay trước thanh đòn",
+      "name_en": "Barbell Curl",
+      "pattern": "biceps",
+      "core_type": null,
+      "equipment": [
+        "barbell"
+      ],
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng thẳng, nắm ngửa rộng bằng vai",
+        "Khuỷu ép sát sườn và đứng yên",
+        "Cuốn lên hết tầm, siết",
+        "Hạ chậm tới thẳng tay"
+      ],
+      "mistakes_vi": [
+        "Ngả lưng vung tạ",
+        "Khuỷu trôi ra trước",
+        "Không xuống hết tay"
+      ],
+      "avoid_if": [
+        "wrist",
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "wrist": "hammer_curl",
+        "lower_back": "cable_curl"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 15,
+      "start_load_women": 10,
+      "start_load_note_vi": "Dùng thanh ngắn hoặc thanh EZ nếu có; thanh 20 kg quá nặng để bắt đầu.",
+      "substitutes": [
+        "dumbbell_curl",
+        "cable_curl",
+        "band_curl"
+      ],
+      "source_url": "https://www.strengthlog.com/barbell-curl/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "dumbbell_curl",
+      "name_vi": "Cuốn tay trước tạ tay",
+      "name_en": "Dumbbell Curl",
+      "pattern": "biceps",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng hoặc ngồi, tay thả thẳng, lòng bàn tay hướng trước",
+        "Khuỷu đứng yên sát sườn",
+        "Cuốn lên, siết 1 giây",
+        "Hạ chậm 2-3 giây"
+      ],
+      "mistakes_vi": [
+        "Vung người",
+        "Nhún vai",
+        "Hạ nửa chừng"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 6,
+      "start_load_women": 3,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "barbell_curl",
+        "cable_curl",
+        "hammer_curl",
+        "band_curl"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-curl/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "hammer_curl",
+      "name_vi": "Cuốn tay kiểu búa",
+      "name_en": "Hammer Curl",
+      "pattern": "biceps",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "biceps",
+        "forearms"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Lòng bàn tay hướng vào nhau suốt động tác",
+        "Khuỷu sát sườn",
+        "Cuốn lên tới ngang vai",
+        "Hạ chậm"
+      ],
+      "mistakes_vi": [
+        "Vung tạ",
+        "Khuỷu trôi ra trước",
+        "Xoay cổ tay giữa chừng"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 6,
+      "start_load_women": 3,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_curl",
+        "cable_curl",
+        "band_curl"
+      ],
+      "source_url": "https://www.strengthlog.com/hammer-curl/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "cable_curl",
+      "name_vi": "Cuốn tay trước cáp",
+      "name_en": "Cable Curl",
+      "pattern": "biceps",
+      "core_type": null,
+      "equipment": [
+        "cable_low"
+      ],
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ròng rọc thấp, nắm ngửa thanh ngắn",
+        "Đứng cách máy một bước, khuỷu sát sườn",
+        "Cuốn lên hết tầm",
+        "Hạ chậm, cáp luôn căng"
+      ],
+      "mistakes_vi": [
+        "Ngả người ra sau",
+        "Khuỷu đưa ra trước",
+        "Thả tạ rơi"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 5,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_curl",
+        "barbell_curl",
+        "band_curl"
+      ],
+      "source_url": "https://www.strengthlog.com/cable-curl-with-bar/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_curl",
+      "name_vi": "Cuốn tay trước với dây",
+      "name_en": "Banded Curl",
+      "pattern": "biceps",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "biceps"
+      ],
+      "secondary": [
+        "forearms"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Giẫm lên dây, nắm ngửa hai đầu",
+        "Khuỷu sát sườn",
+        "Cuốn lên hết tầm, siết",
+        "Hạ chậm, không để dây giật về"
+      ],
+      "mistakes_vi": [
+        "Dây chùng ở dưới",
+        "Vung người",
+        "Khuỷu trôi"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_curl",
+        "cable_curl",
+        "barbell_curl"
+      ],
+      "source_url": "https://www.strengthlog.com/resistance-band-curl/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "lying_triceps_extension_barbell",
+      "name_vi": "Duỗi tay sau nằm (skullcrusher)",
+      "name_en": "Lying Barbell Triceps Extension",
+      "pattern": "triceps",
+      "core_type": null,
+      "equipment": [
+        "barbell",
+        "bench_flat"
+      ],
+      "primary": [
+        "triceps"
+      ],
+      "secondary": [],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm ghế, tay thẳng trên vai, nắm hẹp",
+        "Gập khuỷu hạ thanh về trán hoặc sau đỉnh đầu",
+        "Cánh tay trên gần như đứng yên",
+        "Duỗi thẳng tay, siết tay sau"
+      ],
+      "mistakes_vi": [
+        "Khuỷu bè rộng ra",
+        "Biến thành đẩy ngực hẹp",
+        "Tạ quá nặng gây đau khuỷu"
+      ],
+      "avoid_if": [
+        "wrist",
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "wrist": "triceps_pushdown_cable",
+        "shoulder": "triceps_pushdown_cable"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 15,
+      "start_load_women": 10,
+      "start_load_note_vi": "Dùng thanh ngắn hoặc thanh EZ.",
+      "substitutes": [
+        "overhead_triceps_extension_dumbbell",
+        "triceps_pushdown_cable",
+        "close_grip_push_up",
+        "band_pushdown"
+      ],
+      "source_url": "https://www.strengthlog.com/barbell-lying-triceps-extension/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "overhead_triceps_extension_dumbbell",
+      "name_vi": "Duỗi tay sau qua đầu tạ tay",
+      "name_en": "Dumbbell Overhead Triceps Extension",
+      "pattern": "triceps",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "triceps"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Hai tay ôm một quả tạ, đưa thẳng lên trên đầu",
+        "Khuỷu hướng lên trần, khép vừa phải",
+        "Hạ tạ ra sau đầu tới khi tay sau căng",
+        "Duỗi thẳng lên, không ưỡn lưng"
+      ],
+      "mistakes_vi": [
+        "Khuỷu bè rộng",
+        "Ưỡn lưng dưới",
+        "Hạ quá nông"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "triceps_pushdown_cable"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": true,
+      "start_load_men": 8,
+      "start_load_women": 4,
+      "start_load_note_vi": "Chỉ dùng MỘT quả tạ, hai tay cùng ôm.",
+      "substitutes": [
+        "lying_triceps_extension_barbell",
+        "triceps_pushdown_cable",
+        "band_pushdown",
+        "close_grip_push_up"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-standing-triceps-extension/",
+      "source_status": "url_only",
+      "evidence_note_vi": "[UNVERIFIED, theo tóm tắt tìm kiếm] Nhóm Maeo 2022: duỗi khuỷu ở tư thế tay qua đầu tăng cơ tay sau nhiều hơn tư thế tay xuôi (+19,9% so với +13,9%, 12 tuần, mẫu nhỏ). Áp kết quả này sang bài tạ tay là suy rộng."
+    },
+    {
+      "id": "triceps_pushdown_cable",
+      "name_vi": "Đẩy cáp tay sau",
+      "name_en": "Cable Triceps Pushdown",
+      "pattern": "triceps",
+      "core_type": null,
+      "equipment": [
+        "cable_high"
+      ],
+      "primary": [
+        "triceps"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ròng rọc cao, khuỷu ép sát sườn",
+        "Thân hơi nghiêng trước",
+        "Đẩy xuống tới thẳng tay, siết",
+        "Trả chậm tới khi cẳng tay qua mức ngang"
+      ],
+      "mistakes_vi": [
+        "Khuỷu trôi ra trước sau",
+        "Đè cả người lên thanh",
+        "Trả tạ quá nông"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 5,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_pushdown",
+        "overhead_triceps_extension_dumbbell",
+        "close_grip_push_up"
+      ],
+      "source_url": "https://www.strengthlog.com/tricep-pushdown-with-bar/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "dip",
+      "name_vi": "Chống xà kép",
+      "name_en": "Parallel Bar Dip",
+      "pattern": "triceps",
+      "core_type": null,
+      "equipment": [
+        "dip_bar"
+      ],
+      "primary": [
+        "triceps",
+        "chest"
+      ],
+      "secondary": [
+        "front_delt"
+      ],
+      "difficulty": 3,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Chống thẳng tay, vai hạ xuống (không rụt cổ)",
+        "Hạ tới khi cánh tay trên khoảng song song sàn",
+        "Khuỷu hướng ra sau, thân hơi nghiêng trước",
+        "Đẩy lên thẳng tay"
+      ],
+      "mistakes_vi": [
+        "Hạ quá sâu khi vai chưa quen",
+        "Rụt vai lên tai",
+        "Đung đưa chân"
+      ],
+      "avoid_if": [
+        "shoulder",
+        "wrist"
+      ],
+      "safer_alternative": {
+        "shoulder": "triceps_pushdown_cable",
+        "wrist": "triceps_pushdown_cable"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "close_grip_push_up",
+        "triceps_pushdown_cable",
+        "dumbbell_bench_press"
+      ],
+      "source_url": "https://www.strengthlog.com/bar-dip/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_pushdown",
+      "name_vi": "Đẩy dây tay sau",
+      "name_en": "Banded Triceps Pushdown",
+      "pattern": "triceps",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "triceps"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Móc dây lên điểm cao (xà, móc tường)",
+        "Khuỷu sát sườn",
+        "Đẩy xuống tới thẳng tay, siết 1 giây",
+        "Trả chậm"
+      ],
+      "mistakes_vi": [
+        "Khuỷu trôi",
+        "Gập người đè xuống",
+        "Dây chùng ở trên"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "triceps_pushdown_cable",
+        "overhead_triceps_extension_dumbbell",
+        "close_grip_push_up"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "close_grip_push_up",
+      "name_vi": "Chống đẩy tay hẹp",
+      "name_en": "Close-Grip Push-Up",
+      "pattern": "triceps",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "triceps",
+        "chest"
+      ],
+      "secondary": [
+        "front_delt",
+        "abs"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Tay đặt hẹp hơn vai một chút",
+        "Khuỷu đi sát sườn",
+        "Thân thẳng, bụng gồng",
+        "Kê tay lên ghế nếu chưa đủ sức"
+      ],
+      "mistakes_vi": [
+        "Khuỷu bè ra ngoài",
+        "Võng hông",
+        "Hạ nửa chừng"
+      ],
+      "avoid_if": [
+        "wrist",
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "wrist": "band_pushdown",
+        "shoulder": "band_pushdown"
+      },
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_pushdown",
+        "triceps_pushdown_cable",
+        "overhead_triceps_extension_dumbbell"
+      ],
+      "source_url": "https://www.strengthlog.com/close-grip-push-up/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "upright_row_barbell",
+      "name_vi": "Kéo thanh đòn lên cằm (nắm rộng)",
+      "name_en": "Wide-Grip Barbell Upright Row",
+      "pattern": "lateral_delt",
+      "core_type": null,
+      "equipment": [
+        "barbell"
+      ],
+      "primary": [
+        "lateral_delt",
+        "traps"
+      ],
+      "secondary": [
+        "biceps",
+        "front_delt"
+      ],
+      "difficulty": 2,
+      "beginner_ok": false,
+      "cues_vi": [
+        "Nắm rộng hơn vai",
+        "Kéo khuỷu lên và ra ngoài",
+        "Dừng khi khuỷu ngang vai (thanh ngang ngực dưới)",
+        "Hạ chậm"
+      ],
+      "mistakes_vi": [
+        "Nắm hẹp và kéo quá cao (dễ kẹt vai)",
+        "Vung người",
+        "Bẻ gập cổ tay"
+      ],
+      "avoid_if": [
+        "shoulder",
+        "wrist"
+      ],
+      "safer_alternative": {
+        "shoulder": "band_lateral_raise",
+        "wrist": "dumbbell_lateral_raise"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 15,
+      "start_load_women": 10,
+      "start_load_note_vi": "Dùng thanh ngắn/nhẹ. Bài này dễ gây khó chịu vai; có tạ tay thì ưu tiên dang tạ ngang.",
+      "substitutes": [
+        "dumbbell_lateral_raise",
+        "cable_lateral_raise",
+        "band_lateral_raise"
+      ],
+      "source_url": "https://www.strengthlog.com/barbell-upright-row/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "dumbbell_lateral_raise",
+      "name_vi": "Dang tạ ngang vai",
+      "name_en": "Dumbbell Lateral Raise",
+      "pattern": "lateral_delt",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "lateral_delt"
+      ],
+      "secondary": [
+        "front_delt",
+        "traps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Tạ hai bên hông, khuỷu hơi chùng",
+        "Nâng sang hai bên tới khi cánh tay ngang sàn",
+        "Không nâng cao quá vai",
+        "Hạ chậm có kiểm soát"
+      ],
+      "mistakes_vi": [
+        "Tạ quá nặng",
+        "Vung người lấy đà",
+        "Nhún vai làm cầu vai gánh hết"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "band_lateral_raise"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 3,
+      "start_load_women": 2,
+      "start_load_note_vi": "Phòng không có tạ 1-3 kg thì dùng dây, cáp hoặc bánh tạ nhỏ.",
+      "substitutes": [
+        "cable_lateral_raise",
+        "band_lateral_raise",
+        "upright_row_barbell"
+      ],
+      "source_url": "https://www.strengthlog.com/dumbbell-lateral-raise/",
+      "source_status": "read"
+    },
+    {
+      "id": "cable_lateral_raise",
+      "name_vi": "Dang cáp ngang vai",
+      "name_en": "Cable Lateral Raise",
+      "pattern": "lateral_delt",
+      "core_type": null,
+      "equipment": [
+        "cable_low"
+      ],
+      "primary": [
+        "lateral_delt"
+      ],
+      "secondary": [
+        "front_delt",
+        "traps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ròng rọc thấp (khoảng dưới hông), đứng ngang máy, cầm bằng tay xa máy",
+        "Khuỷu hơi chùng",
+        "Nâng tay sang bên tới ngang vai",
+        "Hạ chậm, cáp luôn căng"
+      ],
+      "mistakes_vi": [
+        "Nhún vai",
+        "Nghiêng người kéo",
+        "Nâng cao quá vai"
+      ],
+      "avoid_if": [
+        "shoulder"
+      ],
+      "safer_alternative": {
+        "shoulder": "band_lateral_raise"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 2.5,
+      "start_load_women": 1.25,
+      "start_load_note_vi": "Dùng nấc nhẹ nhất của máy; nấc đầu vẫn quá nặng thì chuyển sang dây.",
+      "substitutes": [
+        "dumbbell_lateral_raise",
+        "band_lateral_raise"
+      ],
+      "source_url": "https://www.strengthlog.com/cable-lateral-raise/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_lateral_raise",
+      "name_vi": "Dang dây ngang vai",
+      "name_en": "Banded Lateral Raise",
+      "pattern": "lateral_delt",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "lateral_delt"
+      ],
+      "secondary": [
+        "traps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Giẫm lên dây, cầm hai đầu (hoặc tập từng tay)",
+        "Khuỷu hơi chùng",
+        "Nâng sang bên tới ngang vai",
+        "Hạ chậm"
+      ],
+      "mistakes_vi": [
+        "Dây quá căng nên phải nhún vai",
+        "Vung người",
+        "Nâng quá vai"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "light",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_lateral_raise",
+        "cable_lateral_raise"
+      ],
+      "source_url": "https://www.strengthlog.com/resistance-band-lateral-raise/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "standing_calf_raise_machine",
+      "name_vi": "Nhón bắp chân máy đứng",
+      "name_en": "Standing Calf Raise Machine",
+      "pattern": "calves",
+      "core_type": null,
+      "equipment": [
+        "calf_machine"
+      ],
+      "primary": [
+        "calves"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đặt nửa trước bàn chân lên bục",
+        "Hạ gót xuống thấp hết tầm, dừng 1 giây",
+        "Nhón lên cao hết tầm, siết",
+        "Gối gần thẳng suốt động tác"
+      ],
+      "mistakes_vi": [
+        "Nảy tưng tưng ở dưới",
+        "Biên độ ngắn",
+        "Gập gối đẩy bằng đùi"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 30,
+      "start_load_women": 15,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "smith_calf_raise",
+        "leg_press_calf_raise",
+        "single_leg_calf_raise_dumbbell",
+        "single_leg_calf_raise_bodyweight"
+      ],
+      "source_url": "https://www.strengthlog.com/standing-calf-raise/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "smith_calf_raise",
+      "name_vi": "Nhón bắp chân khung Smith",
+      "name_en": "Smith Machine Calf Raise",
+      "pattern": "calves",
+      "core_type": null,
+      "equipment": [
+        "smith"
+      ],
+      "primary": [
+        "calves"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Gánh thanh Smith trên cầu vai, mũi chân trên bục hoặc bánh tạ",
+        "Hạ gót hết tầm",
+        "Nhón cao hết tầm, siết 1 giây",
+        "Gối gần thẳng"
+      ],
+      "mistakes_vi": [
+        "Nảy ở dưới",
+        "Bục kê không chắc",
+        "Biên độ ngắn"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "leg_press_calf_raise"
+      },
+      "load_type": "added_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 20,
+      "start_load_women": 10,
+      "start_load_note_vi": "Số kg là tạ lắp thêm.",
+      "substitutes": [
+        "leg_press_calf_raise",
+        "single_leg_calf_raise_dumbbell",
+        "single_leg_calf_raise_bodyweight"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "leg_press_calf_raise",
+      "name_vi": "Nhón bắp chân trên máy đạp đùi",
+      "name_en": "Leg Press Calf Raise",
+      "pattern": "calves",
+      "core_type": null,
+      "equipment": [
+        "leg_press"
+      ],
+      "primary": [
+        "calves"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đặt mũi chân ở mép dưới bàn đạp, gối gần thẳng",
+        "Để gót hạ về phía mình hết tầm",
+        "Đẩy bằng mũi chân hết tầm",
+        "KHÔNG mở chốt an toàn của máy"
+      ],
+      "mistakes_vi": [
+        "Mở chốt an toàn (chân trượt là bàn đạp sập)",
+        "Gập gối để đẩy",
+        "Biên độ ngắn"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 40,
+      "start_load_women": 20,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "smith_calf_raise",
+        "single_leg_calf_raise_dumbbell",
+        "single_leg_calf_raise_bodyweight"
+      ],
+      "source_url": "https://www.strengthlog.com/calf-raise-in-leg-press/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "single_leg_calf_raise_dumbbell",
+      "name_vi": "Nhón bắp chân một chân cầm tạ",
+      "name_en": "Single-Leg Dumbbell Calf Raise",
+      "pattern": "calves",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "calves"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng một chân trên bậc/bánh tạ, tay cùng bên cầm tạ, tay kia vịn",
+        "Hạ gót hết tầm",
+        "Nhón cao hết tầm, siết",
+        "Lên xuống chậm"
+      ],
+      "mistakes_vi": [
+        "Nảy lấy đà",
+        "Biên độ ngắn",
+        "Vịn tay kéo người lên"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 8,
+      "start_load_women": 4,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "smith_calf_raise",
+        "leg_press_calf_raise",
+        "single_leg_calf_raise_bodyweight"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "single_leg_calf_raise_bodyweight",
+      "name_vi": "Nhón bắp chân một chân không tạ",
+      "name_en": "Bodyweight Single-Leg Calf Raise",
+      "pattern": "calves",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "calves"
+      ],
+      "secondary": [],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đứng một chân trên bậc thang, vịn nhẹ",
+        "Hạ gót hết tầm, dừng 1 giây",
+        "Nhón cao hết tầm",
+        "Chưa đủ sức thì làm hai chân"
+      ],
+      "mistakes_vi": [
+        "Nảy ở dưới",
+        "Biên độ ngắn",
+        "Làm quá nhanh"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "single_leg_calf_raise_dumbbell",
+        "smith_calf_raise",
+        "leg_press_calf_raise"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    },
+    {
+      "id": "barbell_hip_thrust",
+      "name_vi": "Hip thrust thanh đòn",
+      "name_en": "Barbell Hip Thrust",
+      "pattern": "glutes",
+      "core_type": null,
+      "equipment": [
+        "barbell",
+        "bench_flat"
+      ],
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "adductors",
+        "quads",
+        "hamstrings"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Tựa lưng trên (dưới bả vai) vào ghế chắc, lăn thanh lên nếp hông, lót đệm",
+        "Chân rộng bằng vai, gối co",
+        "Đẩy hông lên tới khi gối gập khoảng 90°, siết mông",
+        "Hạ có kiểm soát, tay giữ thanh"
+      ],
+      "mistakes_vi": [
+        "Không lót đệm nên đau xương hông",
+        "Ưỡn lưng dưới thay vì duỗi hông",
+        "Ghế không chắc, bị trượt"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "barbell_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 30,
+      "start_load_women": 20,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "dumbbell_hip_thrust",
+        "single_leg_glute_bridge",
+        "band_glute_bridge",
+        "cable_kickback"
+      ],
+      "source_url": "https://www.strengthlog.com/hip-thrust/",
+      "source_status": "read",
+      "evidence_note_vi": "[UNVERIFIED, theo tóm tắt tìm kiếm] Contreras 2015: hip thrust cho EMG mông cao hơn squat (13 nữ đã tập luyện). Nhưng Plotkin 2023 (9 tuần, đo MRI) thấy mức tăng cơ mông của squat và hip thrust tương đương. Bài nào cũng được, chọn theo dụng cụ."
+    },
+    {
+      "id": "dumbbell_hip_thrust",
+      "name_vi": "Hip thrust tạ tay",
+      "name_en": "Dumbbell Hip Thrust",
+      "pattern": "glutes",
+      "core_type": null,
+      "equipment": [
+        "dumbbell",
+        "bench_flat"
+      ],
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "quads"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Tựa lưng trên vào ghế, đặt một quả tạ nằm ngang trên nếp hông",
+        "Chân rộng bằng vai, bàn chân phẳng",
+        "Đẩy hông lên tới khi thân song song sàn, siết mông 1 giây",
+        "Hạ chậm"
+      ],
+      "mistakes_vi": [
+        "Ưỡn lưng dưới",
+        "Chân đặt quá xa (ăn đùi sau) hoặc quá gần (ăn đùi trước)",
+        "Ngửa cổ ra sau"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": true,
+      "start_load_men": 12,
+      "start_load_women": 8,
+      "start_load_note_vi": "Chỉ dùng MỘT quả tạ đặt trên hông.",
+      "substitutes": [
+        "barbell_hip_thrust",
+        "single_leg_glute_bridge",
+        "band_glute_bridge",
+        "cable_kickback"
+      ],
+      "source_url": "https://www.strengthlog.com/hip-thrust/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "cable_kickback",
+      "name_vi": "Đá mông với cáp",
+      "name_en": "Cable Glute Kickback",
+      "pattern": "glutes",
+      "core_type": null,
+      "equipment": [
+        "cable_low"
+      ],
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đeo đai cổ chân vào ròng rọc thấp, vịn máy, thân hơi nghiêng trước",
+        "Đá chân thẳng ra sau bằng mông",
+        "Dừng khi hông hết tầm, không ưỡn lưng",
+        "Về chậm"
+      ],
+      "mistakes_vi": [
+        "Ưỡn lưng dưới để đá cao hơn",
+        "Vung chân lấy đà",
+        "Xoay mở hông"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "glute_bridge"
+      },
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 5,
+      "start_load_women": 2.5,
+      "start_load_note_vi": "Cần đai đeo cổ chân; phòng thường không có sẵn.",
+      "substitutes": [
+        "single_leg_glute_bridge",
+        "band_glute_bridge",
+        "dumbbell_hip_thrust"
+      ],
+      "source_url": "https://www.strengthlog.com/cable-glute-kickback/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_glute_bridge",
+      "name_vi": "Cầu mông với dây",
+      "name_en": "Banded Glute Bridge",
+      "pattern": "glutes",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "glutes",
+        "hip_abductors"
+      ],
+      "secondary": [
+        "hamstrings"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Đeo dây vòng ngay trên gối, nằm ngửa, gối co",
+        "Đẩy gối ra ngoài chống lại dây",
+        "Đẩy hông lên, siết mông 2 giây",
+        "Hạ chậm"
+      ],
+      "mistakes_vi": [
+        "Gối bị dây kéo vào trong",
+        "Ưỡn lưng",
+        "Đẩy bằng mũi chân"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "medium",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "glute_bridge",
+        "single_leg_glute_bridge",
+        "dumbbell_hip_thrust"
+      ],
+      "source_url": "https://www.strengthlog.com/glute-bridge/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "single_leg_glute_bridge",
+      "name_vi": "Cầu mông một chân",
+      "name_en": "Single-Leg Glute Bridge",
+      "pattern": "glutes",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "hip_abductors"
+      ],
+      "difficulty": 2,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm ngửa, một chân co đặt sàn, chân kia nhấc lên",
+        "Đẩy hông lên bằng gót chân trụ",
+        "Hai bên hông ngang nhau",
+        "Siết mông 1-2 giây rồi hạ"
+      ],
+      "mistakes_vi": [
+        "Hông bên chân nhấc bị rơi xuống",
+        "Ưỡn lưng",
+        "Chuột rút đùi sau do chân đặt quá xa"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_glute_bridge",
+        "dumbbell_hip_thrust",
+        "glute_bridge"
+      ],
+      "source_url": "https://www.strengthlog.com/one-legged-glute-bridge/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "glute_bridge",
+      "name_vi": "Cầu mông",
+      "name_en": "Glute Bridge",
+      "pattern": "glutes",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "glutes"
+      ],
+      "secondary": [
+        "hamstrings",
+        "abs"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm ngửa, gối co, bàn chân phẳng trên sàn, tay dọc thân",
+        "Gồng nhẹ bụng",
+        "Đẩy hông lên bằng cách siết mông tới khi thân thẳng từ vai tới gối",
+        "Hạ chậm"
+      ],
+      "mistakes_vi": [
+        "Ưỡn lưng dưới thay vì siết mông",
+        "Đẩy bằng mũi chân",
+        "Lên quá nhanh, không siết"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_glute_bridge",
+        "single_leg_glute_bridge",
+        "dumbbell_hip_thrust"
+      ],
+      "source_url": "https://www.acefitness.org/resources/everyone/exercise-library/57/glute-bridge/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "reverse_dumbbell_fly",
+      "name_vi": "Dang tạ vai sau (gập người)",
+      "name_en": "Bent-Over Reverse Dumbbell Fly",
+      "pattern": "rear_delt",
+      "core_type": null,
+      "equipment": [
+        "dumbbell"
+      ],
+      "primary": [
+        "rear_delt"
+      ],
+      "secondary": [
+        "rhomboids",
+        "traps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Gập hông, lưng thẳng, thân gần song song sàn",
+        "Khuỷu hơi chùng",
+        "Dang tạ sang hai bên tới ngang vai",
+        "Hạ chậm"
+      ],
+      "mistakes_vi": [
+        "Tạ quá nặng nên phải giật",
+        "Đứng thẳng dần lên",
+        "Kéo khuỷu ra sau thành bài kéo lưng"
+      ],
+      "avoid_if": [
+        "lower_back"
+      ],
+      "safer_alternative": {
+        "lower_back": "band_pull_apart"
+      },
+      "load_type": "dumbbell_kg_per_hand",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 3,
+      "start_load_women": 2,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "face_pull_cable",
+        "band_pull_apart",
+        "prone_y_raise"
+      ],
+      "source_url": "https://www.strengthlog.com/reverse-dumbbell-flyes/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "face_pull_cable",
+      "name_vi": "Face pull với cáp",
+      "name_en": "Cable Face Pull",
+      "pattern": "rear_delt",
+      "core_type": null,
+      "equipment": [
+        "cable_high"
+      ],
+      "primary": [
+        "rear_delt"
+      ],
+      "secondary": [
+        "traps",
+        "rhomboids",
+        "rotator_cuff"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Ròng rọc ngang mặt hoặc cao hơn, dùng dây thừng",
+        "Kéo dây về phía mặt, khuỷu cao và mở rộng",
+        "Cuối động tác xoay tay ra ngoài (như gồng khoe tay)",
+        "Trả chậm"
+      ],
+      "mistakes_vi": [
+        "Tạ quá nặng nên ngả người",
+        "Khuỷu hạ thấp thành bài kéo ngang",
+        "Nhún vai"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "machine_kg",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": 10,
+      "start_load_women": 5,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_pull_apart",
+        "reverse_dumbbell_fly",
+        "prone_y_raise"
+      ],
+      "source_url": "https://www.strengthlog.com/face-pull/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "band_pull_apart",
+      "name_vi": "Kéo giãn dây ngang ngực",
+      "name_en": "Band Pull-Apart",
+      "pattern": "rear_delt",
+      "core_type": null,
+      "equipment": [
+        "band"
+      ],
+      "primary": [
+        "rear_delt"
+      ],
+      "secondary": [
+        "rhomboids",
+        "traps"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Cầm dây trước ngực, tay gần thẳng",
+        "Kéo hai tay sang hai bên tới khi dây chạm ngực",
+        "Siết bả vai 1 giây",
+        "Về chậm"
+      ],
+      "mistakes_vi": [
+        "Nhún vai",
+        "Ưỡn lưng",
+        "Co khuỷu nhiều"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "band_level",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": "light",
+      "start_load_women": "light",
+      "start_load_note_vi": "",
+      "substitutes": [
+        "face_pull_cable",
+        "reverse_dumbbell_fly",
+        "prone_y_raise"
+      ],
+      "source_url": "https://www.strengthlog.com/band-pull-apart/",
+      "source_status": "url_only"
+    },
+    {
+      "id": "prone_y_raise",
+      "name_vi": "Nằm sấp nâng tay chữ Y",
+      "name_en": "Prone Y Raise",
+      "pattern": "rear_delt",
+      "core_type": null,
+      "equipment": [
+        "none"
+      ],
+      "primary": [
+        "rear_delt",
+        "traps"
+      ],
+      "secondary": [
+        "rhomboids",
+        "rotator_cuff"
+      ],
+      "difficulty": 1,
+      "beginner_ok": true,
+      "cues_vi": [
+        "Nằm sấp trên sàn hoặc ghế, tay duỗi chếch thành chữ Y, ngón cái hướng lên",
+        "Nâng tay khỏi sàn bằng cách siết bả vai",
+        "Giữ 2 giây",
+        "Hạ chậm"
+      ],
+      "mistakes_vi": [
+        "Ngửa cổ",
+        "Ưỡn lưng dưới để nâng tay",
+        "Nhún vai lên tai"
+      ],
+      "avoid_if": [],
+      "safer_alternative": {},
+      "load_type": "bodyweight_reps",
+      "measure": "reps",
+      "single_implement": false,
+      "start_load_men": null,
+      "start_load_women": null,
+      "start_load_note_vi": "",
+      "substitutes": [
+        "band_pull_apart",
+        "reverse_dumbbell_fly",
+        "face_pull_cable"
+      ],
+      "source_url": null,
+      "source_status": "none"
+    }
+  ]
+}
