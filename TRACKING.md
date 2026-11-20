@@ -10,8 +10,8 @@
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
 - Bản đầu đã thiết kế: **7/79** · đã code xong: **0/79**.
 - Theo trạng thái (mọi bản): Chưa làm 87 · Đang thiết kế 2 · Đã thiết kế 7 · Đang code 0 · Xong 0.
-- Giai đoạn xong: **0/19** · quyết định đã chốt: **0/17**.
-- Cập nhật lúc: 2026-11-20 17:27.
+- Giai đoạn xong: **0/19** · quyết định đã chốt: **1/17**.
+- Cập nhật lúc: 2026-11-20 17:33.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -191,7 +191,7 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 | D11 | Ai đặt mục tiêu thử thách tuần của tổ? | App tự đặt. Con số phần trăm chỉnh sau khi thử với nhóm thật. |  |
 | D12 | Streak tổ tính tuần đạt khi nào? | Từ 80% số người đạt, và người nghỉ có phép không tính. Tổ 3 người thì nghĩa là cả ba. |  |
 | D13 | Trong nhóm có ai kiêng chuyện hồn vía không? | Hỏi cả nhóm trước khi viết chữ cho onboarding. Chỉ cần một người thấy gở là đổi tên gọi. |  |
-| D14 | Có cho code phần không có giao diện (B0 thử iPhone, B1 rules engine) song song với thiết kế không? | Có. Quy tắc "chưa duyệt thiết kế thì chưa code" vẫn giữ cho mọi thứ có giao diện. |  |
+| D14 | Có cho code phần không có giao diện (B0 thử iPhone, B1 rules engine) song song với thiết kế không? | Có. Quy tắc "chưa duyệt thiết kế thì chưa code" vẫn giữ cho mọi thứ có giao diện. | Không: thiết kế xong hết rồi mới code (chốt 2026-11-21) |
 | D15 | Các con số còn là giả định của hệ thống động lực | Giữ các con số của tài liệu, ghi vào file cấu hình, chỉnh sau vòng thử 4 tuần. |  |
 | D16 | Ai rà nội dung an toàn và hướng dẫn kỹ thuật? | Vợ người dùng rà phần đau; đối chiếu nguồn ưu tiên các bài mà hồ sơ phòng của nhóm thật sự dùng tới. |  |
 | D17 | Thông báo đẩy có trong bản đầu không? | Để v1.1. Push cần máy chủ gửi, và trên iOS chỉ chạy khi đã cài lên màn hình chính. |  |
@@ -203,3 +203,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-21: chốt logo hướng C "Ba màu, một quả tạ"; đang hoàn thiện bộ file logo và icon.
 - 2026-11-21: thiết kế xong màn 0.1 (logo Tạ Nhỏ, hộp đồ bỏ quên, bấm Mở hộp để ba bạn đồng hành nhảy ra); chờ người dùng duyệt.
 - 2026-11-21: trang theo dõi có thêm ảnh màn hình (mục "Đã có hình" và ảnh trong từng màn). Đang thiết kế 0.2 và 0.3.
+- 2026-11-21: chốt D14: thiết kế xong hết rồi mới bắt đầu code.
