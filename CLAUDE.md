@@ -25,7 +25,7 @@ Người dùng làm dự án này bằng **nhiều tài khoản Claude khác nha
 - PWA chạy trên cả iPhone và Android. Mỗi người có profile riêng, check-in hằng ngày, app ra bài, có bài thay thế khi thiếu dụng cụ.
 - Mỗi người lưu nhiều phòng tập. Bảng nhóm, streak nhóm và thử thách có ngay từ bản đầu (Firebase).
 - KHÔNG chia sẻ ra ngoài (không Zalo/Messenger): chỉ đăng vào nhóm trong app.
-- **Tên app: "Tạ Nhỏ"** (chốt 2026-11-20, thay "Ba Vía" vì khó hiểu). Khẩu hiệu "Ai cũng bắt đầu từ quả tạ nhỏ." Nhân vật gọi chung là **nhóc tạ**, chọn nhân vật = **nhận nhóc tạ**, cổ vũ bạn = **đập tay**, nhóm = **"Hội Tạ Nhỏ [tên]"**. KHÔNG dùng chữ "vía" trong app nữa (các tài liệu cũ vẫn gọi là vía, chỉ là tên nội bộ). Chi tiết: `design/09-naming.md`.
+- **Tên app: "Tạ Nhỏ"** (chốt 2026-11-20, thay "Ba Vía" vì khó hiểu). Khẩu hiệu "Ai cũng bắt đầu từ quả tạ nhỏ." Ba nhân vật (Khăn, Bình, Găng) gọi chung là **bạn đồng hành** (KHÔNG gọi "nhóc tạ"; người dùng chốt 2026-11-20), chọn nhân vật = **chọn bạn đồng hành**, cổ vũ bạn = **đập tay**, nhóm = **"Hội Tạ Nhỏ [tên]"**. KHÔNG dùng chữ "vía" trong app nữa (các tài liệu cũ vẫn gọi là vía, chỉ là tên nội bộ). Chi tiết: `design/09-naming.md`.
 - Thế giới đồ bỏ quên (tài liệu cũ gọi là "Ba Vía"), shader **nỉ/len chọc**. Mặt Găng: phương án C (quai găng làm băng đô).
 - Mỗi buổi tập được 1 mảnh đồ, đủ mảnh thành 1 món, tối đa 1 món/tuần.
 - Đồ thu thập được phải **mặc thật** lên avatar (mesh 3D gắn vào rig), không dùng icon dán đè.
