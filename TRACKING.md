@@ -11,7 +11,7 @@
 - Bản đầu đã thiết kế: **6/79** · đã code xong: **0/79**.
 - Theo trạng thái (mọi bản): Chưa làm 89 · Đang thiết kế 1 · Đã thiết kế 6 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **0/17**.
-- Cập nhật lúc: 2026-11-20 16:40.
+- Cập nhật lúc: 2026-11-20 17:03.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -200,3 +200,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 
 - 2026-11-20: tạo file từ kế hoạch của Fable (96 màn, 19 giai đoạn, 17 quyết định). Đã thiết kế 6 màn ở bản v2.
 - 2026-11-20: đổi tên app "Ba Vía" thành **Tạ Nhỏ** (nhân vật = bạn đồng hành, cổ vũ = đập tay, nhóm = Hội Tạ Nhỏ [tên]). Màn 0.1 đang thiết kế; bắt đầu làm logo.
+- 2026-11-21: chốt logo hướng C "Ba màu, một quả tạ"; đang hoàn thiện bộ file logo và icon.
