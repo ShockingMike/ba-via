@@ -31,6 +31,7 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - **Ô màu, biểu tượng phải là chất nỉ** đồng bộ với nhân vật, không dùng chấm tròn phẳng.
 - **Màu cam chỉ dùng cho nút chính.** Không thêm kiểu nút mới (ví dụ nút viền tối) ngoài các kiểu đã có ở 0.4/0.5.
 - Nút phụ ("Để sau") là chữ nhỏ, không to hơn nút chính.
+- Mỗi chú thích phải giải thích đủ mọi ký hiệu đang hiện (ví dụ đã có Đẩy, Kéo thì phải có cả Chân).
 - **Báo lỗi phải nhìn thấy rõ:** viền và chữ màu hổ phách, có icon, ô nhập rung nhẹ, nhân vật lộ vẻ lo.
 - Dòng gợi ý trong ô (placeholder) nhạt và nhỏ hơn chữ đã nhập. Có trạng thái đang gõ (con trỏ, viền focus).
 

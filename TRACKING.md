@@ -8,10 +8,10 @@
 
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
-- Bản đầu đã thiết kế: **11/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 83 · Đang thiết kế 2 · Đã thiết kế 11 · Đang code 0 · Xong 0.
+- Bản đầu đã thiết kế: **13/79** · đã code xong: **0/79**.
+- Theo trạng thái (mọi bản): Chưa làm 83 · Đang thiết kế 0 · Đã thiết kế 13 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **2/17**.
-- Cập nhật lúc: 2026-11-25 07:47.
+- Cập nhật lúc: 2026-11-25 09:28.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -26,8 +26,8 @@
 | 0.3 | Chọn bạn đồng hành | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.3.jpg) · [bấm thử](prototypes/0.3.html) |
 | 0.4 | Đặt tên và chọn màu bạn đồng hành | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.4.jpg) · [bấm thử](prototypes/0.4.html) |
 | 0.5 | Hồ sơ: về người dùng | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.5.jpg) · [bấm thử](prototypes/0.5.html) |
-| 0.6 | Mục tiêu và trình độ | Bản đầu | Đang thiết kế |  |
-| 0.7 | Lời hứa tuần và thời lượng | Bản đầu | Đang thiết kế |  |
+| 0.6 | Mục tiêu và trình độ | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.6.jpg) · [bấm thử](prototypes/0.6.html) |
+| 0.7 | Lời hứa tuần và thời lượng | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.7.jpg) · [bấm thử](prototypes/0.7.html) |
 | 0.8 | Sàng lọc sức khoẻ | Bản đầu | Chưa làm |  |
 | 0.8a | Khuyên hỏi bác sĩ trước | Bản đầu | Chưa làm |  |
 | 0.9 | Vùng hay đau hoặc chấn thương cũ | Bản đầu | Chưa làm |  |
@@ -209,3 +209,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-21: thiết kế xong 0.4 (đặt tên, chọn 1 trong 6 màu: Bạc hà, Cam, Tím, Vàng nghệ, Hồng sen, Xanh trời) và 0.5 (hồ sơ 4 ô); đã qua so mù và sửa; chờ duyệt.
 - 2026-11-25: 0.4, 0.5 đã duyệt. Đang thiết kế 0.6 (mục tiêu, trình độ) và 0.7 (lời hứa tuần, thời lượng).
 - 2026-11-25: chốt buổi đi bộ không tính vào lời hứa tuần (không giữ streak, không được mảnh đồ, không tính thứ hạng).
+- 2026-11-25: thiết kế xong 0.6 (2 bước: mục tiêu, trình độ) và 0.7 (2 bước: số buổi, số phút). Lần đầu dùng cách Opus dựng, Fable chấm: 0.6 lên 8,5/10, 0.7 lên 8/10; chờ duyệt.
