@@ -96,6 +96,10 @@ h3{font-size:17px;font-weight:800;margin:0}
 .big{font:700 clamp(30px,6vw,42px)/1 var(--mono)}
 .big small{font-size:16px;color:var(--ink3)}
 .hero .r{text-align:right}
+.play{display:flex;align-items:center;gap:14px;margin:18px 0 4px;padding:14px 16px;border-radius:14px;background:#FFC93C;color:#2a1d00;text-decoration:none;box-shadow:0 6px 0 #D9A21C;transition:transform .12s,box-shadow .12s}
+.play:hover{transform:translateY(-1px)}.play:active{transform:translateY(4px);box-shadow:0 2px 0 #D9A21C}
+.play .pi{width:40px;height:40px;border-radius:50%;background:#2a1d00;color:#FFC93C;display:grid;place-items:center;font-size:16px;flex:none}
+.play b{display:block;font-size:17px;font-weight:800}.play small{display:block;font-size:13px;opacity:.8}
 .track{position:relative;height:10px;border-radius:5px;background:var(--line);margin:22px 0 8px;overflow:hidden;display:flex}
 .track i{display:block;height:100%}
 i.done{background:var(--teal)} i.building{background:var(--violet)} i.designed{background:var(--acc)} i.designing{background:var(--amber)}
@@ -168,6 +172,7 @@ a{color:var(--acc)}
     <div class="r"><div class="eyebrow">Giai đoạn hiện tại</div><div style="font-weight:700;margin-top:4px">${curPhase ? `${esc(curPhase.id)} · ${esc(curPhase.name)}` : 'Đã xong tất cả'}</div></div>
   </div>
   <div class="track">${seg}</div>
+  <a class="play" href="app.html"><span class="pi">▶</span><span><b>Trải nghiệm app</b><small>${screens.filter((s) => isDesigned(s) && fs.existsSync(path.join(root, 'prototypes', s.id + '.html'))).length} màn đã ghép, bấm như app thật</small></span></a>
   <div class="legend">${STATES.map((s) => `<span><span class="dot" style="background:${{ 'Chưa làm': 'var(--line)', 'Đang thiết kế': 'var(--amber)', 'Đã thiết kế': 'var(--acc)', 'Đang code': 'var(--violet)', 'Xong': 'var(--teal)' }[s]}"></span>${esc(s)} <b>${counts[s]}</b></span>`).join('')}</div>
 </section>
 <section class="card stats">
@@ -207,6 +212,9 @@ if (fs.existsSync(protoDir)) { fs.mkdirSync(path.join(root, 'docs', 'prototypes'
   if (!/^\s*<!doctype/i.test(h)) h = '<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' + h + '</body></html>';
   fs.writeFileSync(path.join(root, 'docs', 'prototypes', f), h);
 } }
+// ---- docs/app.html: every designed screen that has a prototype, chained in the order users meet them ----
+const playable = flows.flatMap((f) => f.rows.filter((s) => isDesigned(s) && fs.existsSync(path.join(root, 'prototypes', s.id + '.html'))).map((s) => ({ id: s.id, name: s.name, flow: f.name, proto: 'prototypes/' + s.id + '.html' })));
+fs.writeFileSync(path.join(root, 'docs', 'app.html'), fs.readFileSync(path.join(__dirname, 'app-player.html'), 'utf8').replace('var SCREENS = __SCREENS__', () => 'var SCREENS = ' + JSON.stringify(playable).replace(/</g, '\\u003c')));
 for (const f of shotFiles) fs.copyFileSync(path.join(shotDir, f), path.join(root, 'docs', 'shots', f));
 try { fs.copyFileSync(path.join(root, 'brand', 'favicon.svg'), path.join(root, 'docs', 'favicon.svg')); } catch (e) { /* optional */ }
 console.log(`docs/index.html: ${screens.length} màn, ${nDesigned}/${mvp.length} bản đầu đã thiết kế, ${nDecided}/${decisions.length} quyết định`);

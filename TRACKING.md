@@ -11,7 +11,7 @@
 - Bản đầu đã thiết kế: **24/79** · đã code xong: **0/79**.
 - Theo trạng thái (mọi bản): Chưa làm 72 · Đang thiết kế 0 · Đã thiết kế 24 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **6/17**.
-- Cập nhật lúc: 2026-11-25 14:04.
+- Cập nhật lúc: 2026-11-25 14:09.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -218,3 +218,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-25: thiết kế xong 0.14, 0.14a, 0.14b, 0.15. Fable chấm 8 / 8 / 8 / 7,5, sau đó sửa nốt 0.15. Toàn bộ 18 màn onboarding bản đầu đã thiết kế; chờ duyệt.
 - 2026-11-25: người dùng duyệt 0.14, 0.14a, 0.14b, 0.15 (xong onboarding). Bắt đầu nhánh 1: làm lại 6 màn v2 theo chất lượng mới.
 - 2026-11-25: chốt D3 (đồ bỏ quên, 12 món), D4 (90 chuỗi gương, để sau khi người dùng bảo), ghi D9 (đi bộ không tính).
+- 2026-11-25: thêm trang **Trải nghiệm app** (app.html): tự ghép các màn đã thiết kế thành một luồng bấm thử, tới đâu ghép tới đó.

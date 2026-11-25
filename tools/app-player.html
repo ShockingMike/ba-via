@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tạ Nhỏ · Trải nghiệm</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500;600;700;800&display=swap">
+<style>
+/* Template for docs/app.html. tools/build-tracker-page.js fills the SCREENS list. */
+:root{--bg:#121318;--card:#1A1C23;--line:#2A2D37;--ink:#ECEDF2;--ink2:#A2A6B4;--ink3:#6E7282;--acc:#FFC93C}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#EDEDF2;--card:#FFFFFF;--line:#DCDDE5;--ink:#1A1C23;--ink2:#5A5F6E;--ink3:#8B8F9C}}
+:root[data-theme="dark"]{--bg:#121318;--card:#1A1C23;--line:#2A2D37;--ink:#ECEDF2;--ink2:#A2A6B4;--ink3:#6E7282}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 "Be Vietnam Pro",system-ui,sans-serif;overflow:hidden}
+button{font:inherit;color:inherit}
+.app{height:100%;display:flex;flex-direction:column}
+.bar{flex:none;display:flex;align-items:center;gap:6px;padding:8px max(10px,env(safe-area-inset-right)) 8px max(10px,env(safe-area-inset-left));border-bottom:1px solid var(--line);background:var(--card)}
+.bar a.home{color:var(--ink2);text-decoration:none;font-weight:700;font-size:13px;padding:6px 8px;border-radius:8px;white-space:nowrap}
+.bar a.home:hover{background:var(--line)}
+.ib{flex:none;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center;font-size:16px;font-weight:800}
+.ib:disabled{opacity:.35;cursor:default}
+.ib:not(:disabled):hover{background:var(--line)}
+.where{flex:1;min-width:0;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:transparent;border-radius:10px;height:34px;padding:0 10px;cursor:pointer;text-align:left}
+.where b{font-variant-numeric:tabular-nums;color:var(--acc);font-weight:800}
+.where span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.where small{margin-left:auto;color:var(--ink3);white-space:nowrap}
+.stage{flex:1;min-height:0;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.device{position:relative;width:390px;height:844px;flex:none;transform-origin:center center}
+.device iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff;display:block}
+/* desktop: real phone bezel; narrow screens: the iframe IS the screen */
+@media (min-width:600px){
+  .device{border-radius:54px;box-shadow:0 0 0 10px #17141F,0 40px 80px -30px rgba(0,0,0,.6)}
+  .device iframe{border-radius:44px}
+}
+@media (max-width:599px){.device{border-radius:18px;overflow:hidden}}
+.states{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);display:none}
+.end{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:24px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(4px);z-index:5}
+.end.on{display:flex}
+.end .box{max-width:340px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center}
+.end h2{margin:0 0 6px;font-size:19px}
+.end p{margin:0 0 16px;color:var(--ink2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;border-radius:12px;border:0;background:var(--acc);color:#2a1d00;font-weight:800;cursor:pointer;text-decoration:none;margin:4px}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+/* screen list sheet */
+.sheet{position:fixed;inset:0;z-index:10;display:none}
+.sheet.on{display:block}
+.sheet .scrim{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.sheet .panel{position:absolute;top:56px;left:50%;transform:translateX(-50%);width:min(440px,calc(100% - 20px));max-height:calc(100% - 76px);overflow:auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px}
+.sheet h3{margin:10px 10px 4px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.sheet .it{display:flex;gap:10px;align-items:center;width:100%;border:0;background:transparent;padding:9px 10px;border-radius:10px;cursor:pointer;text-align:left}
+.sheet .it:hover{background:var(--line)}
+.sheet .it.cur{background:color-mix(in srgb,var(--acc) 18%,transparent)}
+.sheet .it b{min-width:42px;font-variant-numeric:tabular-nums;color:var(--acc)}
+.sheet .it small{margin-left:auto;color:var(--ink3);font-size:12px;text-align:right}
+.hint{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:var(--card);border:1px solid var(--line);color:var(--ink2);border-radius:999px;padding:6px 14px;font-size:12.5px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .3s;z-index:4}
+.hint.on{opacity:1}
+@media (max-width:599px){.bar a.home .long{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="bar">
+    <a class="home" href="./" title="Về trang theo dõi">← <span class="long">Theo dõi</span></a>
+    <button class="ib" id="prev" aria-label="Màn trước">‹</button>
+    <button class="where" id="where" aria-label="Chọn màn"><b id="wid"></b><span id="wname"></span><small id="wpos"></small></button>
+    <button class="ib" id="next" aria-label="Màn sau">›</button>
+  </div>
+  <div class="stage" id="stage">
+    <div class="device" id="device"><iframe id="f" title="Tạ Nhỏ"></iframe></div>
+    <div class="hint" id="hint">Bấm như dùng app thật · chạm tên màn ở trên để nhảy màn</div>
+    <div class="end" id="end"><div class="box"><h2 id="endT">Tới đây là hết phần đã thiết kế</h2><p id="endP"></p><button class="btn ghost" id="endBack">Ở lại màn này</button><a class="btn" href="./">Về trang theo dõi</a></div></div>
+  </div>
+</div>
+<div class="sheet" id="sheet"><div class="scrim" id="scrim"></div><div class="panel" id="panel"></div></div>
+<script>
+var SCREENS = __SCREENS__; /* [{id,name,flow,proto}] in the order users meet them; only designed screens with a prototype */
+(function(){
+  var f=document.getElementById('f'),dev=document.getElementById('device'),stage=document.getElementById('stage');
+  var cur=-1,curUnit=null,obs=null,navLock=false;
+  var idx=function(id){for(var i=0;i<SCREENS.length;i++)if(SCREENS[i].id===id)return i;return -1};
+  /* the state a real user sees first: "vừa mở / chưa chọn / chưa gõ…", else the first unit */
+  var FIRST=[/vừa mở|mở lần đầu|chưa chọn|chưa gõ|câu 1\b|bước 1 · chưa/i,/bước 1|câu 1/i];
+  function scale(){
+    var m=innerWidth<600?8:32,k=Math.min(1.25,(stage.clientHeight-m)/844,(stage.clientWidth-m)/390);dev.style.transform='scale('+k+')';
+  }
+  addEventListener('resize',scale);
+  function units(d){return [].slice.call(d.querySelectorAll('section.unit'))}
+  function cap(u){var c=u.querySelector('.cap');return c?c.textContent.trim():u.id}
+  function pickUnit(d,want){
+    var us=units(d);if(!us.length)return null;
+    if(want){for(var i=0;i<us.length;i++)if(us[i].id===want)return us[i]}
+    for(var r=0;r<FIRST.length;r++)for(var j=0;j<us.length;j++)if(FIRST[r].test(cap(us[j])))return us[j];
+    return us[0];
+  }
+  function show(d,u){
+    units(d).forEach(function(x){x.classList.toggle('play-on',x===u)});curUnit=u?u.id:null;
+    try{f.contentWindow.dispatchEvent(new Event('resize'))}catch(e){}
+    try{f.contentWindow.scrollTo(0,0)}catch(e){}
+  }
+  var CSS='html,body{background:#fff!important;margin:0!important;padding:0!important;overflow-x:hidden}'+
+    '.intro,.cap,.legend,footer{display:none!important}'+
+    'main.desk{margin:0!important;padding:0!important;max-width:none!important;background:transparent!important;min-height:0!important}'+
+    '.frames{display:block!important;gap:0!important;padding:0!important;margin:0!important}'+
+    'section.unit{display:none!important}section.unit.play-on{display:block!important;width:100%!important;max-width:none!important;margin:0!important}'+
+    'section.unit.play-on>*:not(.phone){display:none!important}'+
+    '.phone{width:100%!important;max-width:none!important;padding:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important}'+
+    '.fit{border-radius:0!important}'+
+    '.toast.play-nav{visibility:hidden!important}';
+  var NAV=/Bản mẫu:\s*(sang|về|vào)[^0-9]*?(\d+\.\d+[a-z]?)/i,BACK=/Bản mẫu:\s*quay lại màn trước/i;
+  function watch(d){
+    if(obs)obs.disconnect();
+    obs=new MutationObserver(function(ms){
+      if(navLock)return;
+      for(var i=0;i<ms.length;i++){
+        var t=ms[i].target.nodeType===3?ms[i].target.parentNode:ms[i].target;
+        var toast=t&&t.closest&&t.closest('.toast');if(!toast)continue;
+        var s=toast.textContent||'',m=s.match(NAV);
+        if(m){toast.classList.add('play-nav');go(m[2],m[1].toLowerCase()==='về'?'back':'fwd');return}
+        if(BACK.test(s)){toast.classList.add('play-nav');step(-1);return}
+      }
+    });
+    obs.observe(d.body,{subtree:true,childList:true,characterData:true});
+  }
+  f.addEventListener('load',function(){
+    var d;try{d=f.contentDocument}catch(e){d=null}
+    if(!d||!d.head)return;
+    var st=d.createElement('style');st.textContent=CSS;d.head.appendChild(st);
+    var want=(location.hash.split('/')[1])||null;
+    show(d,pickUnit(d,want));watch(d);navLock=false;
+  });
+  function go(id,dir){
+    var i=idx(id);
+    if(i<0){return ending(id)}
+    location.hash=SCREENS[i].id;
+  }
+  function ending(id){
+    navLock=true;
+    document.getElementById('endT').textContent=id?'Màn '+id+' chưa ghép vào':'Tới đây là hết phần đã thiết kế';
+    document.getElementById('endP').textContent='Bản trải nghiệm có '+SCREENS.length+' màn đã thiết kế. Màn nào thiết kế xong sẽ tự được ghép vào đây.';
+    document.getElementById('end').classList.add('on');
+  }
+  document.getElementById('endBack').onclick=function(){document.getElementById('end').classList.remove('on');navLock=false};
+  function step(n){var i=cur+n;if(i<0)return;if(i>=SCREENS.length)return ending(null);location.hash=SCREENS[i].id}
+  function route(){
+    var h=decodeURIComponent(location.hash.slice(1)),id=h.split('/')[0],i=idx(id);if(i<0)i=0;
+    document.getElementById('end').classList.remove('on');
+    var s=SCREENS[i];
+    document.getElementById('wid').textContent=s.id;document.getElementById('wname').textContent=s.name;
+    document.getElementById('wpos').textContent=(i+1)+'/'+SCREENS.length;
+    document.getElementById('prev').disabled=i===0;
+    document.title=s.id+' '+s.name+' · Tạ Nhỏ';
+    if(i!==cur){cur=i;navLock=true;f.src=s.proto}
+    else{try{show(f.contentDocument,pickUnit(f.contentDocument,h.split('/')[1]||null))}catch(e){}}
+  }
+  addEventListener('hashchange',route);
+  document.getElementById('prev').onclick=function(){step(-1)};
+  document.getElementById('next').onclick=function(){step(1)};
+  /* sheet: every screen, plus the other states of the current one */
+  var sheet=document.getElementById('sheet'),panel=document.getElementById('panel');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function openSheet(){
+    var h='',d=null;try{d=f.contentDocument}catch(e){}
+    var us=d?units(d):[];
+    if(us.length>1){h+='<h3>Trạng thái của màn '+esc(SCREENS[cur].id)+'</h3>';us.forEach(function(u){h+='<button class="it'+(u.id===curUnit?' cur':'')+'" data-u="'+esc(u.id)+'"><span>'+esc(cap(u))+'</span></button>'})}
+    var fl='';SCREENS.forEach(function(s,i){if(s.flow!==fl){fl=s.flow;h+='<h3>'+esc(fl)+'</h3>'}h+='<button class="it'+(i===cur?' cur':'')+'" data-s="'+esc(s.id)+'"><b>'+esc(s.id)+'</b><span>'+esc(s.name)+'</span></button>'});
+    panel.innerHTML=h;sheet.classList.add('on');
+    var c=panel.querySelector('.it.cur[data-s]');if(c)c.scrollIntoView({block:'center'});
+  }
+  document.getElementById('where').onclick=openSheet;
+  document.getElementById('scrim').onclick=function(){sheet.classList.remove('on')};
+  panel.addEventListener('click',function(e){var b=e.target.closest('.it');if(!b)return;sheet.classList.remove('on');
+    if(b.dataset.s)location.hash=b.dataset.s;else if(b.dataset.u)location.hash=SCREENS[cur].id+'/'+b.dataset.u});
+  addEventListener('keydown',function(e){if(e.key==='Escape')sheet.classList.remove('on')});
+  scale();route();
+  var hint=document.getElementById('hint');setTimeout(function(){hint.classList.add('on')},600);setTimeout(function(){hint.classList.remove('on')},5200);
+})();
+</script>
+</body>
+</html>
