@@ -47,3 +47,27 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - Không cuộn ngang ở bề rộng 400px. Tôn trọng `prefers-reduced-motion`.
 - Ảnh nhúng nén lại, mỗi trang càng nhẹ càng tốt (mục tiêu dưới 3 MB).
 - Chụp ảnh 390×844 cho trạng thái chính và các biến thể quan trọng, rồi tự xem ảnh trước khi gửi chấm.
+- Tự xem **mọi khung** trên trang, không chỉ mấy ảnh được yêu cầu (gộp tất cả vào một tấm để soát).
+
+## Màn sức khoẻ, an toàn (từ lượt chấm 0.8–0.9)
+- **Bản quyền nội dung:** không dịch hay chế lại một bảng câu hỏi có điều khoản "không được sửa" (ví dụ PAR-Q+). Tự soạn câu hỏi riêng, ghi rõ là bản nháp chờ người có chuyên môn duyệt.
+- Không tự bịa luật sàng lọc trong bong bóng (ví dụ "không chắc thì chọn Có"). Bong bóng chỉ nói lời trung tính.
+- **Màn khuyên là lời khuyên, không phải cửa chặn:** tiêu đề viết như một gợi ý; khi chưa chọn gì thì bong bóng trung tính, không nói như thể đã chọn sẵn.
+- Không đưa con số mâu thuẫn với chữ (ví dụ "nhẹ" mà lại ghi "20–60 phút"). Mô tả chế độ bằng lời thường, ngắn và khớp nhau.
+- **Biểu cảm theo ngữ cảnh nghiêm túc:** cạnh câu trả lời về bệnh tim hay khi khai chỗ đau thì không cười toe, không nháy mắt, không mắt lim dim. Dùng vẻ chăm chú, lo lắng nhẹ.
+- Đạo cụ không được che mặt nhân vật (bút chì chéo qua mắt).
+
+## Luồng hỏi đáp
+- **Một chỉ báo tiến độ** mỗi màn: thanh trên cùng HOẶC các vạch đoạn, không cả hai.
+- Câu hỏi Có/Không: chạm là trả lời và tự sang câu sau sau một nhịp ngắn, không cần nút Tiếp cho từng câu; luôn giữ nút quay lại.
+- Thẻ câu hỏi có chiều cao cố định: đo bằng câu **dài nhất kèm dòng gợi ý**; chữ không được dính sát vạch ngăn.
+- **Thẻ chưa chọn phải trông bấm được:** nền trắng có viền mảnh và vòng tròn trống ở góc (chỗ dấu tick sẽ hiện), không để giống thẻ bị vô hiệu hoá.
+- Huy hiệu tick nằm **bên trong** góc thẻ hay chip, không lòi ra ngoài viền.
+
+## Hình cơ thể để chọn vùng
+- Hình không mặt nhìn từ sau dễ bị đọc nhầm thành mặt trước (lưng thành bụng). Mở ở mặt trước, vùng ở lưng đặt ở mặt sau, có nút "Mặt trước / Mặt sau", chọn vùng lưng thì hình tự quay.
+- Điểm chạm trên cơ thể phải to (khoảng 44px), có nhịp sáng nhẹ khi chưa chọn gì; nhãn bên cạnh là lối chọn thứ hai ngang hàng. Bong bóng nói đúng cả hai cách chọn.
+- Nền khung (gương) phải ấm, trung tính như nền kem/cát của 0.6/0.7; không dùng mảng xanh tím hay tím nhạt lạnh.
+- Chọn một vùng không thấy được ở mặt đang xem thì hình phải tự lật sang mặt kia; nếu chủ lật lại, tab mặt kia hiện số vùng đã chọn.
+- Cột nhãn chia đều chiều cao, không để khoảng trống chết giữa nhãn cuối và vạch ngăn.
+- Màn khuyên: bong bóng sau khi chọn phải nói rõ đó là lựa chọn của chủ ("Chủ chọn tập nhẹ…"), để ảnh chụp không bị đọc như đã bật sẵn.
