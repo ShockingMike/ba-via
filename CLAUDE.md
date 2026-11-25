@@ -39,6 +39,7 @@ Người dùng làm dự án này bằng **nhiều tài khoản Claude khác nha
 - **Thiết kế xong hết rồi mới code** (D14, chốt 2026-11-21): không code phần nào, kể cả rules engine, trước khi các màn bản đầu được thiết kế và duyệt.
 - **D3:** tủ đồ là đồ bỏ quên, MVP 12 món, giữ luật mảnh và mốc streak 4/12/26 tuần (chốt 2026-11-25).
 - **D4:** bóng trong gương làm 90 chuỗi riêng cho 90 bài, NHƯNG CHƯA LÀM: chỉ bắt tay khi người dùng bảo. Thiết kế màn dùng 1 chuỗi mẫu có sẵn (chốt 2026-11-25).
+- **Thanh điều hướng** (chốt 2026-11-26): kiểu C hướng G (Tiimo). Một viên thuốc trắng nổi gồm Hôm nay · Hội · Tủ đồ, tab chọn có biểu tượng tô đậm, chữ đậm và chấm vàng. Quả cầu mặt bạn đồng hành có vòng tiến độ tuần đứng riêng bên phải là tab Tôi. Biểu tượng bộ 2 (quả tạ và mặt trời · đập tay · tủ khoá), có hiệu ứng khi chạm. File ở `design/nav-icons/`, gồm cả `nav-anim.js`.
 - Hướng dẫn tập bằng "bóng trong gương" như bản v2: người dùng khen "mượt rồi".
 
 ## Cách làm việc người dùng muốn

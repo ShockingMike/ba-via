@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tạ Nhỏ Nav Icons Final</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--ink:#2A2340;--ink-2:#6F6880;--line:#EDE5D8;--desk:#EFE9DF;--body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;--display:"Baloo 2","Be Vietnam Pro",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--desk);color:var(--ink);font:500 14px/1.5 var(--body);padding:32px 16px 48px}
+main{max-width:860px;margin:0 auto;display:grid;gap:36px}
+h1{font:800 30px/1.1 var(--display);margin:0 0 6px}
+h2{font:800 20px/1.2 var(--display);margin:0 0 12px}
+p{margin:0;color:var(--ink-2);max-width:68ch}
+h2+p{margin:-6px 0 12px}
+button{font:inherit;border:0;background:none;padding:0;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.big{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+figure{margin:0;background:#fff;border-radius:24px;padding:22px 18px 18px;box-shadow:0 0 0 1.5px var(--line) inset}
+.pair{display:flex;justify-content:center;gap:18px}
+.off{color:var(--ink-2)}.onn{color:var(--ink)}
+.pair span,.row span{display:grid;place-items:center}
+figcaption{margin-top:14px;font-size:13px;color:var(--ink-2);text-align:center;text-wrap:balance}
+figcaption b{display:block;font:800 17px/1.2 var(--display);color:var(--ink)}
+figcaption i{display:block;margin-top:6px;font-style:normal;font-size:12px;color:#A39DB0}
+.bars{display:flex;flex-wrap:wrap;gap:12px}
+.bar{width:390px;max-width:100%;border-radius:24px;background:#FFFCF7;padding:10px 0 0;box-shadow:0 0 0 1px rgba(0,0,0,.05)}
+.bar small,.c small{display:block;padding:0 18px 4px;font:700 11px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;color:#A39DB0}
+.navg{position:relative;display:flex;align-items:flex-end;gap:10px;padding:2px 16px 12px}
+.navg .pill{flex:1;height:64px;border-radius:32px;background:#fff;box-shadow:0 0 0 1.5px var(--line) inset,0 14px 26px -16px rgba(86,60,22,.45);display:grid;grid-template-columns:repeat(3,1fr);padding:5px}
+.navg .t{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;border-radius:26px;color:var(--ink-2);font:700 11.5px/1 var(--body);transition:color .18s ease-out}
+.navg .t:focus-visible{outline:2px solid var(--ink);outline-offset:-3px}
+.navg .li{display:block}
+.vc .t.on{color:var(--ink);font-weight:800}
+.vc .t em{position:absolute;top:7px;right:calc(50% - 20px);width:8px;height:8px;border-radius:50%;background:#FFC93C;box-shadow:0 0 0 2px #fff;opacity:0}
+.vc .t.on em{opacity:1}
+.navg .orb{flex:none;position:relative;width:68px;height:68px;border-radius:50%;cursor:default}
+.vc .orb .ring{position:absolute;inset:-1px;width:70px;height:70px}
+.vc .orb i{position:absolute;inset:7px;border-radius:50%;background-color:#2EC4B6;background-size:118% auto;background-position:50% 22%;background-repeat:no-repeat;box-shadow:inset 0 -3px 0 rgba(0,0,0,.08)}
+.cmp{display:flex;flex-wrap:wrap;gap:12px}
+.c{background:#fff;border-radius:20px;padding:14px 6px 10px;box-shadow:0 0 0 1.5px var(--line) inset;min-width:170px}
+.row{display:flex;align-items:center;gap:16px;padding:8px 18px}
+.row u{text-decoration:none;font:700 11px/1 var(--body);color:#A39DB0;margin-left:auto}
+.row+.row{border-top:1.5px dashed var(--line)}
+code{font-size:.92em}
+{{face}}
+</style></head><body><main>
+<header><h1>Ba biểu tượng thanh điều hướng · bản chốt</h1>
+<p>Vẽ lại ba ý của bộ 2 thành một họ: lưới 24, đầu nét và góc bo tròn, một độ dày nét (1.9 thường, 2.3 khi chọn), mục đang chọn tô nhạt cùng dáng. File rời và <code>nav-anim.js</code> nằm trong <code>design/nav-icons/</code>.</p></header>
+<section><h2>Phóng to 96 px · thường và đang chọn</h2><div class="big">{{big}}</div></section>
+<section><h2>Cỡ thật 28 px trong thanh C</h2><p>Chạm vào từng mục để xem nó động đậy. Chạm lại mục đang chọn để xem lần nữa.</p><div class="bars">{{bars}}</div></section>
+<section><h2>So với bộ 2 cũ</h2><div class="cmp">{{cmp}}</div><div class="bars" style="margin-top:12px">{{oldbar}}</div></section>
+</main>
+<script src="nav-icons/nav-anim.js"></script>
+<script>
+// review helper: ?tab=1&t=260 selects tab 1 in every bar and freezes its animation at 260 ms (for screenshots)
+(function(){var q=new URLSearchParams(location.search);if(!q.has('tab'))return;
+  document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.navbar').forEach(function(b){TaNhoNav.select(b.querySelectorAll('.tab')[+q.get('tab')]).forEach(function(a){a.pause();a.currentTime=+q.get('t')||0})})})})();
+</script>
+</body></html>
