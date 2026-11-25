@@ -97,3 +97,34 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 ## Ghép vào bản trải nghiệm (app.html)
 - [ ] Mỗi trạng thái là `<section class="unit">` có `<p class="cap">`; trạng thái người dùng gặp đầu tiên có chú thích chứa "Vừa mở" hoặc "Chưa chọn".
 - [ ] Nút chính ở bước cuối gọi toast `Bản mẫu: sang <mã màn kế>.`; nút lùi gọi `Bản mẫu: về <mã màn trước>.` Đúng mã theo TRACKING.
+- Gộp ảnh nhân vật từ nhiều lần render khác camera hoặc khác cỡ ảnh: KHÔNG dùng chung một khung cắt hợp (union crop), vì nhân vật sẽ nhỏ đi; cắt từng ảnh theo khung riêng rồi đưa về cùng chiều cao.
+- Chiều cao theo phần trăm của một cha flex không có chiều cao cụ thể sẽ thành 0: ảnh nhân hoặc cảnh biến mất. Dùng chiều cao cố định cho khung ảnh.
+- Khi có dải nhắc phụ (sao lưu…), khung nhân vật phải co lại để bong bóng không đè lên đầu.
+- Ngày tháng ở đầu màn phải khớp với ô "hôm nay" trong dải tuần.
+
+## Vòng hằng ngày (từ lượt chấm 1.1–1.3)
+- **Luật "cái gì được tính" nói đối xứng:** mọi lựa chọn ghi kết quả cùng một kiểu, cùng một chỗ, cùng độ đậm ("Tính 1 buổi · 1 mảnh" / "Không tính vào lời hứa tuần"); không phủ định kép, không in đậm riêng một thẻ.
+- **Mỗi bài tập có một hình** cho người mới (tạm thời một hình nỉ cho mỗi kiểu động tác; chuỗi riêng từng bài để sau), kèm tên tiếng Việt dễ hiểu, tên tiếng Anh nhỏ.
+- **Nút chỉ có biểu tượng phải có chữ** (Đổi bài, Để sau). Không dùng biểu tượng đồng hồ nếu không phải hẹn giờ.
+- **Thay đổi được nhắc thì phải thấy và có đánh dấu:** khi bong bóng nói về một bài, bài đó tự cuộn vào tầm nhìn và có viền.
+- **Nhãn lặp trên mọi dòng thì đưa lên đầu danh sách** (một dòng ghi chú), không lặp lại từng dòng.
+- **Điểm chạm trên cơ thể nằm đúng bộ phận được gọi tên** (cổ tay ở cổ tay, gối ở gối); hình đủ to để chạm.
+- **Điều khiển không áp dụng thì thu lại**, không làm mờ (ví dụ chọn "Không đau" thì bỏ hẳn bước mức đau, kiểu đau).
+- **Danh sách cuộn mờ dần dưới nút cố định**, và có chỗ trống cuối danh sách để dòng cuối nổi lên trên lớp mờ.
+- **Biểu tượng tab cắt sạch nền**, không có ô vuông xám.
+- **Câu số liệu huấn luyện phải soát cách hiểu ngược:** "còn sức làm thêm 2–3 lần" dễ bị đọc thành "làm thêm 2–3 lần"; viết "dừng khi còn sức làm thêm 2–3 lần nữa, đừng cố tới hết sức".
+- Thanh trượt web mặc định không hợp với giao diện nỉ: dùng các bậc nỉ có chữ.
+- Một câu hỏi mỗi bước, kể cả trong tấm trượt: chỗ đau → mức → kiểu → kết quả.
+- Lựa chọn chưa chọn: nền trắng, viền mảnh, vòng tròn trống ở cùng một chỗ dấu tick sẽ hiện.
+- Một sân khấu cố định cho mọi trạng thái của màn chính: nhân vật cùng chiều cao, bóng đổ dính chân.
+- **Bong bóng ở màn chính có vị trí dọc cố định** giữa mọi trạng thái (đặt tuyệt đối ở đầu sân khấu), không trôi theo chiều cao nhân vật.
+- **Nhãn nhỏ và tiêu đề thẻ không nói cùng một ý** ("Tuần này đủ rồi" / "Đủ tuần rồi"): tiêu đề phải thêm thông tin mới.
+- **Biểu tượng tab dạng nhân vật**: cắt sát mặt (thấy mắt) để khi chuyển xám vẫn đọc được, không thành khối xám.
+- **Nút chính ghim đáy giữa các bước**; lựa chọn giãn ra lấp chỗ trống, không để nút nhảy lên xuống.
+- **Lựa chọn loại trừ ("Đủ cả", "Không đau") tách riêng** thành một dòng ở trên, không nằm lẫn như một chip ngang hàng.
+- **Tấm trượt có tiêu đề riêng từng bước và chỉ báo bước**, co theo nội dung; ghi chú chỉ hiện ở bước nó thuộc về.
+- **Hình nỉ của bài phải khớp tên bài** (ghế dốc thì có ghế nằm nghiêng, bài ngồi thì ngồi); soát từng hình với tên trước khi gửi.
+- **Danh sách tự cuộn có lớp mờ cả trên lẫn dưới**, để không thẻ nào bị cắt ngang chữ.
+- **Đuôi bong bóng chỉ về phía nhân vật**; bong bóng chính tối đa 3 dòng.
+- **Dấu chấm trang trí cũng là viên nỉ**, không dùng chấm phẳng.
+- Hình người dùng để chọn vùng: tay dang ra để cổ tay không trùng hông; khung hình co theo bề ngang để không cắt mất tay.

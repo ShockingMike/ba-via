@@ -8,10 +8,10 @@
 
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
-- Bản đầu đã thiết kế: **24/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 72 · Đang thiết kế 0 · Đã thiết kế 24 · Đang code 0 · Xong 0.
+- Bản đầu đã thiết kế: **27/79** · đã code xong: **0/79**.
+- Theo trạng thái (mọi bản): Chưa làm 69 · Đang thiết kế 0 · Đã thiết kế 27 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **6/17**.
-- Cập nhật lúc: 2026-11-25 14:09.
+- Cập nhật lúc: 2026-11-25 15:23.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -45,11 +45,11 @@
 
 | Mã | Màn | Bản | Trạng thái | Ghi chú |
 |---|---|---|---|---|
-| 1.1 | Hôm nay | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/1.1.jpg) · [bấm thử](prototypes/v2.html) |
-| 1.2 | Check-in | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/1.2.jpg) · [bấm thử](prototypes/v2.html) |
-| 1.2a | Hôm nay đau chỗ nào? (tấm trượt) | Bản đầu | Chưa làm |  |
-| 1.2b | Hôm nay vùng đỏ: chọn cách tập | Bản đầu | Chưa làm |  |
-| 1.3 | Buổi tập hôm nay (xem trước) | Bản đầu | Chưa làm |  |
+| 1.1 | Hôm nay | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.1.jpg) · [bấm thử](prototypes/1.1.html) |
+| 1.2 | Check-in | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.2.jpg) · [bấm thử](prototypes/1.2.html) |
+| 1.2a | Hôm nay đau chỗ nào? (tấm trượt) | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8,5/10 · [ảnh](shots/1.2a.jpg) · [bấm thử](prototypes/1.2a.html) |
+| 1.2b | Hôm nay vùng đỏ: chọn cách tập | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.2b.jpg) · [bấm thử](prototypes/1.2b.html) |
+| 1.3 | Buổi tập hôm nay (xem trước) | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.3.jpg) · [bấm thử](prototypes/1.3.html) |
 | 1.4 | Đang tập | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/1.4.jpg) · [bấm thử](prototypes/v2.html) |
 | 1.4a | Hướng dẫn động tác | Bản đầu | Chưa làm |  |
 | 1.4b | Báo đau giữa buổi (tấm trượt) | Bản đầu | Chưa làm |  |
@@ -219,3 +219,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-25: người dùng duyệt 0.14, 0.14a, 0.14b, 0.15 (xong onboarding). Bắt đầu nhánh 1: làm lại 6 màn v2 theo chất lượng mới.
 - 2026-11-25: chốt D3 (đồ bỏ quên, 12 món), D4 (90 chuỗi gương, để sau khi người dùng bảo), ghi D9 (đi bộ không tính).
 - 2026-11-25: thêm trang **Trải nghiệm app** (app.html): tự ghép các màn đã thiết kế thành một luồng bấm thử, tới đâu ghép tới đó.
+- 2026-11-25: thiết kế xong 1.1, 1.2, 1.2a, 1.2b, 1.3 (làm lại 1.1, 1.2 từ bản v2, đổi "tổ" thành "hội"). Qua 3 vòng Fable chấm: 8 / 8 / 8,5 / 8 / 8. Đã ghép vào trang Trải nghiệm app; chờ duyệt.
