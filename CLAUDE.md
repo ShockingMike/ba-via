@@ -32,6 +32,7 @@ Người dùng làm dự án này bằng **nhiều tài khoản Claude khác nha
 - **Logo: hướng C "Ba màu, một quả tạ"** (chốt 2026-11-21): một quả tạ nỉ ghép từ màu của ba bạn đồng hành. File cuối ở `design/logo/final/` (chỉ có trên máy, không đẩy lên repo). Chi tiết: `design/10-logo.md`.
 - Thế giới đồ bỏ quên (tài liệu cũ gọi là "Ba Vía"), shader **nỉ/len chọc**. Mặt Găng: phương án C (quai găng làm băng đô).
 - **Buổi đi bộ KHÔNG tính** vào số buổi hứa mỗi tuần N: không giữ streak, không được mảnh đồ, không tính thứ hạng nhóm (chốt 2026-11-25). Người mới chọn 5–6 buổi được gợi ý đổi lời hứa thành 3–4 buổi tạ.
+- **Buổi dừng giữa chừng** (chốt 2026-11-26): đã xong ít nhất 1 bài thì TÍNH 1 buổi (giữ streak, tính vào lời hứa tuần) nhưng KHÔNG cho mảnh đồ; chưa xong bài nào thì chỉ lưu nháp, không tính.
 - Mỗi buổi tập được 1 mảnh đồ, đủ mảnh thành 1 món, tối đa 1 món/tuần.
 - **D2:** mỗi món đồ là một lớp render 3D nỉ riêng, có che khuất đúng, xếp chồng lên nhau trên máy. Mỗi bạn đồng hành có **6 màu cố định** (chốt 2026-11-21).
 - Đồ thu thập được phải **mặc thật** lên avatar (mesh 3D gắn vào rig), không dùng icon dán đè.

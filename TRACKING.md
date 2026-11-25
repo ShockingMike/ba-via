@@ -11,7 +11,7 @@
 - Bản đầu đã thiết kế: **27/79** · đã code xong: **0/79**.
 - Theo trạng thái (mọi bản): Chưa làm 69 · Đang thiết kế 0 · Đã thiết kế 27 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **6/17**.
-- Cập nhật lúc: 2026-11-25 17:30.
+- Cập nhật lúc: 2026-11-25 18:13.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -222,3 +222,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-25: thiết kế xong 1.1, 1.2, 1.2a, 1.2b, 1.3 (làm lại 1.1, 1.2 từ bản v2, đổi "tổ" thành "hội"). Qua 3 vòng Fable chấm: 8 / 8 / 8,5 / 8 / 8. Đã ghép vào trang Trải nghiệm app; chờ duyệt.
 - 2026-11-26: chốt thanh điều hướng mới (kiểu C hướng G, biểu tượng bộ 2 có hiệu ứng khi chạm). Đang thay vào mọi màn.
 - 2026-11-26: người dùng duyệt 1.1, 1.2, 1.2a, 1.2b, 1.3. Bắt đầu 1.4 và 1.4a–g.
+- 2026-11-26: chốt buổi dừng giữa chừng (đã xong ≥1 bài): tính buổi, không cho mảnh.
