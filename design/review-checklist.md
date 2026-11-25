@@ -71,3 +71,10 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - Chọn một vùng không thấy được ở mặt đang xem thì hình phải tự lật sang mặt kia; nếu chủ lật lại, tab mặt kia hiện số vùng đã chọn.
 - Cột nhãn chia đều chiều cao, không để khoảng trống chết giữa nhãn cuối và vạch ngăn.
 - Màn khuyên: bong bóng sau khi chọn phải nói rõ đó là lựa chọn của chủ ("Chủ chọn tập nhẹ…"), để ảnh chụp không bị đọc như đã bật sẵn.
+
+## Danh sách dài, dụng cụ (từ cụm 0.10–0.13)
+- Danh sách nhiều mục (ví dụ 22 dụng cụ): chia nhóm gập mở được, ô hai cột; con số chính (ví dụ "Làm được X bài") nằm **ngoài** vùng cuộn để luôn thấy.
+- Biểu tượng ở đầu nhóm không được trùng với biểu tượng của một ô ngay bên dưới.
+- Con số tính từ dữ liệu thật (exercises.json) chứ không gõ tay; script dựng in ra số mong đợi của từng khung để đối chiếu với ảnh chụp.
+- Lựa chọn "Chưa biết" là một ô bình thường cùng kiểu với các ô khác, không thêm kiểu nút mới.
+- Mỗi giá trị nói luôn nghĩa thực tế bằng lời thường (ví dụ "mỗi lần thêm được 2,5 kg"), thay cho thuật ngữ.
