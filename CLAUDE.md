@@ -37,7 +37,11 @@ Người dùng làm dự án này bằng **nhiều tài khoản Claude khác nha
 - Hướng dẫn tập bằng "bóng trong gương" như bản v2: người dùng khen "mượt rồi".
 
 ## Cách làm việc người dùng muốn
-- Agent nghiên cứu và thiết kế chạy với model **fable** (người dùng muốn Fable làm cố vấn).
+- **Chia việc theo model (chốt 2026-11-25), mục tiêu là tiết kiệm token Fable mà chất lượng giữ nguyên hoặc tốt hơn:**
+  - **Opus dựng** màn hình, viết HTML, chạy Blender, chụp ảnh. Trước khi gửi chấm, Opus phải tự soát hết `design/review-checklist.md`.
+  - **Fable chỉ chấm** (so mù với ảnh app thật): một lượt ngắn, trả về điểm và danh sách lỗi. Fable cũng được dùng cho các quyết định sáng tạo lớn (nhân vật, logo, tên, phong cách).
+  - Vòng lặp: Opus dựng → Fable chấm → Opus sửa → Fable chấm lại nếu điểm dưới 8/10.
+  - Mỗi lỗi mới Fable bắt được thì thêm vào `design/review-checklist.md`, để lần sau Opus tự tránh.
 - Không tự khen chất lượng. Trước khi đưa người dùng xem, cho một agent khác so mù với ảnh app thật (Duolingo, Finch, Gentler Streak trong `design/refs/`) rồi sửa.
 - Nhân vật hay asset mới: đưa vài phương án để người dùng chọn, không tự chốt.
 - Trả lời người dùng bằng tiếng Việt, gọn, dễ đọc.
