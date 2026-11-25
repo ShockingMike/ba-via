@@ -8,10 +8,10 @@
 
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
-- Bản đầu đã thiết kế: **20/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 72 · Đang thiết kế 4 · Đã thiết kế 20 · Đang code 0 · Xong 0.
+- Bản đầu đã thiết kế: **24/79** · đã code xong: **0/79**.
+- Theo trạng thái (mọi bản): Chưa làm 72 · Đang thiết kế 0 · Đã thiết kế 24 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **3/17**.
-- Cập nhật lúc: 2026-11-25 12:21.
+- Cập nhật lúc: 2026-11-25 12:56.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -35,10 +35,10 @@
 | 0.11 | Checklist dụng cụ của phòng | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.11.jpg) · [bấm thử](prototypes/0.11.html) |
 | 0.12 | Bước tạ của phòng | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.12.jpg) · [bấm thử](prototypes/0.12.html) |
 | 0.13 | Dụng cụ cá nhân | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.13.jpg) · [bấm thử](prototypes/0.13.html) |
-| 0.14 | Hội: tạo hoặc vào | Bản đầu | Đang thiết kế |  |
-| 0.14a | Lập hội mới | Bản đầu | Đang thiết kế |  |
-| 0.14b | Vào hội bằng mã | Bản đầu | Đang thiết kế |  |
-| 0.15 | Bộ khởi đầu và tuần đầu tiên | Bản đầu | Đang thiết kế |  |
+| 0.14 | Hội: tạo hoặc vào | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.14.jpg) · [bấm thử](prototypes/0.14.html) |
+| 0.14a | Lập hội mới | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.14a.jpg) · [bấm thử](prototypes/0.14a.html) |
+| 0.14b | Vào hội bằng mã | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.14b.jpg) · [bấm thử](prototypes/0.14b.html) |
+| 0.15 | Bộ khởi đầu và tuần đầu tiên | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.15.jpg) · [bấm thử](prototypes/0.15.html) |
 | 0.16 | Bật thông báo | v1.1 | Chưa làm |  |
 
 ### Nhánh 1: Vòng lặp hằng ngày
@@ -215,3 +215,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-25: 0.8, 0.8a, 0.9 đã duyệt (chữ câu hỏi sức khoẻ vẫn chờ rà chuyên môn). Đang thiết kế cụm phòng tập 0.10–0.13.
 - 2026-11-25: thiết kế xong cụm phòng tập 0.10–0.13. Fable chấm 8 / 8,5 / 8 / 8,5; chờ duyệt. Chốt gọi nhóm là "hội".
 - 2026-11-25: 0.10–0.13 đã duyệt. Chốt D1: vào hội bằng mã, nối Google tuỳ chọn. Đang thiết kế 0.14, 0.14a, 0.14b, 0.15.
+- 2026-11-25: thiết kế xong 0.14, 0.14a, 0.14b, 0.15. Fable chấm 8 / 8 / 8 / 7,5, sau đó sửa nốt 0.15. Toàn bộ 18 màn onboarding bản đầu đã thiết kế; chờ duyệt.

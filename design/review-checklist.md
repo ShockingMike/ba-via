@@ -84,3 +84,12 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - Bong bóng không lặp lại dòng phụ của ô vừa chọn: bong bóng nói **vì sao**, ô nói **là gì**.
 - Dòng lựa chọn có số đo (kg, cỡ) nên có hình nỉ vẽ theo cỡ thật (thanh dài ngắn, đĩa to nhỏ). Biểu tượng vuông thì đặt khung vuông, nếu không mọi cỡ trông như nhau.
 - Nhãn "Khuyên dùng" nằm trong thẻ (dưới tiêu đề), không đè lên dấu tick hay lòi ra ngoài viền. Lựa chọn loại trừ ("Không mang gì") là một dòng full bề ngang dưới vạch ngăn.
+- Ô có ảnh nỉ đặt bằng class CSS: dùng `background-color`, không dùng `background:` viết gộp, vì nó xoá mất ảnh (dải tuần ở 0.15 từng mất viên nỉ vì lỗi này).
+- Cảnh rộng (nhiều hộp, cả hội) phải gom gọn để khi co theo bề ngang cột vẫn đủ cao; đừng để cảnh dài ngang rồi bé tí.
+- **Mọi luồng mời bạn phải có hành động chia sẻ:** nút chính "Chia sẻ mã" mở bảng chia sẻ của máy (mã + tên hội + một câu mời), "Sao chép" là nút phụ. Luật "không chia sẻ ra ngoài" chỉ áp cho bài tập, không áp cho mã mời.
+- Mã mời hiển thị và ô nhập mã dùng **cùng một cách chia nhóm** (3 + 3) và cùng một vạch ngăn.
+- Phần cố định của tên (ví dụ "Hội Tạ Nhỏ") là một chip không sửa được trong ô nhập; bộ đếm ký tự chỉ hiện khi gần chạm giới hạn.
+- Bong bóng đặt vào khoảng trống của cảnh (trên hộp), không đè lên đầu nhân vật.
+- Màn kết thúc là **khoảnh khắc vui**, không phải form tóm tắt: nhân vật to, là tâm điểm, có hiệu ứng nhỏ (an toàn với giảm chuyển động); phần tóm tắt gom thành một hàng chip.
+- Ô quà tặng (món đã có) không viền xanh ngọc, có nhãn "Mới", để không trông như lựa chọn bấm được. Ảnh món đồ phải đủ to để đọc (cắt sát một món nếu ảnh gốc có cả đôi đứng xa nhau).
+- Dấu chú thích trong một biểu thức Python kéo dài nhiều dòng có thể nuốt mất phần sau: kiểm tra mọi lớp CSS ảnh thực sự có trong trang.
