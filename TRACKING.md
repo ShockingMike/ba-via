@@ -208,3 +208,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-21: chốt D2 (đồ render theo lớp, mỗi bạn đồng hành 6 màu cố định). Đang sửa 0.2, 0.3 và thiết kế 0.4, 0.5.
 - 2026-11-21: thiết kế xong 0.4 (đặt tên, chọn 1 trong 6 màu: Bạc hà, Cam, Tím, Vàng nghệ, Hồng sen, Xanh trời) và 0.5 (hồ sơ 4 ô); đã qua so mù và sửa; chờ duyệt.
 - 2026-11-25: 0.4, 0.5 đã duyệt. Đang thiết kế 0.6 (mục tiêu, trình độ) và 0.7 (lời hứa tuần, thời lượng).
+- 2026-11-25: chốt buổi đi bộ không tính vào lời hứa tuần (không giữ streak, không được mảnh đồ, không tính thứ hạng).
