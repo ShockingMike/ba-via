@@ -11,7 +11,7 @@
 - Bản đầu đã thiết kế: **34/79** · đã code xong: **0/79**.
 - Theo trạng thái (mọi bản): Chưa làm 62 · Đang thiết kế 0 · Đã thiết kế 34 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **6/17**.
-- Cập nhật lúc: 2026-11-25 18:52.
+- Cập nhật lúc: 2026-11-25 20:46.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -225,3 +225,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-26: chốt buổi dừng giữa chừng (đã xong ≥1 bài): tính buổi, không cho mảnh.
 - 2026-11-26: thiết kế xong 1.4 và 1.4a–g (1.4 làm lại từ bản v2). Qua 3 vòng Fable chấm, tất cả đạt 8 trở lên (1.4: 8,5). Chờ duyệt.
 - 2026-11-26: người dùng duyệt 1.4 và 1.4a–g.
+- 2026-11-26 đêm: chạy render cả đêm (hàng đợi blender/queue, ghi chép ở blender/NIGHT-2026-11-26.md, chỉ có trên máy). Nháp danh mục 12 món đồ ở design/11-wardrobe-catalog.md. Đã dựng 9 món mới; Bình và Găng có đủ 65 tư thế màn hình; bóng gương 84/90 bài đang render.
