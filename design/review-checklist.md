@@ -128,3 +128,12 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - **Đuôi bong bóng chỉ về phía nhân vật**; bong bóng chính tối đa 3 dòng.
 - **Dấu chấm trang trí cũng là viên nỉ**, không dùng chấm phẳng.
 - Hình người dùng để chọn vùng: tay dang ra để cổ tay không trùng hông; khung hình co theo bề ngang để không cắt mất tay.
+
+## Thanh điều hướng (chốt 2026-11-26)
+- **Mẫu duy nhất: thanh C.** Viên thuốc trắng nổi, ba mục có chữ (Hôm nay, Hội, Tủ đồ); quả cầu Khăn đứng riêng bên phải là mục Tôi, có vòng tiến độ tuần màu xanh ngọc (số buổi đã tập / lời hứa N).
+- **Mục đang chọn:** biểu tượng tô nhạt và nét dày hơn, chữ đậm màu mực, chấm vàng nhỏ #FFC93C. Không dùng màu cam (cam chỉ cho nút chính).
+- **Biểu tượng và hiệu ứng chạm** là bộ cuối trong `design/nav-icons/` (sáu SVG + `nav-anim.js`), không vẽ lại riêng từng màn.
+- **Màn mới bắt buộc dùng markup chung:** `<nav class="navg"><div class="navbar"><button class="tab" data-icon="homnay|hoi|tudo">…</button></div><button class="orb">…</button></nav>`, sinh bằng hàm `tabbar()` trong `screen-1.1-1.3-src/screens1x.py`, và CSS khối "shared bottom nav" trong `t11h.html`.
+- Bản bấm thử phải là một file HTML: **nhúng thẳng** `nav-anim.js` vào trang (thay `{{id}}` bằng một mã khác để qua bước kiểm tra chỗ trống của script dựng, và thoát chuỗi `</script` trong phần chú thích, nếu không khối script bị cắt giữa chừng và biểu tượng không hiện).
+- Thanh nằm trong dòng chảy dưới nút chính (không đè lên nút "Vào tập"), cách thanh home 30px.
+- Trong bản mẫu, chạm Hội, Tủ đồ, Tôi chỉ hiện toast "Bản mẫu: tab … chưa có bản thiết kế." rồi trả mục chọn về; không dùng chữ "sang <mã>" khi màn đó chưa có.
