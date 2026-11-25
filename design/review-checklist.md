@@ -8,6 +8,12 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - **Câu hỏi hoặc tiêu đề luôn nằm cố định trên đầu màn**, không biến mất sau khi chọn (giống 0.4).
 - **Cố định khung giữa các biến thể:** nhân vật, chấm chuyển trang, tên và bong bóng thoại không được nhảy vị trí khi đổi lựa chọn hoặc đổi nhân vật.
 - **Thẻ co theo nội dung**, không để thừa chỗ ở trạng thái ít dữ liệu.
+- **Một câu hỏi mỗi màn** (kiểu Duolingo). Hai câu hỏi trên một màn thì bị chê là form hay danh sách khô khan; tách thành nhiều bước trong cùng một khung.
+- **Tiêu đề và mọi thứ nằm gọn trong cột nội dung.** Không tràn qua lề, kể cả đạo cụ trong cảnh (ghế, bàn).
+- **Không để đoạn chữ mồ côi** lơ lửng phía trên nút chính. Gắn nó vào thẻ liên quan hoặc vào bong bóng thoại.
+- **Bong bóng thoại không được che đầu nhân vật.**
+- **Bong bóng và nội dung không được mâu thuẫn**, ví dụ bong bóng nói "4" trong khi con số trên màn là "6".
+- **Không lặp lại cùng một hình** ở cùng cỡ ngay cạnh nhau (đạo cụ nhân vật cầm và biểu tượng trong thẻ).
 
 ## Nhân vật (bạn đồng hành)
 - Dáng và biểu cảm phải **khớp tính cách**: Khăn nhút nhát, Bình mê lập kế hoạch, Găng lười mà khoẻ.
@@ -17,6 +23,7 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - Không dán cùng một ảnh render vào hai biến thể khác nhau.
 
 ## Thành phần giao diện
+- **Dấu tick là huy hiệu ở góc trên bên phải thẻ.** Chữ trong thẻ không bị đẩy lệch khi chọn hay bỏ chọn.
 - **Một kiểu đánh dấu đã chọn** cho toàn app: nền xanh ngọc kèm dấu tick, giống chip ở 0.5. Không trộn nút radio bên phải với tick bên trái.
 - Lựa chọn chưa chọn **không được trông như bị vô hiệu hoá**.
 - Lựa chọn phải có **phản hồi đáng giá**: biểu tượng phóng to, nhân vật phản ứng. Không để trông như danh sách cài đặt.
