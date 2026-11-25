@@ -78,3 +78,9 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - Con số tính từ dữ liệu thật (exercises.json) chứ không gõ tay; script dựng in ra số mong đợi của từng khung để đối chiếu với ảnh chụp.
 - Lựa chọn "Chưa biết" là một ô bình thường cùng kiểu với các ô khác, không thêm kiểu nút mới.
 - Mỗi giá trị nói luôn nghĩa thực tế bằng lời thường (ví dụ "mỗi lần thêm được 2,5 kg"), thay cho thuật ngữ.
+- Một món chỉ nằm ở **một** màn: không vừa có ô "Dây kháng lực" trong danh sách vừa có thẻ bảo "thêm dây ở bước sau". Đồ cá nhân chỉ khai ở màn đồ cá nhân.
+- Mẫu "đầy đủ" phải tích sẵn **tất cả**; nhóm đang gập vẫn ghi tên các món đã tích (hoặc "Đủ cả" / "Chưa có món nào").
+- Khi đã có thẻ ghi chú, bong bóng chỉ còn **một dòng ngắn**, để danh sách không bị đẩy xuống dưới mép màn.
+- Bong bóng không lặp lại dòng phụ của ô vừa chọn: bong bóng nói **vì sao**, ô nói **là gì**.
+- Dòng lựa chọn có số đo (kg, cỡ) nên có hình nỉ vẽ theo cỡ thật (thanh dài ngắn, đĩa to nhỏ). Biểu tượng vuông thì đặt khung vuông, nếu không mọi cỡ trông như nhau.
+- Nhãn "Khuyên dùng" nằm trong thẻ (dưới tiêu đề), không đè lên dấu tick hay lòi ra ngoài viền. Lựa chọn loại trừ ("Không mang gì") là một dòng full bề ngang dưới vạch ngăn.
