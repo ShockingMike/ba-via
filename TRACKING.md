@@ -11,7 +11,7 @@
 - Bản đầu đã thiết kế: **34/79** · đã code xong: **0/79**.
 - Theo trạng thái (mọi bản): Chưa làm 62 · Đang thiết kế 0 · Đã thiết kế 34 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **6/17**.
-- Cập nhật lúc: 2026-11-25 18:33.
+- Cập nhật lúc: 2026-11-25 18:52.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -50,14 +50,14 @@
 | 1.2a | Hôm nay đau chỗ nào? (tấm trượt) | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8,5/10 · [ảnh](shots/1.2a.jpg) · [bấm thử](prototypes/1.2a.html) |
 | 1.2b | Hôm nay vùng đỏ: chọn cách tập | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.2b.jpg) · [bấm thử](prototypes/1.2b.html) |
 | 1.3 | Buổi tập hôm nay (xem trước) | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.3.jpg) · [bấm thử](prototypes/1.3.html) |
-| 1.4 | Đang tập | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8,5/10 · [ảnh](shots/1.4.jpg) · [bấm thử](prototypes/1.4.html) |
-| 1.4a | Hướng dẫn động tác | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.4a.jpg) · [bấm thử](prototypes/1.4a.html) |
-| 1.4b | Báo đau giữa buổi (tấm trượt) | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.4b.jpg) · [bấm thử](prototypes/1.4b.html) |
-| 1.4c | Hỏi bước tạ lần đầu dùng dụng cụ (tấm trượt) | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.4c.jpg) · [bấm thử](prototypes/1.4c.html) |
-| 1.4d | Sửa số và ghi chú bài (tấm trượt) | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.4d.jpg) · [bấm thử](prototypes/1.4d.html) |
-| 1.4e | Kỷ lục mới tại chỗ (thông báo nổi) | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.4e.jpg) · [bấm thử](prototypes/1.4e.html) |
-| 1.4f | App tự chỉnh giữa buổi (thông báo) | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.4f.jpg) · [bấm thử](prototypes/1.4f.html) |
-| 1.4g | Dừng buổi giữa chừng (xác nhận) | Bản đầu | Đã thiết kế | Chờ duyệt · Fable 8/10 · [ảnh](shots/1.4g.jpg) · [bấm thử](prototypes/1.4g.html) |
+| 1.4 | Đang tập | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8,5/10 · [ảnh](shots/1.4.jpg) · [bấm thử](prototypes/1.4.html) |
+| 1.4a | Hướng dẫn động tác | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.4a.jpg) · [bấm thử](prototypes/1.4a.html) |
+| 1.4b | Báo đau giữa buổi (tấm trượt) | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.4b.jpg) · [bấm thử](prototypes/1.4b.html) |
+| 1.4c | Hỏi bước tạ lần đầu dùng dụng cụ (tấm trượt) | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.4c.jpg) · [bấm thử](prototypes/1.4c.html) |
+| 1.4d | Sửa số và ghi chú bài (tấm trượt) | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.4d.jpg) · [bấm thử](prototypes/1.4d.html) |
+| 1.4e | Kỷ lục mới tại chỗ (thông báo nổi) | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.4e.jpg) · [bấm thử](prototypes/1.4e.html) |
+| 1.4f | App tự chỉnh giữa buổi (thông báo) | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.4f.jpg) · [bấm thử](prototypes/1.4f.html) |
+| 1.4g | Dừng buổi giữa chừng (xác nhận) | Bản đầu | Đã thiết kế | Đã duyệt · Fable 8/10 · [ảnh](shots/1.4g.jpg) · [bấm thử](prototypes/1.4g.html) |
 | 1.5 | Buổi này thế nào? | Bản đầu | Chưa làm |  |
 | 1.6 | Xong buổi | Bản đầu | Đã thiết kế | Bản v2 · [ảnh](shots/1.6.jpg) · [bấm thử](prototypes/v2.html) |
 | 1.6a | Nhận món: thanh đầy | Bản đầu | Chưa làm |  |
@@ -224,3 +224,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-26: người dùng duyệt 1.1, 1.2, 1.2a, 1.2b, 1.3. Bắt đầu 1.4 và 1.4a–g.
 - 2026-11-26: chốt buổi dừng giữa chừng (đã xong ≥1 bài): tính buổi, không cho mảnh.
 - 2026-11-26: thiết kế xong 1.4 và 1.4a–g (1.4 làm lại từ bản v2). Qua 3 vòng Fable chấm, tất cả đạt 8 trở lên (1.4: 8,5). Chờ duyệt.
+- 2026-11-26: người dùng duyệt 1.4 và 1.4a–g.
