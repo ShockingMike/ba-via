@@ -137,3 +137,24 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - Bản bấm thử phải là một file HTML: **nhúng thẳng** `nav-anim.js` vào trang (thay `{{id}}` bằng một mã khác để qua bước kiểm tra chỗ trống của script dựng, và thoát chuỗi `</script` trong phần chú thích, nếu không khối script bị cắt giữa chừng và biểu tượng không hiện).
 - Thanh nằm trong dòng chảy dưới nút chính (không đè lên nút "Vào tập"), cách thanh home 30px.
 - Trong bản mẫu, chạm Hội, Tủ đồ, Tôi chỉ hiện toast "Bản mẫu: tab … chưa có bản thiết kế." rồi trả mục chọn về; không dùng chữ "sang <mã>" khi màn đó chưa có.
+
+## Màn tập (từ cụm 1.4)
+- Trong buổi tập không có thanh điều hướng; nút X ở góc mở xác nhận dừng buổi.
+- Hình bóng trong gương không được cắt mất đầu: khi khung gương phải thấp lại (vì có thẻ thông báo), dùng `object-fit:contain` trên nền cùng màu kính.
+- Tên bài không được cắt bằng dấu ba chấm: đưa nút phụ (Hướng dẫn) vào góc khung gương thay vì đặt cạnh tên.
+- Lời bạn đồng hành nằm một dòng riêng dưới chấm set, không chen cạnh chấm set rồi bị cắt.
+- Hình tĩnh theo kiểu động tác phải khớp dụng cụ của bài (thanh đòn thì hình cầm thanh đòn, không phải tạ tay).
+- Dừng buổi giữa chừng: đã xong ít nhất 1 bài thì tính 1 buổi · 1 mảnh; chưa xong bài nào thì lưu nháp, chưa tính. Nói rõ trên tấm xác nhận.
+- Thông báo kỷ lục là dải nổi tự tắt, không chặn đồng hồ nghỉ hay nút bên dưới.
+- Chuỗi có dấu % trong mã Python dùng toán tử % phải viết %% (lỗi "unsupported format character").
+- **Nút trong buổi tập tối thiểu 48pt** (nút −/+ 52pt, ±15s và X 46–48pt); không có hành động chỉ là chữ, mỗi hành động là chip có biểu tượng và chữ.
+- **Nút chính và hai ô số ở toạ độ cố định** qua mọi trạng thái (khoá đáy màn); dưới mỗi số có ô cố định 2 dòng cho "đích" hoặc số đĩa.
+- **Hành động an toàn (Báo đau) có ở mọi trạng thái con**, kể cả lúc nghỉ.
+- **Mũi tên phải khớp chữ** (xuống = XUỐNG); lúc nghỉ không hiện nhãn pha động tác.
+- **Cùng một giá trị phải khớp giữa các màn** (tạ khởi động 1.4 = 1.4d; số phút 1.1 = 1.3).
+- **Không có thông báo nội bộ trong giao diện** người dùng thấy.
+- **Câu dự phòng theo từng loại dụng cụ** (tạ tay 2 kg, thanh đòn với đĩa 1,25 kg, máy 5 kg mỗi nấc).
+- **Toast không bao giờ che hình hướng dẫn** trong gương.
+- **Không hỏi câu cài đặt giữa set**: chỉ hỏi lúc nghỉ hoặc lúc xem trước.
+- **Không chèn nút giữa câu chữ**: nút nằm một dòng riêng.
+- Dừng buổi sau ít nhất 1 bài: tính 1 buổi (chuỗi tuần, lời hứa) nhưng không có mảnh đồ; 0 bài là nháp, không tính.
