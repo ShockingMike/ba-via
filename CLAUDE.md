@@ -36,6 +36,8 @@ Người dùng làm dự án này bằng **nhiều tài khoản Claude khác nha
 - Đồ thu thập được phải **mặc thật** lên avatar (mesh 3D gắn vào rig), không dùng icon dán đè.
 - Asset làm bằng phần mềm trong máy (Blender portable ở `tools/`). Không dùng Higgsfield hay OpenArt cho app này.
 - **Thiết kế xong hết rồi mới code** (D14, chốt 2026-11-21): không code phần nào, kể cả rules engine, trước khi các màn bản đầu được thiết kế và duyệt.
+- **D3:** tủ đồ là đồ bỏ quên, MVP 12 món, giữ luật mảnh và mốc streak 4/12/26 tuần (chốt 2026-11-25).
+- **D4:** bóng trong gương làm 90 chuỗi riêng cho 90 bài, NHƯNG CHƯA LÀM: chỉ bắt tay khi người dùng bảo. Thiết kế màn dùng 1 chuỗi mẫu có sẵn (chốt 2026-11-25).
 - Hướng dẫn tập bằng "bóng trong gương" như bản v2: người dùng khen "mượt rồi".
 
 ## Cách làm việc người dùng muốn

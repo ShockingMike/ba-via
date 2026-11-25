@@ -10,8 +10,8 @@
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
 - Bản đầu đã thiết kế: **24/79** · đã code xong: **0/79**.
 - Theo trạng thái (mọi bản): Chưa làm 72 · Đang thiết kế 0 · Đã thiết kế 24 · Đang code 0 · Xong 0.
-- Giai đoạn xong: **0/19** · quyết định đã chốt: **3/17**.
-- Cập nhật lúc: 2026-11-25 13:59.
+- Giai đoạn xong: **0/19** · quyết định đã chốt: **6/17**.
+- Cập nhật lúc: 2026-11-25 14:04.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -180,13 +180,13 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 |---|---|---|---|
 | D1 | Vào tổ bằng mã nhóm không tài khoản, hay đăng nhập Google? | Phương án thứ ba: vào bằng mã cho nhanh, nối Google là tuỳ chọn để giữ danh tính. Lý do chính là rủi ro iOS xoá dữ liệu. | Vào hội bằng mã (đăng nhập ẩn danh), cho nối Google sau trong mục Tôi để giữ dữ liệu (chốt 2026-11-25) |
 | D2 | Vía mặc đồ đến được điện thoại bằng cách nào, và màu vía là bảng cố định hay tự do? | Render sẵn theo lớp + bảng 6 màu cố định mỗi giống. Cần người dùng xác nhận rằng lớp đồ render 3D riêng rồi ghép vẫn đúng yêu cầu "mặc thật, không dán 2D". Thử trong giai đoạn A1 trước khi làm hàng loạt. | Render theo lớp + 6 màu cố định mỗi bạn đồng hành (chốt 2026-11-21) |
-| D3 | Danh mục đồ và các mốc mở đồ theo thế giới Ba Vía là gì? | Viết lại theo đồ bỏ quên, MVP 12 món. Giữ mốc 4/12/26 tuần của tài liệu 06 và sửa chữ trong bản v2. |  |
-| D4 | Bóng trong gương làm mẫu cho 90 bài bằng cách nào? | Phương án thứ ba, và vía là hình riêng đặt cạnh gương để ảnh gương dùng chung cho mọi giống. |  |
+| D3 | Danh mục đồ và các mốc mở đồ theo thế giới Ba Vía là gì? | Viết lại theo đồ bỏ quên, MVP 12 món. Giữ mốc 4/12/26 tuần của tài liệu 06 và sửa chữ trong bản v2. | Đồ bỏ quên, MVP 12 món; giữ luật mảnh, mốc streak 4/12/26 tuần (chốt 2026-11-25) |
+| D4 | Bóng trong gương làm mẫu cho 90 bài bằng cách nào? | Phương án thứ ba, và vía là hình riêng đặt cạnh gương để ảnh gương dùng chung cho mọi giống. | 90 chuỗi, mỗi bài một chuỗi riêng. CHƯA làm: chỉ bắt đầu khi người dùng bảo. Màn 1.4a thiết kế bằng 1 chuỗi mẫu có sẵn (chốt 2026-11-25) |
 | D5 | Tiến độ (lịch sử, biểu đồ, cân nặng) nằm ở đâu? | Trong tab Tôi. Bốn tab đã được duyệt, và tiến độ không phải việc hằng ngày. |  |
 | D6 | Có cho đổi giống vía sau khi đã nhận không? | Cho đổi có xác nhận. Tài liệu 06 đã quy định tủ đồ đi theo người. |  |
 | D7 | Chia sẻ hồ sơ phòng tập bằng cách nào sau khi đã bỏ chia sẻ ra ngoài? | Qua tổ trong app. File sao lưu vẫn chứa hồ sơ phòng nên không mất gì. Nếu chọn hướng này, bước vào tổ (0.14) nên chuyển lên trước bước tạo phòng (0.10) để người vào sau lấy được phòng ngay lần đầu. |  |
 | D8 | Một người có được ở nhiều tổ cùng lúc không? | Một tổ ở MVP. Mô hình dữ liệu vẫn để tổ là danh sách để mở rộng sau. |  |
-| D9 | Buổi đi bộ 20–30 phút ở ngày vùng đỏ có tính là buổi đạt và cho mảnh không? | Có. Nếu không, người mệt sẽ cố tập tạ để khỏi thiệt, ngược với luật chống tập quá sức. |  |
+| D9 | Buổi đi bộ 20–30 phút ở ngày vùng đỏ có tính là buổi đạt và cho mảnh không? | Có. Nếu không, người mệt sẽ cố tập tạ để khỏi thiệt, ngược với luật chống tập quá sức. | Không: buổi đi bộ không giữ streak, không cho mảnh, không tính thứ hạng (chốt 2026-11-25) |
 | D10 | Bài đăng trong tổ: có lời tự viết và bình luận không? | MVP chỉ thẻ tự sinh + cho vía. Nhóm đã có chỗ nói chuyện riêng; bình luận kéo theo việc kiểm duyệt và thông báo. |  |
 | D11 | Ai đặt mục tiêu thử thách tuần của tổ? | App tự đặt. Con số phần trăm chỉnh sau khi thử với nhóm thật. |  |
 | D12 | Streak tổ tính tuần đạt khi nào? | Từ 80% số người đạt, và người nghỉ có phép không tính. Tổ 3 người thì nghĩa là cả ba. |  |
@@ -217,3 +217,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-25: 0.10–0.13 đã duyệt. Chốt D1: vào hội bằng mã, nối Google tuỳ chọn. Đang thiết kế 0.14, 0.14a, 0.14b, 0.15.
 - 2026-11-25: thiết kế xong 0.14, 0.14a, 0.14b, 0.15. Fable chấm 8 / 8 / 8 / 7,5, sau đó sửa nốt 0.15. Toàn bộ 18 màn onboarding bản đầu đã thiết kế; chờ duyệt.
 - 2026-11-25: người dùng duyệt 0.14, 0.14a, 0.14b, 0.15 (xong onboarding). Bắt đầu nhánh 1: làm lại 6 màn v2 theo chất lượng mới.
+- 2026-11-25: chốt D3 (đồ bỏ quên, 12 món), D4 (90 chuỗi gương, để sau khi người dùng bảo), ghi D9 (đi bộ không tính).
