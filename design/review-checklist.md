@@ -93,3 +93,7 @@ Tổng hợp từ các lượt so mù màn 0.1–0.7 và bản v2. Người dự
 - Màn kết thúc là **khoảnh khắc vui**, không phải form tóm tắt: nhân vật to, là tâm điểm, có hiệu ứng nhỏ (an toàn với giảm chuyển động); phần tóm tắt gom thành một hàng chip.
 - Ô quà tặng (món đã có) không viền xanh ngọc, có nhãn "Mới", để không trông như lựa chọn bấm được. Ảnh món đồ phải đủ to để đọc (cắt sát một món nếu ảnh gốc có cả đôi đứng xa nhau).
 - Dấu chú thích trong một biểu thức Python kéo dài nhiều dòng có thể nuốt mất phần sau: kiểm tra mọi lớp CSS ảnh thực sự có trong trang.
+
+## Ghép vào bản trải nghiệm (app.html)
+- [ ] Mỗi trạng thái là `<section class="unit">` có `<p class="cap">`; trạng thái người dùng gặp đầu tiên có chú thích chứa "Vừa mở" hoặc "Chưa chọn".
+- [ ] Nút chính ở bước cuối gọi toast `Bản mẫu: sang <mã màn kế>.`; nút lùi gọi `Bản mẫu: về <mã màn trước>.` Đúng mã theo TRACKING.
