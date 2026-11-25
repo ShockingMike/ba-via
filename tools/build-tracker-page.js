@@ -172,7 +172,7 @@ a{color:var(--acc)}
     <div><div class="eyebrow">Bản đầu đã thiết kế</div><div class="big">${nDesigned}<small> / ${mvp.length} màn</small></div></div>
     <div class="r"><div class="eyebrow">Giai đoạn hiện tại</div><div style="font-weight:700;margin-top:4px">${curPhase ? `${esc(curPhase.id)} · ${esc(curPhase.name)}` : 'Đã xong tất cả'}</div></div>
   </div>
-  <div class="track">${seg}</div>
+  <div class="track">${seg}</div>
   <div class="legend">${STATES.map((s) => `<span><span class="dot" style="background:${{ 'Chưa làm': 'var(--line)', 'Đang thiết kế': 'var(--amber)', 'Đã thiết kế': 'var(--acc)', 'Đang code': 'var(--violet)', 'Xong': 'var(--teal)' }[s]}"></span>${esc(s)} <b>${counts[s]}</b></span>`).join('')}</div>
 </section>
 <section class="card stats">
@@ -207,6 +207,7 @@ fs.writeFileSync(path.join(root, 'docs', 'index.html'), html);
 fs.mkdirSync(path.join(root, 'docs', 'shots'), { recursive: true });
 const protoDir = path.join(root, 'prototypes');
 if (fs.existsSync(protoDir)) { fs.mkdirSync(path.join(root, 'docs', 'prototypes'), { recursive: true }); for (const f of fs.readdirSync(protoDir)) {
+  if (fs.statSync(path.join(protoDir, f)).isDirectory()) { fs.cpSync(path.join(protoDir, f), path.join(root, 'docs', 'prototypes', f), { recursive: true }); continue; }
   // Prototypes are written as page bodies (artifact style); give them a proper document shell for GitHub Pages.
   let h = fs.readFileSync(path.join(protoDir, f), 'utf8');
   if (!/^\s*<!doctype/i.test(h)) h = '<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><style>html{color-scheme:light}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' + h + '</body></html>';
