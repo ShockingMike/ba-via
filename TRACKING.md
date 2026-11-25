@@ -9,9 +9,9 @@
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
 - Bản đầu đã thiết kế: **20/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 76 · Đang thiết kế 0 · Đã thiết kế 20 · Đang code 0 · Xong 0.
-- Giai đoạn xong: **0/19** · quyết định đã chốt: **2/17**.
-- Cập nhật lúc: 2026-11-25 11:28.
+- Theo trạng thái (mọi bản): Chưa làm 72 · Đang thiết kế 4 · Đã thiết kế 20 · Đang code 0 · Xong 0.
+- Giai đoạn xong: **0/19** · quyết định đã chốt: **3/17**.
+- Cập nhật lúc: 2026-11-25 12:21.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -31,14 +31,14 @@
 | 0.8 | Sàng lọc sức khoẻ | Bản đầu | Đã thiết kế | Đã duyệt. Câu hỏi sức khoẻ là bản nháp, chờ rà chuyên môn. · [ảnh](shots/0.8.jpg) · [bấm thử](prototypes/0.8.html) |
 | 0.8a | Khuyên hỏi bác sĩ trước | Bản đầu | Đã thiết kế | Đã duyệt. Câu hỏi sức khoẻ là bản nháp, chờ rà chuyên môn. · [ảnh](shots/0.8a.jpg) · [bấm thử](prototypes/0.8a.html) |
 | 0.9 | Vùng hay đau hoặc chấn thương cũ | Bản đầu | Đã thiết kế | Đã duyệt. · [ảnh](shots/0.9.jpg) · [bấm thử](prototypes/0.9.html) |
-| 0.10 | Phòng tập đầu tiên | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.10.jpg) · [bấm thử](prototypes/0.10.html) |
-| 0.11 | Checklist dụng cụ của phòng | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.11.jpg) · [bấm thử](prototypes/0.11.html) |
-| 0.12 | Bước tạ của phòng | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.12.jpg) · [bấm thử](prototypes/0.12.html) |
-| 0.13 | Dụng cụ cá nhân | Bản đầu | Đã thiết kế | Chờ duyệt · [ảnh](shots/0.13.jpg) · [bấm thử](prototypes/0.13.html) |
-| 0.14 | Tổ: tạo hoặc vào | Bản đầu | Chưa làm |  |
-| 0.14a | Lập tổ mới | Bản đầu | Chưa làm |  |
-| 0.14b | Vào tổ bằng mã | Bản đầu | Chưa làm |  |
-| 0.15 | Bộ khởi đầu và tuần đầu tiên | Bản đầu | Chưa làm |  |
+| 0.10 | Phòng tập đầu tiên | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.10.jpg) · [bấm thử](prototypes/0.10.html) |
+| 0.11 | Checklist dụng cụ của phòng | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.11.jpg) · [bấm thử](prototypes/0.11.html) |
+| 0.12 | Bước tạ của phòng | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.12.jpg) · [bấm thử](prototypes/0.12.html) |
+| 0.13 | Dụng cụ cá nhân | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.13.jpg) · [bấm thử](prototypes/0.13.html) |
+| 0.14 | Hội: tạo hoặc vào | Bản đầu | Đang thiết kế |  |
+| 0.14a | Lập hội mới | Bản đầu | Đang thiết kế |  |
+| 0.14b | Vào hội bằng mã | Bản đầu | Đang thiết kế |  |
+| 0.15 | Bộ khởi đầu và tuần đầu tiên | Bản đầu | Đang thiết kế |  |
 | 0.16 | Bật thông báo | v1.1 | Chưa làm |  |
 
 ### Nhánh 1: Vòng lặp hằng ngày
@@ -178,7 +178,7 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 
 | Mã | Câu hỏi | Fable đề xuất | Đã chốt |
 |---|---|---|---|
-| D1 | Vào tổ bằng mã nhóm không tài khoản, hay đăng nhập Google? | Phương án thứ ba: vào bằng mã cho nhanh, nối Google là tuỳ chọn để giữ danh tính. Lý do chính là rủi ro iOS xoá dữ liệu. |  |
+| D1 | Vào tổ bằng mã nhóm không tài khoản, hay đăng nhập Google? | Phương án thứ ba: vào bằng mã cho nhanh, nối Google là tuỳ chọn để giữ danh tính. Lý do chính là rủi ro iOS xoá dữ liệu. | Vào hội bằng mã (đăng nhập ẩn danh), cho nối Google sau trong mục Tôi để giữ dữ liệu (chốt 2026-11-25) |
 | D2 | Vía mặc đồ đến được điện thoại bằng cách nào, và màu vía là bảng cố định hay tự do? | Render sẵn theo lớp + bảng 6 màu cố định mỗi giống. Cần người dùng xác nhận rằng lớp đồ render 3D riêng rồi ghép vẫn đúng yêu cầu "mặc thật, không dán 2D". Thử trong giai đoạn A1 trước khi làm hàng loạt. | Render theo lớp + 6 màu cố định mỗi bạn đồng hành (chốt 2026-11-21) |
 | D3 | Danh mục đồ và các mốc mở đồ theo thế giới Ba Vía là gì? | Viết lại theo đồ bỏ quên, MVP 12 món. Giữ mốc 4/12/26 tuần của tài liệu 06 và sửa chữ trong bản v2. |  |
 | D4 | Bóng trong gương làm mẫu cho 90 bài bằng cách nào? | Phương án thứ ba, và vía là hình riêng đặt cạnh gương để ảnh gương dùng chung cho mọi giống. |  |
@@ -214,3 +214,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-25: thiết kế xong 0.8 (sàng lọc sức khoẻ, 7 câu tự viết, bỏ PAR-Q+ vì bản quyền cấm sửa), 0.8a (khuyên hỏi bác sĩ, chế độ nhẹ) và 0.9 (vùng hay đau, hình bóng gương có mặt trước và mặt sau). Fable chấm 8,5 / 8 / 7,5, sau đó đã sửa nốt; chờ duyệt.
 - 2026-11-25: 0.8, 0.8a, 0.9 đã duyệt (chữ câu hỏi sức khoẻ vẫn chờ rà chuyên môn). Đang thiết kế cụm phòng tập 0.10–0.13.
 - 2026-11-25: thiết kế xong cụm phòng tập 0.10–0.13. Fable chấm 8 / 8,5 / 8 / 8,5; chờ duyệt. Chốt gọi nhóm là "hội".
+- 2026-11-25: 0.10–0.13 đã duyệt. Chốt D1: vào hội bằng mã, nối Google tuỳ chọn. Đang thiết kế 0.14, 0.14a, 0.14b, 0.15.
