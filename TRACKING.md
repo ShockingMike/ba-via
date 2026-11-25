@@ -9,9 +9,9 @@
 <!-- SUMMARY:START -->
 - Tổng: **96** màn, trong đó **79** thuộc bản đầu.
 - Bản đầu đã thiết kế: **16/79** · đã code xong: **0/79**.
-- Theo trạng thái (mọi bản): Chưa làm 80 · Đang thiết kế 0 · Đã thiết kế 16 · Đang code 0 · Xong 0.
+- Theo trạng thái (mọi bản): Chưa làm 76 · Đang thiết kế 4 · Đã thiết kế 16 · Đang code 0 · Xong 0.
 - Giai đoạn xong: **0/19** · quyết định đã chốt: **2/17**.
-- Cập nhật lúc: 2026-11-25 10:23.
+- Cập nhật lúc: 2026-11-25 10:25.
 <!-- SUMMARY:END -->
 
 ## Màn hình (theo thứ tự người dùng gặp)
@@ -28,13 +28,13 @@
 | 0.5 | Hồ sơ: về người dùng | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.5.jpg) · [bấm thử](prototypes/0.5.html) |
 | 0.6 | Mục tiêu và trình độ | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.6.jpg) · [bấm thử](prototypes/0.6.html) |
 | 0.7 | Lời hứa tuần và thời lượng | Bản đầu | Đã thiết kế | Đã duyệt · [ảnh](shots/0.7.jpg) · [bấm thử](prototypes/0.7.html) |
-| 0.8 | Sàng lọc sức khoẻ | Bản đầu | Đã thiết kế | Chờ duyệt. Câu hỏi sức khoẻ là bản nháp, chờ rà chuyên môn. · [ảnh](shots/0.8.jpg) · [bấm thử](prototypes/0.8.html) |
-| 0.8a | Khuyên hỏi bác sĩ trước | Bản đầu | Đã thiết kế | Chờ duyệt. Câu hỏi sức khoẻ là bản nháp, chờ rà chuyên môn. · [ảnh](shots/0.8a.jpg) · [bấm thử](prototypes/0.8a.html) |
-| 0.9 | Vùng hay đau hoặc chấn thương cũ | Bản đầu | Đã thiết kế | Chờ duyệt. · [ảnh](shots/0.9.jpg) · [bấm thử](prototypes/0.9.html) |
-| 0.10 | Phòng tập đầu tiên | Bản đầu | Chưa làm |  |
-| 0.11 | Checklist dụng cụ của phòng | Bản đầu | Chưa làm |  |
-| 0.12 | Bước tạ của phòng | Bản đầu | Chưa làm |  |
-| 0.13 | Dụng cụ cá nhân | Bản đầu | Chưa làm |  |
+| 0.8 | Sàng lọc sức khoẻ | Bản đầu | Đã thiết kế | Đã duyệt. Câu hỏi sức khoẻ là bản nháp, chờ rà chuyên môn. · [ảnh](shots/0.8.jpg) · [bấm thử](prototypes/0.8.html) |
+| 0.8a | Khuyên hỏi bác sĩ trước | Bản đầu | Đã thiết kế | Đã duyệt. Câu hỏi sức khoẻ là bản nháp, chờ rà chuyên môn. · [ảnh](shots/0.8a.jpg) · [bấm thử](prototypes/0.8a.html) |
+| 0.9 | Vùng hay đau hoặc chấn thương cũ | Bản đầu | Đã thiết kế | Đã duyệt. · [ảnh](shots/0.9.jpg) · [bấm thử](prototypes/0.9.html) |
+| 0.10 | Phòng tập đầu tiên | Bản đầu | Đang thiết kế |  |
+| 0.11 | Checklist dụng cụ của phòng | Bản đầu | Đang thiết kế |  |
+| 0.12 | Bước tạ của phòng | Bản đầu | Đang thiết kế |  |
+| 0.13 | Dụng cụ cá nhân | Bản đầu | Đang thiết kế |  |
 | 0.14 | Tổ: tạo hoặc vào | Bản đầu | Chưa làm |  |
 | 0.14a | Lập tổ mới | Bản đầu | Chưa làm |  |
 | 0.14b | Vào tổ bằng mã | Bản đầu | Chưa làm |  |
@@ -212,3 +212,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-25: thiết kế xong 0.6 (2 bước: mục tiêu, trình độ) và 0.7 (2 bước: số buổi, số phút). Lần đầu dùng cách Opus dựng, Fable chấm: 0.6 lên 8,5/10, 0.7 lên 8/10; chờ duyệt.
 - 2026-11-25: 0.6, 0.7 đã duyệt. Đang thiết kế 0.8, 0.8a, 0.9 (Opus dựng, Fable chấm).
 - 2026-11-25: thiết kế xong 0.8 (sàng lọc sức khoẻ, 7 câu tự viết, bỏ PAR-Q+ vì bản quyền cấm sửa), 0.8a (khuyên hỏi bác sĩ, chế độ nhẹ) và 0.9 (vùng hay đau, hình bóng gương có mặt trước và mặt sau). Fable chấm 8,5 / 8 / 7,5, sau đó đã sửa nốt; chờ duyệt.
+- 2026-11-25: 0.8, 0.8a, 0.9 đã duyệt (chữ câu hỏi sức khoẻ vẫn chờ rà chuyên môn). Đang thiết kế cụm phòng tập 0.10–0.13.
