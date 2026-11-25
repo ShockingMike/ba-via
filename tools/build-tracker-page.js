@@ -91,12 +91,12 @@ h3{font-size:17px;font-weight:800;margin:0}
 .upd{color:var(--ink3);font-size:13px;margin:22px 0 0}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px}
 .mono{font-family:var(--mono);color:var(--ink3);font-size:12.5px}
-.hero{margin-top:28px;padding:22px 22px 18px}
+.hero{margin-top:22px;padding:22px 22px 18px}
 .hero .top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
 .big{font:700 clamp(30px,6vw,42px)/1 var(--mono)}
 .big small{font-size:16px;color:var(--ink3)}
 .hero .r{text-align:right}
-.play{display:flex;align-items:center;gap:14px;margin:18px 0 4px;padding:14px 16px;border-radius:14px;background:#FFC93C;color:#2a1d00;text-decoration:none;box-shadow:0 6px 0 #D9A21C;transition:transform .12s,box-shadow .12s}
+.play{display:flex;align-items:center;gap:14px;margin:28px 0 0;padding:14px 16px;border-radius:14px;background:#FFC93C;color:#2a1d00;text-decoration:none;box-shadow:0 6px 0 #D9A21C;transition:transform .12s,box-shadow .12s}
 .play:hover{transform:translateY(-1px)}.play:active{transform:translateY(4px);box-shadow:0 2px 0 #D9A21C}
 .play .pi{width:40px;height:40px;border-radius:50%;background:#2a1d00;color:#FFC93C;display:grid;place-items:center;font-size:16px;flex:none}
 .play b{display:block;font-size:17px;font-weight:800}.play small{display:block;font-size:13px;opacity:.8}
@@ -166,13 +166,13 @@ a{color:var(--acc)}
 <p class="sub">96 màn hình xếp theo thứ tự người dùng gặp. Trang tự sinh từ <code>TRACKING.md</code>: sửa file đó (trên máy hoặc ngay trên GitHub), đẩy lên là trang tự cập nhật.</p>
 <p class="upd">Cập nhật lần cuối: ${esc(updated)}</p>
 
+<a class="play" href="app.html"><span class="pi">▶</span><span><b>Trải nghiệm app</b><small>${screens.filter((s) => isDesigned(s) && fs.existsSync(path.join(root, 'prototypes', s.id + '.html'))).length} màn đã ghép, bấm như app thật</small></span></a>
 <section class="card hero">
   <div class="top">
     <div><div class="eyebrow">Bản đầu đã thiết kế</div><div class="big">${nDesigned}<small> / ${mvp.length} màn</small></div></div>
     <div class="r"><div class="eyebrow">Giai đoạn hiện tại</div><div style="font-weight:700;margin-top:4px">${curPhase ? `${esc(curPhase.id)} · ${esc(curPhase.name)}` : 'Đã xong tất cả'}</div></div>
   </div>
-  <div class="track">${seg}</div>
-  <a class="play" href="app.html"><span class="pi">▶</span><span><b>Trải nghiệm app</b><small>${screens.filter((s) => isDesigned(s) && fs.existsSync(path.join(root, 'prototypes', s.id + '.html'))).length} màn đã ghép, bấm như app thật</small></span></a>
+  <div class="track">${seg}</div>
   <div class="legend">${STATES.map((s) => `<span><span class="dot" style="background:${{ 'Chưa làm': 'var(--line)', 'Đang thiết kế': 'var(--amber)', 'Đã thiết kế': 'var(--acc)', 'Đang code': 'var(--violet)', 'Xong': 'var(--teal)' }[s]}"></span>${esc(s)} <b>${counts[s]}</b></span>`).join('')}</div>
 </section>
 <section class="card stats">
