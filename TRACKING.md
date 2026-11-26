@@ -226,3 +226,4 @@ Ghi phương án đã chọn vào cột **Đã chốt** (để trống = chưa c
 - 2026-11-26: thiết kế xong 1.4 và 1.4a–g (1.4 làm lại từ bản v2). Qua 3 vòng Fable chấm, tất cả đạt 8 trở lên (1.4: 8,5). Chờ duyệt.
 - 2026-11-26: người dùng duyệt 1.4 và 1.4a–g.
 - 2026-11-26 đêm: chạy render cả đêm (hàng đợi blender/queue, ghi chép ở blender/NIGHT-2026-11-26.md, chỉ có trên máy). Nháp danh mục 12 món đồ ở design/11-wardrobe-catalog.md. Đã dựng 9 món mới; Bình và Găng có đủ 65 tư thế màn hình; bóng gương 84/90 bài đang render.
+- 2026-11-26 10:13: render xong cả 1.422 job, có 1 lỗi (bản chạy thử). Trang duyệt: prototypes/render-review.html (tủ đồ, Khăn 6 màu, Bình/Găng 65 tư thế, 84 bóng gương). Chờ người dùng duyệt.
