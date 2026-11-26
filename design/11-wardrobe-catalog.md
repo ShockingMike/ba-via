@@ -221,7 +221,7 @@ Cái giá của việc có 4 món ở ô đầu: Vương miện giấy và Kính
 
 Đã cân nhắc và loại: chiếc găng tay phải (là nút thắt giữa mùa truyện của Găng, không làm món đồ), khăn mặt in hoa (trên Khăn thành khăn đội khăn), bình nước (trên Bình thành bình cầm bình; cốc trà đá đã giữ được trò đùa này ở mức nhẹ), đai lưng tập tạ và găng hở ngón của tài liệu 06 (đồ của người tập giỏi, không phải đồ bỏ quên vui).
 
-## 8. Cần chủ dự án chốt
+## 8. Đã chốt 2026-11-26: tất cả theo đề xuất, câu 7 là N mảnh
 
 | # | Câu hỏi | Đề xuất |
 |---|---|---|
